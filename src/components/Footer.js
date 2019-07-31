@@ -3,7 +3,7 @@ import './css/Footer.css';
 function Footer(props) {
     return(
         <div className="footer">
-            <p>in the footer.</p>
+            <h4>Empty footer for now...</h4>
         </div>
     );
 }
