@@ -1,17 +1,21 @@
 .mainBody{
     position: relative;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
-.mainBody .webProjects{
-    width: 50%;
+.mainBody .projects{
+    width: 100%;
+    height: 100vh;
     text-align: center;
+
+    border-bottom: 3px dotted;
 }
 
-.mainBody .otherProjects{
-    width: 50%;
+.mainBody .hobbies{
+    width: 100%;
+    height: 100vh;
     text-align: center;
 }
