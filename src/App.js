@@ -7,10 +7,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <body>
       <title>Bilal Ahmed</title>
-
       <Header className="appHeader"/>
+      <body>
 
       <MainBody/>
       

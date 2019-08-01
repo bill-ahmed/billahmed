@@ -1,9 +1,11 @@
 import React from 'react';
-import './css/Footer.css';
+import './css/MainBody.css';
 function MainBody(props) {
     return(
         <div className="mainBody">
-            <h2>Work in progress!</h2>
+            <div id="projects" className="projects">
+                <h1>Projects</h1>
+            </div>
         </div>
     );
 }

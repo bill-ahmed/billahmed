@@ -1,0 +1,17 @@
+.mainBody{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainBody .webProjects{
+    width: 50%;
+    text-align: center;
+}
+
+.mainBody .otherProjects{
+    width: 50%;
+    text-align: center;
+}
