@@ -19,19 +19,35 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Bilal Ahmed</title>
+
+    <div id="animatedBackground" height="100vw" width="100vh"></div>
+
+    <!-- vanta js assets -->
+    <script src="./three.min.js"></script>
+    <script src="./vanta.net.min.js"></script>
+    
+    <!-- Instilize vanta js by #id selector -->
+    <script> 
+      // If mobile user, do nothing
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+      } else{
+        VANTA.NET({
+          el: "#animatedBackground",
+          color: '#c8c8c8',
+          backgroundColor: '#3f51b5',
+          points: 6.00,
+          maxDistance: 21.00,
+          spacing: 16.00
+        })
+      }
+    </script>
+
+    
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script src="../src/components/js_animation/three.r92.min.js"></script>
-    <script src="../src/components/js_animation/vanta.net.min.js"></script>
-    <script>
-    VANTA.NET({
-      el: "#headerContent",
-      color: 0xffffff,
-      backgroundColor: 0x#3f51b5
-    })
-    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
