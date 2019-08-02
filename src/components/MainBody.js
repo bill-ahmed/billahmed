@@ -10,6 +10,9 @@ function MainBody(props) {
 
             <div id="hobbies" className="hobbies">
                 <h1>Hobbies</h1>
+                <div className="projectsContainer">
+                    
+                </div>
                 <h3>Coming soon!</h3>
             </div>
         </div>
