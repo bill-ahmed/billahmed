@@ -25,10 +25,15 @@ class Header extends Component{
                 window.location.replace("/");
                 break;
             case "projects":
-                document.getElementById("projects").scrollIntoView();
+                document.querySelector('#projects').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
                 break;
             case "hobbies":
-                document.getElementById("hobbies").scrollIntoView();
+                // Scroll to a certain element
+                document.querySelector('#hobbies').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
                 break;
             default:
                 break;
