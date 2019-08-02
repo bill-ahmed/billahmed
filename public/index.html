@@ -20,7 +20,7 @@
     -->
     <title>Bilal Ahmed</title>
 
-    <div id="animatedBackground" height="100vw" width="100vh"></div>
+    <div id="animatedBackground"></div>
 
     <!-- vanta js assets -->
     <script src="./three.min.js"></script>
@@ -28,19 +28,30 @@
     
     <!-- Instilize vanta js by #id selector -->
     <script> 
-      // If mobile user, do nothing
-      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      // Strength of each effect; higher numbers ==> more intensive ==> more performance hungry
+      var netPoints = 6.00;
+      var netMaxDistance = 21.00;
+      var netSpacing = 16.00;
 
+      // If mobile device is detected, reduce number of points, spacing, etc. for better visuals and performance
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        var netPoints = 4.00;
+        var netMaxDistance = 16.00;
+        var netSpacing = 16.00;
       } else{
-        VANTA.NET({
+        // Don't display on mobile
+        
+      }
+      VANTA.NET({
           el: "#animatedBackground",
           color: '#c8c8c8',
           backgroundColor: '#3f51b5',
-          points: 6.00,
-          maxDistance: 21.00,
-          spacing: 16.00
+          points: netPoints,
+          maxDistance: netMaxDistance,
+          spacing: netSpacing
         })
-      }
+
+      
     </script>
 
     
