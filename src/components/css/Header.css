@@ -53,14 +53,14 @@
       width: 100%;
 
       text-align: center;
-      /* text-shadow: 2px 2px black; */
 
       /*Animations short-hand: {duration} {timing-function} {dekay} {itetarion-count} {nameOfAnimation}*/
       animation: 0.7s ease-out 0s 1 fadeUpFromBottom;
   }
 
   .headerContent .shortIntro h1{
-      font-size: 300%;
+      /*Limit the minimum size to be 29pt for name, and gradually increase as screen increases*/
+      font-size: calc(28pt + 2vw);
   }
 
   .headerContent .shortIntro h3{
