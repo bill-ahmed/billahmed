@@ -1,0 +1,8 @@
+.sideNavigation{
+    width: 100%;
+    height: 100%;
+}
+
+.sideNavigation .sideNavListItemIcon{
+    padding-right: 0;
+}

@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Fab from '@material-ui/core/Fab';
 import IconButton from '@material-ui/core/IconButton';
+import NavigationDrawer from './NavigationDrawer';
 import Tooltip from '@material-ui/core/Tooltip';
 import './css/Header.css';
 
@@ -29,14 +30,22 @@ function handleButtonClick(location){
 }
 
 function Header(){
+    var isMobileUser = global.isMobileUser;
+
     return(
         <div id="headerContent" className="headerContent">
             <div className="navigation">
-                <Button className="navButton" size="medium" variant="text" color="inherit" onClick={() => handleButtonClick("home")}>Home</Button>
-                <Button className="navButton" size="medium" variant="text" color="inherit" onClick={() => handleButtonClick("projects")}>Projects</Button>
-                <Button className="navButton" size="medium" variant="text" color="inherit" onClick={() => handleButtonClick("hobbies")}>Hobbies</Button>
+                <div className="leftNavigation">
+                    {isMobileUser && <NavigationDrawer/>}
+                </div>
+
+                {!isMobileUser && <div className="rightNavigation">
+                    <Button className="navButton" size="medium" variant="text" color="inherit" onClick={() => handleButtonClick("home")}>Home</Button>
+                    <Button className="navButton" size="medium" variant="text" color="inherit" onClick={() => handleButtonClick("projects")}>Projects</Button>
+                    <Button className="navButton" size="medium" variant="text" color="inherit" onClick={() => handleButtonClick("hobbies")}>Hobbies</Button>
+                </div>}
             </div>
-            
+
             <div className="shortIntro">
                 <h1>Bilal Ahmed</h1>
                 <h3><i>A Computer Science student at the University of Toronto</i></h3>
@@ -67,7 +76,7 @@ function Header(){
                 </Tooltip>
 
             </div>
-            <IconButton size="medium" color="inherit" id="linkToProjectSection" onClick={() => this.handleButtonClick("projects")}>
+            <IconButton size="medium" color="inherit" id="linkToProjectSection" onClick={() => handleButtonClick("projects")}>
                 <ExpandMoreIcon/>
             </IconButton>
             <br/>

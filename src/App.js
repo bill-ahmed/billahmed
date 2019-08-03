@@ -5,15 +5,16 @@ import Footer from './components/Footer';
 import './App.css';
 
 function App() {
+
   return (
     <div className="App">
       <title>Bilal Ahmed</title>
       <Header className="appHeader"/>
-      <body>
+      <div className="Body">
 
       <MainBody/>
       
-      </body>
+      </div>
 
       <Footer className="appFooter"/>
     </div>

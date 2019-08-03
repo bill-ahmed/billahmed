@@ -17,6 +17,17 @@
 
   .headerContent .navigation{
       position: relative;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      width: 100%;
+  }
+
+  .headerContent .navigation .rightNavigation{
+      position: relative;
       top: 10px;
       right: 10px;
       z-index: 1000;
@@ -28,6 +39,15 @@
 
       /*Animations short-hand: {duration} {timing-function} {dekay} {itetarion-count} {nameOfAnimation}*/
       animation: 0.7s ease-out 0s 1 fadeUpFromBottom;
+  }
+
+  .headerContent .navigation .leftNavigation{
+      position: relative;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+
+      align-self: flex-start;
   }
 
   /*Hide the border for navigation buttons, until hover*/
