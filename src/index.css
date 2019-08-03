@@ -3,6 +3,14 @@ html{
   overflow-x: hidden;
 }
 
+* .videoEmbed iframe{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: calc(15vw + 200px);
+  height: calc(10vh + 150px);
+}
+
 head .animatedBackground{
   height: 100vh;
   width: 100vw;
