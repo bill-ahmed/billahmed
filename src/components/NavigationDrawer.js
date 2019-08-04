@@ -17,7 +17,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import './css/NavigationDrawer.css';
 
 /**Handle main functions of navigation drawer (opening, closing, event listenint, etc.) */
-function NavigationDrawer(){
+function NavigationDrawer(props){
     const [state, setState] = React.useState({
         navDrawerOpen: false,
     });
@@ -27,8 +27,15 @@ function NavigationDrawer(){
         setState({...state, navDrawerOpen : open});
     }
 
+    function handleButtonClick(id){
+        console.log("in handlebuttonclick with id: " + id);
+        props.handleButtonClick(id);
+        // toggleDrawer(false);
+        
+    }
+
     // Retrieve props to render inside the side navigation
-    let navProps = sideNavProps();
+    let navProps = sideNavProps(handleButtonClick);
 
     return(
         <div>
@@ -46,12 +53,12 @@ function NavigationDrawer(){
 /**Return the props to be rendered in the side navigation
  * @returns Props to be rendered.
  */
-function sideNavProps(){
+function sideNavProps(handleButtonClick){
     return(
         <div className="sideNavigation">
             <List>
                 {/* Home Button */}
-                <ListItem button key="Home">
+                <ListItem button key="Home" onClick={() => handleButtonClick("home")}>
                     <ListItemIcon className="sideNavListItemIcon">
                         <HomeIcon/>
                     </ListItemIcon>
@@ -59,7 +66,7 @@ function sideNavProps(){
                 </ListItem>
 
                 {/* Projects Button */}
-                <ListItem button key="Projects">
+                <ListItem button key="Projects" onClick={() => handleButtonClick("projects")}>
                     <ListItemIcon>
                         <img src={require('../assets/laptop-code-solid.svg')} width="25px" height="25px" color="inherit"/>
                     </ListItemIcon>
@@ -67,7 +74,7 @@ function sideNavProps(){
                 </ListItem>
 
                 {/* Hobbies Button */}
-                <ListItem button key="Hobbies">
+                <ListItem button key="Hobbies" onClick={() => handleButtonClick("hobbies")}>
                     <ListItemIcon>
                         <CameraAltIcon/>
                     </ListItemIcon>

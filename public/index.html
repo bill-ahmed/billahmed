@@ -9,6 +9,10 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!--Stylesheet for animating div elements-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -36,7 +40,7 @@
       // If mobile device is detected, reduce number of points, spacing, etc. for better visuals and performance
       if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         var netPoints = 4.00;
-        var netMaxDistance = 16.00;
+        var netMaxDistance = 20.00;
         var netSpacing = 16.00;
       }
 
@@ -67,5 +71,14 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <!--
+      Initialize the AOS library
+    -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
   </body>
 </html>

@@ -13,6 +13,7 @@ function handleButtonClick(location){
             window.location.replace("/");
             break;
         case "projects":
+            console.log("set location to projects");
             document.querySelector('#projects').scrollIntoView({ 
                 behavior: 'smooth' 
             });
@@ -23,6 +24,10 @@ function handleButtonClick(location){
                 behavior: 'smooth' 
             });
             break;
+
+        case "top":
+            // Sroll back to the top of the page
+            document.querySelector("html").scrollIntoView(true);
         default:
             break;
     }
@@ -30,20 +35,26 @@ function handleButtonClick(location){
 }
 
 function Header(){
+    // If user is in mobile view, give the nav buttons a border
     var isMobileUser = global.isMobileUser;
+    let navButtonVariant = "text";
+    if(isMobileUser){
+        console.log("is mobile user, changing button styles");
+        navButtonVariant = "outlined";
+    }
 
     return(
         <div id="headerContent" className="headerContent">
             <div className="navigation">
-                <div className="leftNavigation">
-                    {isMobileUser && <NavigationDrawer/>}
-                </div>
+                {/* <div className="leftNavigation">
+                    {isMobileUser && <NavigationDrawer handleButtonClick={handleButtonClick}/>}
+                </div> */}
 
-                {!isMobileUser && <div className="rightNavigation">
-                    <Button className="navButton" size="medium" variant="text" color="inherit" onClick={() => handleButtonClick("home")}>Home</Button>
-                    <Button className="navButton" size="medium" variant="text" color="inherit" onClick={() => handleButtonClick("projects")}>Projects</Button>
-                    <Button className="navButton" size="medium" variant="text" color="inherit" onClick={() => handleButtonClick("hobbies")}>Hobbies</Button>
-                </div>}
+                <div className="rightNavigation">
+                    <Button className="navButton" size="medium" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("home")}>Home</Button>
+                    <Button className="navButton" size="medium" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("projects")}>Projects</Button>
+                    <Button className="navButton" size="medium" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("hobbies")}>Hobbies</Button>
+                </div>
             </div>
 
             <div className="shortIntro">
@@ -77,7 +88,7 @@ function Header(){
 
             </div>
             <IconButton size="medium" color="inherit" id="linkToProjectSection" onClick={() => handleButtonClick("projects")}>
-                <ExpandMoreIcon/>
+                <ExpandMoreIcon fontSize="large"/>
             </IconButton>
             <br/>
             <br/>

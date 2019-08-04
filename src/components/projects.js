@@ -7,6 +7,9 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Divider from '@material-ui/core/Divider';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import OpenInNewIcon from '@material-ui/icons/OpenInNew';
+import IconButton from '@material-ui/core/IconButton';
 import Paper from '@material-ui/core/Paper';
 import './css/Projects.css';
 
@@ -44,12 +47,12 @@ function Projects(props) {
     let project3Image = require('../assets/microchip-solid.svg');
 
     let project1 = createProjectDisplay("DDSBlaze", "Web application to keep track of individuals during fire " + 
-                                        "alarms and and other emergencies",
+                                        "alarms and other emergencies",
                                         ["React.js", "Express.js", "Node", "Microsoft Graph"], 
                                         "https://ddsblaze.herokuapp.com", project1Image, populateGallery);
 
     let project2 = createProjectDisplay("SpendingTracker", "A web-app to help track personal spending.", 
-                                        ["Python/Flask", "React", "Google Firebase", "NoSQL","Gunicorn/Nginx"],
+                                        ["Python/Flask", "React.js", "Google Firebase", "NoSQL","Gunicorn/Nginx"],
                                         "https://github.com/bill-ahmed/SpendingTracker", project2Image, populateGallery);
 
     let project3 = createProjectDisplay("Motion Pong", "A game of Pong that utilizes ultrasonic sensors for a " + 
@@ -90,9 +93,13 @@ function Projects(props) {
  * @returns An element populated with the given data
 */
 function createProjectDisplay(name, desc, techUsed, hypref, imgObj, galleryOpen){
+    
+    // Array of allowed AOS animations for this component
+    let animationOptions = ["fade-up", "fade-left", "fade-right"];
 
     return(
-        <Paper className="individualProject">
+        <Paper className="individualProject" data-aos={getRandomFadeAnimation(0, 
+                                                        animationOptions.length, animationOptions)} data-aos-once="true">
             <img className="projectPhoto" src={imgObj} width="70px" height="70px"/>
             <div className="projectDetails">
                 <h2>{name}</h2>
@@ -105,12 +112,13 @@ function createProjectDisplay(name, desc, techUsed, hypref, imgObj, galleryOpen)
                 <Button variant="outlined" className="seeMoreButton" 
                 href={hypref} target="_blank">
                     View More
+                    <OpenInNewIcon style={{marginLeft : "5px"}}/>
                 </Button>
             </div>
             <Divider variant="middle"/>
             <div>
                 {techUsed.map((elem) => (
-                    <Chip className="techUsedChips" label={elem}/>
+                    <Chip key={elem} className="techUsedChips" label={elem}/>
                 ))}
             </div>
         </Paper>
@@ -138,6 +146,13 @@ function getGalleryProps(nameOfProject){
                 </div>
             )
     }
+}
+
+function getRandomFadeAnimation(min, max, animationOptions){
+    // Index of element to return
+    let index = Math.floor(Math.random() * (max - min)) + min;
+
+    return animationOptions[index];
 }
 
 export default Projects;
