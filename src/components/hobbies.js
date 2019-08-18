@@ -6,7 +6,7 @@ function Hobbies(props) {
     return(
         <div id="hobbies" className="hobbies">
             <div>
-                <h1>Hobbies</h1>
+                <h1>Hobbies (coming soon!)</h1>
                 <div className="section1"></div>
             </div>
 
