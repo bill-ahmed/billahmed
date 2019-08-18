@@ -3,9 +3,8 @@
     min-height: 100vh;
     text-align: center;
 
-    margin-top: 20px;
-
     border-bottom: 3px dotted;
+    /*rgb(67, 160, 71)*/
 }
 
 .projects .projectsContainer{

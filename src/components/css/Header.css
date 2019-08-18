@@ -11,6 +11,8 @@
     padding-bottom: 2%;
 
     background: #3f51b5;
+    background-image: linear-gradient(165deg, #3f51b5, #006CC6, #0080C5, #0091B5, #009E9D);
+    /* background-image: linear-gradient(165deg, #3f51b5, #0073c9, #0089b1, #00987d, #43a047); */
     color: white;
     
   }
@@ -36,12 +38,12 @@
   }
 
   .headerContent .navigation .rightNavigation{
-      position: relative;
+      /* position: relative;
       top: 0;
       right: 10px;
       z-index: 1000;
 
-      align-self: flex-end;
+      align-self: flex-end; */
 
       margin: 10px;
       margin-top: 0;
@@ -83,6 +85,7 @@
 
       margin: 5px;
       width: 100%;
+      max-width: 680px;
 
       text-align: center;
       visibility: hidden;
@@ -95,6 +98,7 @@
   .headerContent .shortIntro h1{
       /*Limit the minimum size to be 29pt for name, and gradually increase as screen increases*/
       font-size: calc(28pt + 2vw);
+      text-shadow: 2px 3px 0px #898999;
   }
 
   .headerContent .shortIntro h3{

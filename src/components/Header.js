@@ -1,10 +1,12 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Fab from '@material-ui/core/Fab';
 import IconButton from '@material-ui/core/IconButton';
 import NavigationDrawer from './NavigationDrawer';
 import Tooltip from '@material-ui/core/Tooltip';
+import Typography from '@material-ui/core/Typography';
 import './css/Header.css';
 
 function handleButtonClick(location){
@@ -28,6 +30,7 @@ function handleButtonClick(location){
         case "top":
             // Sroll back to the top of the page
             document.querySelector("html").scrollIntoView(true);
+            break;
         default:
             break;
     }
@@ -50,16 +53,17 @@ function Header(){
                     {isMobileUser && <NavigationDrawer handleButtonClick={handleButtonClick}/>}
                 </div> */}
 
-                <div className="rightNavigation">
+                <ButtonGroup size="medium" color="inherit" className="rightNavigation">
                     <Button className="navButton" size="medium" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("home")}>Home</Button>
                     <Button className="navButton" size="medium" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("projects")}>Projects</Button>
                     <Button className="navButton" size="medium" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("hobbies")}>Hobbies</Button>
-                </div>
+                </ButtonGroup>
             </div>
 
             <div className="shortIntro">
                 <h1>Bilal Ahmed</h1>
-                <h3><i>A Computer Science student at the University of Toronto</i></h3>
+                <h3><i>A Computer Science student at the University of Toronto that's passionate
+                     about web design and software development.</i></h3>
             </div>
             <br/>
             <br/>
@@ -83,6 +87,13 @@ function Header(){
                 <Tooltip title="Facebook">
                     <Fab size="large" className="socialLink" href="https://www.facebook.com/BillAhmed4343" target="_blank">
                         <img alt="Link to Facebook" className="roundedImage" src={require("../assets/facebook-brands.svg")} width="80%" height="80%"/>
+                    </Fab>
+                </Tooltip>
+
+                {/* Resume */}
+                <Tooltip title="My Resume/CV">
+                    <Fab size="large" className="socialLink" variant="extended">
+                        Resume/CV
                     </Fab>
                 </Tooltip>
 

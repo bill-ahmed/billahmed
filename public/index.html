@@ -33,25 +33,25 @@
     <!-- Instilize vanta js by #id selector -->
     <script> 
       // Strength of each effect; higher numbers ==> more intensive ==> more performance hungry
-      var netPoints = 6.00;
-      var netMaxDistance = 21.00;
-      var netSpacing = 16.00;
+      var netPoints = 7.00;
+      var netMaxDistance = 23.00;
+      var netSpacing = 20.00;
 
       // If mobile device is detected, reduce number of points, spacing, etc. for better visuals and performance
       if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        var netPoints = 4.00;
-        var netMaxDistance = 20.00;
-        var netSpacing = 16.00;
+        var netPoints = 5.00;
+        var netMaxDistance = 22.00;
+        var netSpacing = 25.00;
       }
 
-      VANTA.NET({
+      {% comment %} VANTA.NET({
           el: "#animatedBackground",
           color: '#bdbdbd',
           backgroundColor: '#3f51b5',
           points: netPoints,
           maxDistance: netMaxDistance,
           spacing: netSpacing
-        })
+        }) {% endcomment %}
 
       
     </script>

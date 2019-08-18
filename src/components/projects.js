@@ -48,7 +48,7 @@ function Projects(props) {
 
     let project1 = createProjectDisplay("DDSBlaze", "Web application to keep track of individuals during fire " + 
                                         "alarms and other emergencies",
-                                        ["React.js", "Express.js", "Node", "Microsoft Graph"], 
+                                        ["React.js", "Express.js", "Node.js", "Microsoft Graph", "Twilio API"], 
                                         "https://ddsblaze.herokuapp.com", project1Image, populateGallery);
 
     let project2 = createProjectDisplay("SpendingTracker", "A web-app to help track personal spending.", 
