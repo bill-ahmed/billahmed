@@ -167,6 +167,7 @@ function getGalleryProps(nameOfProject, classes){
                             </GridListTile>
                         ))}
                     </GridList>
+                    <p>More coming soon!</p>
                 </div>
             )
         case "SpendingTracker":
