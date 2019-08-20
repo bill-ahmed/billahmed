@@ -2,23 +2,29 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Divider from '@material-ui/core/Divider';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import GalleryData from './GalleryData';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
-import IconButton from '@material-ui/core/IconButton';
 import Paper from '@material-ui/core/Paper';
 import './css/Projects.css';
+
+/* Define all the data for grid of images in "Gallery" view */
+const allGalleryData = GalleryData();
+const ddsblazeGalleryData = allGalleryData[0];
+const SpendingTrackerGalleryData = allGalleryData[1];
+const motionPongGalleryData = allGalleryData[2];
 
 /**A component to represent the porjects section */
 function Projects(props) {
     // Equivalent to react states
     const [open, setOpen] = React.useState(false);
     const [name, setName] = React.useState("");
-
+    console.log(motionPongGalleryData);
     /**Open the pop-up dialog */
     function handleGalleryOpen(){
         setOpen(true);
@@ -35,7 +41,6 @@ function Projects(props) {
      */
     function populateGallery(name){
         // Open the gallery for viewing
-        console.log("inside populate gallery");
         handleGalleryOpen();
 
         // Update data used in gallery
@@ -90,6 +95,7 @@ function Projects(props) {
  * @param hypref An external link where a user can find more information
  * @param imgObj As of writing, <img> tags don't work unless you do <img src={require("pathToImage")}>.
  * Hence, imbObj is the return value of require() 
+ * @param galleryOpen (bool) Determine if gallery is open or not
  * @returns An element populated with the given data
 */
 function createProjectDisplay(name, desc, techUsed, hypref, imgObj, galleryOpen){
@@ -100,7 +106,7 @@ function createProjectDisplay(name, desc, techUsed, hypref, imgObj, galleryOpen)
     return(
         <Paper className="individualProject" data-aos={getRandomFadeAnimation(0, 
                                                         animationOptions.length, animationOptions)} data-aos-once="true">
-            <img className="projectPhoto" src={imgObj} width="70px" height="70px"/>
+            <img alt={name + " Logo"} className="projectPhoto" src={imgObj} width="70px" height="70px"/>
             <div className="projectDetails">
                 <h2>{name}</h2>
                 <h3>{desc}</h3>
@@ -133,17 +139,49 @@ function createProjectDisplay(name, desc, techUsed, hypref, imgObj, galleryOpen)
 function getGalleryProps(nameOfProject){
     switch(nameOfProject){
         case "DDSBlaze":
-            return (<h3>Coming soon!</h3>)
+            return (
+                <div className="GalleryGridContainer">
+                    {/* Gallery of images for this project */}
+                    <GridList cellHeight={300} cols={3} className="GalleryGrid">
+                        {ddsblazeGalleryData.map(title => (
+                            <GridListTile key={title.img} cols={title.cols || 1}>
+                                {title.type === "image" ? <img src={title.img} alt={title.title}/> : 
+                                <video width="100%" height="100%" controls alt={title.title}>
+                                    <source src={title.img} type="video/mp4"/>
+                                </video>}
+                            </GridListTile>
+                        ))}
+                    </GridList>
+                </div>
+            )
         case "SpendingTracker":
-            return (<h3>Coming soon!</h3>)
+            return (
+            <h3>Coming soon!</h3>
+            )
         case "Motion Pong":
             return(
-                <div class="videoEmbed">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/NO6y1-P6fCI" 
-                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen/>
-                <h3>More coming soon!</h3>
+                <div className="GalleryGridContainer">
+                    {/* Gallery of images for this project */}
+                    <GridList cellHeight={270} cols={3} className="GalleryGrid">
+                            <GridListTile key="motionPongVideo" cols={3}>
+                                <iframe width="100%" height="100%" title="Motion Pong Video" src="https://www.youtube.com/embed/NO6y1-P6fCI" 
+                                frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen/>
+                            </GridListTile>
+                        {motionPongGalleryData.map(title => (
+                            <GridListTile key={title.img} cols={title.cols || 1}>
+                                {title.type === "image" ? <img src={title.img} alt={title.title}/> : 
+                                <video width="100%" height="100%" controls alt={title.title}>
+                                    <source src={title.img} type="video/mp4"/>
+                                </video>}
+                            </GridListTile>
+                        ))}
+                    </GridList>
                 </div>
+            )
+        default:
+            return(
+            <h3>N/A</h3>
             )
     }
 }
