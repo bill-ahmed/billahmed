@@ -84,6 +84,17 @@ function Projects(props) {
             <h1>Projects</h1>
             <Divider variant="middle"/>
             <div className="projectsContainer">
+                <Paper elevation={1} className="projectsOverview">
+                    <h2>Brief Overview</h2>
+                    <p>
+                        Below are some projects i've worked on (or am actively working on) during my free time. Although the list is small,
+                        i'm always looking for ways to expand my skillset and explore new technologies.
+                    </p>
+                    <p>
+                        I will continue to add more projects that are fun, interesting, and useful. Stay tuned!
+                    </p>
+                </Paper>
+
                 <div className="projectsSubsection">
                     {project1}
                     {project2}
@@ -119,7 +130,7 @@ function createProjectDisplay(name, desc, techUsed, hypref, imgObj, galleryOpen)
     let animationOptions = ["fade-up", "fade-left", "fade-right"];
 
     return(
-        <Paper className="individualProject" data-aos={getRandomFadeAnimation(0, 
+        <Paper elevation={3} className="individualProject" data-aos={getRandomFadeAnimation(0, 
                                                         animationOptions.length, animationOptions)} data-aos-once="true">
             <img alt={name + " Logo"} className="projectPhoto" src={imgObj} width="70px" height="70px"/>
             <div className="projectDetails">

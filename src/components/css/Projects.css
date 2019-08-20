@@ -5,7 +5,7 @@
 
     background-image: url('../../assets/code_icon.svg');
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: cover;
     background-position: center;
     /* border-bottom: 3px dotted; */
     /*rgb(67, 160, 71)*/
@@ -13,11 +13,22 @@
 
 .projects .projectsContainer{
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
     align-items: center;
 
-    margin-top: 5%;
+    margin-top: calc(50px + 3%);
+}
+
+.projects .projectsContainer .projectsOverview{
+    width: calc(200px + 40%);
+    margin-bottom: 50px;
+}
+
+.projects .projectsContainer .projectsOverview p{
+    margin: 20px;
 }
 
 .projects .projectsContainer .projectsSubsection{
