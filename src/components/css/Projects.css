@@ -59,14 +59,3 @@
 .projects .projectsContainer .projectsSubsection .individualProject .techUsedChips{
     margin: 7px 5px 5px 7px;
 }
-
-.GalleryGridContainer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.GalleryGridContainer .GalleryGrid{
-    width: 500;
-    height: 450;
-}

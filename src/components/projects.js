@@ -1,3 +1,4 @@
+import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
@@ -13,6 +14,19 @@ import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 import Paper from '@material-ui/core/Paper';
 import './css/Projects.css';
 
+const useStyles = makeStyles(theme => ({
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
+      overflow: 'hidden',
+    },
+    gridList: {
+      width: 500,
+      height: 450,
+    },
+  }));
+
 /* Define all the data for grid of images in "Gallery" view */
 const allGalleryData = GalleryData();
 const ddsblazeGalleryData = allGalleryData[0];
@@ -24,7 +38,8 @@ function Projects(props) {
     // Equivalent to react states
     const [open, setOpen] = React.useState(false);
     const [name, setName] = React.useState("");
-    console.log(motionPongGalleryData);
+    const classes = useStyles();
+
     /**Open the pop-up dialog */
     function handleGalleryOpen(){
         setOpen(true);
@@ -80,7 +95,7 @@ function Projects(props) {
                 <Divider variant="fullWidth"/>
                 <DialogContent>
                     <DialogContentText>
-                    {getGalleryProps(name)}
+                    {getGalleryProps(name, classes)}
                     </DialogContentText>
                 </DialogContent>
             </Dialog>
@@ -136,13 +151,13 @@ function createProjectDisplay(name, desc, techUsed, hypref, imgObj, galleryOpen)
  * @param nameOfProject The name of the project
  * @returns A <div> containing all pictures/vidoes neatly formatted
  */
-function getGalleryProps(nameOfProject){
+function getGalleryProps(nameOfProject, classes){
     switch(nameOfProject){
         case "DDSBlaze":
             return (
-                <div className="GalleryGridContainer">
+                <div className={classes.root}>
                     {/* Gallery of images for this project */}
-                    <GridList cellHeight={300} cols={3} className="GalleryGrid">
+                    <GridList cellHeight={270} cols={3} className={classes.gridList}>
                         {ddsblazeGalleryData.map(title => (
                             <GridListTile key={title.img} cols={title.cols || 1}>
                                 {title.type === "image" ? <img src={title.img} alt={title.title}/> : 
@@ -156,13 +171,13 @@ function getGalleryProps(nameOfProject){
             )
         case "SpendingTracker":
             return (
-            <h3>Coming soon!</h3>
+            "Coming soon!"
             )
         case "Motion Pong":
             return(
-                <div className="GalleryGridContainer">
+                <div className={classes.root}>
                     {/* Gallery of images for this project */}
-                    <GridList cellHeight={270} cols={3} className="GalleryGrid">
+                    <GridList cellHeight={270} cols={3} className={classes.gridList}>
                             <GridListTile key="motionPongVideo" cols={3}>
                                 <iframe width="100%" height="100%" title="Motion Pong Video" src="https://www.youtube.com/embed/NO6y1-P6fCI" 
                                 frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
