@@ -8,8 +8,10 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Divider from '@material-ui/core/Divider';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
+import IconButton from '@material-ui/core/IconButton';
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 import Paper from '@material-ui/core/Paper';
 import './css/Projects.css';
@@ -65,13 +67,16 @@ function Projects(props) {
     let project1Image = require("../assets/fire-solid.svg");
     let project2Image = require('../assets/money-check-alt-solid.svg');
     let project3Image = require('../assets/microchip-solid.svg');
+    let project4Image = require('../assets/maze.svg');
+    let project5Image = require('../assets/gnu_bash.svg');
 
     let project1 = createProjectDisplay("DDSBlaze", "Web application to keep track of individuals during fire " + 
                                         "alarms and other emergencies",
                                         ["React.js", "Express.js", "Node.js", "Microsoft Graph", "Twilio API"], 
                                         "https://ddsblaze.herokuapp.com", project1Image, populateGallery);
 
-    let project2 = createProjectDisplay("SpendingTracker", "A web-app to help track personal spending.", 
+    let project2 = createProjectDisplay("SpendingTracker", "A web-app to help track personal spending with the aid of graphs and other " + 
+                                        "statistical information.", 
                                         ["Python/Flask", "React.js", "Google Firebase", "NoSQL","Gunicorn/Nginx"],
                                         "https://github.com/bill-ahmed/SpendingTracker", project2Image, populateGallery);
 
@@ -79,27 +84,39 @@ function Projects(props) {
                                         "deeper level of interaction with the user.", 
                                         ["Altera DE2-115", "Verilog HDL", "Ultrasonic Sensors"],
                                         "https://github.com/bill-ahmed/CSCB58-Final-Project", project3Image, populateGallery);
+
+    let project4 = createProjectDisplay("Maze Solver", "An implementation of Dijkstra's Algorithm that finds the " + 
+                                        "shortest (and only) path to solving a maze.", 
+                                        ["Python", "Dijkstra"],
+                                        "", project4Image, populateGallery);
+
+    let project5 = createProjectDisplay("JShell", "A Java implementation of the Unix shell, within a mock file system in the JVM.", 
+                                        ["Java", "XML", "Agile/Scrum"],
+                                        "", project5Image, populateGallery);
     return(
         <div id="projects" className="projects">
             <h1>Projects</h1>
             <Divider variant="middle"/>
             <div className="projectsContainer">
-                <Paper elevation={1} className="projectsOverview">
+                <Paper square elevation={0} className="projectsOverview">
                     <h2>Brief Overview</h2>
                     <p>
                         Below are some projects i've worked on (or am actively working on) during my free time. Although the list is small,
                         i'm always looking for ways to expand my skillset and explore new technologies.
                     </p>
-                    <p>
-                        I will continue to add more projects that are fun, interesting, and useful. Stay tuned!
-                    </p>
                 </Paper>
 
+                {/* List all projects */}
                 <div className="projectsSubsection">
-                    {project1}
-                    {project2}
-                    {project3}
+                    {project1} {project2} {project3}
+                        {project4} {project5}
                 </div>
+
+                {/* Go to hobbies section button */}
+                <IconButton size="medium" color="inherit" id="linkToHobbiesSection" onClick={() => props.moveUserToSection("hobbies")}>
+                    <ExpandMoreIcon fontSize="large"/>
+                </IconButton>
+
             </div>
             <Dialog open={open} onClose={() => handleGalleryClose()}>
                 <DialogTitle>{name}</DialogTitle>
@@ -180,11 +197,11 @@ function getGalleryProps(nameOfProject, classes){
                     </GridList>
                     <p>More coming soon!</p>
                 </div>
-            )
+            );
         case "SpendingTracker":
             return (
             "Coming soon!"
-            )
+            );
         case "Motion Pong":
             return(
                 <div className={classes.root}>
@@ -205,10 +222,14 @@ function getGalleryProps(nameOfProject, classes){
                         ))}
                     </GridList>
                 </div>
-            )
+            );
+        case "Maze Solver":
+            return ("Coming Soon!");
+        case "JShell":
+            return ("Coming Soon!");
         default:
             return(
-            <h3>N/A</h3>
+            "N/A"
             )
     }
 }

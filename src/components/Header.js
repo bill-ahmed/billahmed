@@ -4,47 +4,19 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Fab from '@material-ui/core/Fab';
 import IconButton from '@material-ui/core/IconButton';
-import NavigationDrawer from './NavigationDrawer';
 import Tooltip from '@material-ui/core/Tooltip';
-import Typography from '@material-ui/core/Typography';
 import './css/Header.css';
 
-function handleButtonClick(location){
-    switch(location){
-        case "home":
-            window.location.replace("/");
-            break;
-        case "projects":
-            console.log("set location to projects");
-            document.querySelector('#projects').scrollIntoView({ 
-                behavior: 'smooth' 
-            });
-            break;
-        case "hobbies":
-            // Scroll to a certain element
-            document.querySelector('#hobbies').scrollIntoView({ 
-                behavior: 'smooth' 
-            });
-            break;
-
-        case "top":
-            // Sroll back to the top of the page
-            document.querySelector("html").scrollIntoView(true);
-            break;
-        default:
-            break;
-    }
-    
-}
-
-function Header(){
+function Header(props){
     // If user is in mobile view, give the nav buttons a border
     var isMobileUser = global.isMobileUser;
     let navButtonVariant = "text";
     if(isMobileUser){
-        console.log("is mobile user, changing button styles");
         navButtonVariant = "outlined";
     }
+
+    const handleButtonClick = props.moveUserToSection;
+    console.log(props.moveUserToSection);
 
     return(
         <div id="headerContent" className="headerContent">
