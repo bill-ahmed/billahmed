@@ -118,11 +118,11 @@ function Projects(props) {
                 <div className="projectsSubsection">
                     <div className="firstSubsection">
                         {project1} 
-                        {project2}
+                        {project3}
                     </div>
                       
                     <div className="secondSubsection">
-                        {project3}
+                        {project2}
                         {project4}
                         {/* {project5} */}
                     </div>

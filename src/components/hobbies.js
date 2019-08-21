@@ -68,7 +68,7 @@ function Hobbies(props) {
                 <h1>Photography (WIP!)</h1>
                 <Divider variant="middle"/>
                 <div className="hobbiesContainer">
-                    <div className="imageViewer">
+                    <div className="imageViewer" data-aos="fade-up" data-aos-once="true">
                         <Paper elevation={1}>
                             <p>
                                 In my free time, I especially enjoy photography. Most of my subjects are relatively still,
@@ -82,7 +82,7 @@ function Hobbies(props) {
                         </Paper>
                     </div>
 
-                    <div className={classes.root}>
+                    <div className={classes.root} data-aos="fade-down" data-aos-once="true">
                         <GridList cellHeight={270} cols={6} className={classes.gridList}>
                             {portfolioData.map(tile => (
 
