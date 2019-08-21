@@ -106,7 +106,7 @@ function Projects(props) {
             <h1>Projects</h1>
             <Divider variant="middle"/>
             <div className="projectsContainer">
-                <Paper square elevation={0} className="projectsOverview">
+                <Paper square elevation={0} className="projectsOverview" data-aos="fade-up" data-aos-once="true">
                     <h2>Brief Overview</h2>
                     <p>
                         Below are some projects i've worked on (or am actively working on) during my free time. You can view sreenshots/videos
@@ -116,8 +116,16 @@ function Projects(props) {
 
                 {/* List all projects */}
                 <div className="projectsSubsection">
-                    {project1} {project2} {project3}
-                        {project4} {project5}
+                    <div className="firstSubsection">
+                        {project1} 
+                        {project2}
+                    </div>
+                      
+                    <div className="secondSubsection">
+                        {project3}
+                        {project4}
+                        {/* {project5} */}
+                    </div>
                 </div>
 
                 {/* Go to hobbies section button */}

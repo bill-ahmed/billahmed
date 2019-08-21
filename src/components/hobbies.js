@@ -65,19 +65,20 @@ function Hobbies(props) {
     return(
         <div id="hobbies" className="hobbies">
             <div>
-                <h1>Hobbies (WIP!)</h1>
+                <h1>Photography (WIP!)</h1>
                 <Divider variant="middle"/>
                 <div className="hobbiesContainer">
                     <div className="imageViewer">
                         <Paper elevation={1}>
-                            <div className="imageViewerContainer">
-                                <img width="98%" height="98%" src={currImage} alt="test"/>
-                            </div>
                             <p>
-                                In my free time, I especially enjoy photography. Most of my subjects tend to be relatively still,
-                                although I do ocassionally attempt to photograph moving objects.
+                                In my free time, I especially enjoy photography. Most of my subjects are relatively still,
+                                although I do ocassionally attempt to photograph moving objects. The following is a small sample
+                                of the images i've taken.
                             </p>
-                            <p>Click an image to enlarge it.</p>
+                            <div className="imageViewerContainer">
+                                <img width="99%" height="99%" src={currImage} alt="test"/>
+                            </div>
+                            <p><strong>Click an image to enlarge it.</strong></p>
                         </Paper>
                     </div>
 
