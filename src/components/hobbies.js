@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
 function Hobbies(props) {
 
     // Keep track of which image is selected, so appropriate one can be displayed larger
-    const [currImage, setCurrImage] = useState(require('../assets/portfolio/IMG_0381.JPG'));
+    const [currImage, setCurrImage] = useState(require('../assets/image_placeholder.jpg'));
 
     var classes = useStyles();  // Styles added to GridList and other elements
     var isMobileUser = props.isMobileUser();
@@ -80,7 +80,6 @@ function Hobbies(props) {
                             <div className="imageViewerContainer">
                                 <img width="99%" height="99%" src={currImage} alt="test"/>
                             </div>
-                            <p><strong>Click an image to enlarge it here.</strong></p>
                         </div>
                     </div>
 
