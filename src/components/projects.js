@@ -1,3 +1,4 @@
+import { getProjectsGalleryData } from './GalleryData';
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import Button from '@material-ui/core/Button';
@@ -7,7 +8,6 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Divider from '@material-ui/core/Divider';
-import GalleryData from './GalleryData';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   }));
 
 /* Define all the data for grid of images in "Gallery" view */
-const allGalleryData = GalleryData();
+const allGalleryData = getProjectsGalleryData();
 const ddsblazeGalleryData = allGalleryData[0];
 const SpendingTrackerGalleryData = allGalleryData[1];
 const motionPongGalleryData = allGalleryData[2];
@@ -168,12 +168,12 @@ function getGalleryProps(nameOfProject, classes){
             return (
                 <div className={classes.root}>
                     {/* Gallery of images for this project */}
-                    <GridList cellHeight={270} cols={3} className={classes.gridList}>
-                        {ddsblazeGalleryData.map(title => (
-                            <GridListTile key={title.img} cols={title.cols || 1}>
-                                {title.type === "image" ? <img src={title.img} alt={title.title}/> : 
-                                <video width="100%" height="100%" controls alt={title.title}>
-                                    <source src={title.img} type="video/mp4"/>
+                    <GridList cellHeight={420} cols={2} className={classes.gridList}>
+                        {ddsblazeGalleryData.map(tile => (
+                            <GridListTile key={tile.img} cols={tile.cols || 1}>
+                                {tile.type === "image" ? <img src={tile.img} alt={tile.title}/> : 
+                                <video width="100%" height="100%" controls alt={tile.title}>
+                                    <source src={tile.img} type="video/mp4"/>
                                 </video>}
                             </GridListTile>
                         ))}
@@ -195,11 +195,11 @@ function getGalleryProps(nameOfProject, classes){
                                 frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen/>
                             </GridListTile>
-                        {motionPongGalleryData.map(title => (
-                            <GridListTile key={title.img} cols={title.cols || 1}>
-                                {title.type === "image" ? <img src={title.img} alt={title.title}/> : 
-                                <video width="100%" height="100%" controls alt={title.title}>
-                                    <source src={title.img} type="video/mp4"/>
+                        {motionPongGalleryData.map(tile => (
+                            <GridListTile key={tile.img} cols={tile.cols || 1}>
+                                {tile.type === "image" ? <img src={tile.img} alt={tile.title}/> : 
+                                <video width="100%" height="100%" controls alt={tile.title}>
+                                    <source src={tile.img} type="video/mp4"/>
                                 </video>}
                             </GridListTile>
                         ))}

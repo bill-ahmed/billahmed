@@ -3,7 +3,7 @@
  * index 1 --> spendingtracker
  * index 2 --> motion pong
  */
-export default function GalleryData(){
+export function getProjectsGalleryData(){
     return(
         [[{
             type: "image",
@@ -13,11 +13,6 @@ export default function GalleryData(){
         }, {
             type: "image",
             img: require('../assets/images/ddsblaze_undo_checkin.jpg'),
-            title: 'DDSBlaze Undo Check In',
-            cols: 1,
-        }, {
-            type: "image",
-            img: require('../assets/images/ddsblaze_send_bulk_message.jpg'),
             title: 'DDSBlaze Undo Check In',
             cols: 1,
         }], [{
@@ -43,5 +38,46 @@ export default function GalleryData(){
             title: 'Ultrasonic Sensor, Alternate Angle',
             cols: 3,
         }]]
+    );
+}
+
+export function getPortfolioGalleryData(){
+    return(
+        [{
+            type: "image",
+            img: require('../assets/portfolio/IMG_3606.JPG'),
+            title: 'Flower - Red',
+            cols: 2,
+        }, {
+            type: "image",
+            img: require('../assets/portfolio/IMG_0407.JPG'),
+            title: 'Flower - Orange',
+            cols: 4,
+        }, {
+            type: "image",
+            img: require('../assets/portfolio/IMG_0381.JPG'),
+            title: 'Clip',
+            cols: 2,
+        }, {
+            type: "image",
+            img: require('../assets/portfolio/IMG_0481.JPG'),
+            title: 'Snail in a bush',
+            cols: 2,
+        }, {
+            type: "image",
+            img: require('../assets/portfolio/IMG_3721.JPG'),
+            title: 'Camp fire',
+            cols: 2,
+        }, {
+            type: "image",
+            img: require('../assets/portfolio/IMG_3245.JPG'),
+            title: 'TTC Bus - Long Exposure',
+            cols: 4,
+        }, {
+            type: "image",
+            img: require('../assets/portfolio/IMG_3624.JPG'),
+            title: 'Flower - Blue',
+            cols: 2,
+        }]
     );
 }

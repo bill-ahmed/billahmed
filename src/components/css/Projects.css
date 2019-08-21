@@ -5,8 +5,8 @@
 
     background-image: url('../../assets/code_icon.svg');
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-size: 100%;
+    background-position: 0px -200px;
     /* border-bottom: 3px dotted; */
     /*rgb(67, 160, 71)*/
 }
