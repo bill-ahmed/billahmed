@@ -103,8 +103,7 @@ function Projects(props) {
                                         "", project5Image, populateGallery);
     return(
         <div id="projects" className="projects">
-            <h1>Projects</h1>
-            <Divider variant="middle"/>
+            <h1><span>Projects</span></h1>
             <div className="projectsContainer">
                 <Paper square elevation={0} className="projectsOverview" data-aos="fade-up" data-aos-once="true">
                     <h2>Brief Overview</h2>
@@ -170,7 +169,7 @@ function createProjectDisplay(name, desc, techUsed, hypref, imgObj, galleryOpen)
     let animationOptions = ["fade-up", "fade-left", "fade-right"];
 
     return(
-        <Paper elevation={3} className="individualProject" data-aos={getRandomFadeAnimation(0, 
+        <div elevation={3} className="individualProject" data-aos={getRandomFadeAnimation(0, 
                                                         animationOptions.length, animationOptions)} data-aos-once="true">
             <img alt={name + " Logo"} className="projectPhoto" src={imgObj} width="70px" height="70px"/>
             <div className="projectDetails">
@@ -193,7 +192,7 @@ function createProjectDisplay(name, desc, techUsed, hypref, imgObj, galleryOpen)
                     <Chip key={elem} className="techUsedChips" label={elem}/>
                 ))}
             </div>
-        </Paper>
+        </div>
     )
 }
 

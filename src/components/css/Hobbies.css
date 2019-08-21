@@ -2,11 +2,27 @@
     width: 100%;
     min-height: 100vh;
     text-align: center;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
+
+    /* background-image: url('../../assets/dslr_icon.svg'); */
+    background-image: linear-gradient(to bottom, #0091B5, #009E9D);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .hobbies h1{
-    margin-top: calc(50px + 3%);
+    width: 100%;
+    color: white;
+    margin: 50px 0 50px 0;
+    line-height: 0.1em;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+.hobbies h1 span{
+    padding: 0 10px;
+    background: #0091B5;
 }
 
 .hobbies .hobbiesContainer{
@@ -21,6 +37,9 @@
 
 .hobbies .hobbiesContainer .imageViewer {
     width: calc(260px + 32%);
+    background-color: white;
+
+    border-radius: 10px;
 }
 
 .hobbies .hobbiesContainer .imageViewer p{

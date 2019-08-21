@@ -3,12 +3,30 @@
     min-height: 100vh;
     text-align: center;
 
+    background: #0091B5;
     background-image: url('../../assets/code_icon.svg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0px -200px;
+
+    color: white;
+
     /* border-bottom: 3px dotted; */
     /*rgb(67, 160, 71)*/
+}
+
+.projects h1{
+    width: 100%;
+    color: white;
+    margin-top: 40px;
+    line-height: 0.1em;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+.projects h1 span{
+    padding: 0 10px;
+    background: #0091B5;
 }
 
 .projects .projectsContainer{
@@ -27,11 +45,15 @@
 }
 
 .projects .projectsContainer .projectsOverview{
-    border: solid #b3b3b3 1px;
-    border-radius: 20px;
+    /* border: solid #b3b3b3 1px;
+    border-radius: 20px; */
 
     width: calc(200px + 40%);
+    max-width: 800px;
     margin-bottom: 50px;
+
+    background: none;
+    color: white;
 }
 
 .projects .projectsContainer .projectsOverview p{
@@ -49,6 +71,8 @@
     margin-bottom: 0;
     width: 100%;
     min-width: 200px;
+
+    color: black;
 }
 
 .projects .projectsContainer .projectsSubsection .firstSubsection{
@@ -60,7 +84,7 @@
     align-items: center;
     flex-wrap: wrap;
 
-    border-right: solid #b3b3b3 1px;
+    border-right: solid white 1px;
 }
 
 .projects .projectsContainer .projectsSubsection .secondSubsection{
@@ -74,8 +98,10 @@
 }
 
 .projects .projectsContainer .projectsSubsection .individualProject{
-    margin: 20px 20px 40px 20px;
+    margin: 40px 20px 60px 20px;
     max-width: 550px;
+    background-color: white;
+    border-radius: 10px;
 }
 
 .projects .projectsContainer .projectsSubsection .individualProject .projectPhoto{

@@ -18,6 +18,9 @@ const useStyles = makeStyles(theme => ({
       flexWrap: 'wrap',
       justifyContent: 'space-around',
       overflow: 'hidden',
+      backgroundColor: 'white',
+      border: "solid white 4px",
+      borderRadius: '10px',
     },
     gridList: {
       width: 850,
@@ -65,11 +68,10 @@ function Hobbies(props) {
     return(
         <div id="hobbies" className="hobbies">
             <div>
-                <h1>Photography (WIP!)</h1>
-                <Divider variant="middle"/>
+                <h1><span>Photography (WIP!)</span></h1>
                 <div className="hobbiesContainer">
                     <div className="imageViewer" data-aos="fade-up" data-aos-once="true">
-                        <Paper elevation={1}>
+                        <div>
                             <p>
                                 In my free time, I especially enjoy photography. Most of my subjects are relatively still,
                                 although I do ocassionally attempt to photograph moving objects. The following is a small sample
@@ -78,8 +80,8 @@ function Hobbies(props) {
                             <div className="imageViewerContainer">
                                 <img width="99%" height="99%" src={currImage} alt="test"/>
                             </div>
-                            <p><strong>Click an image to enlarge it.</strong></p>
-                        </Paper>
+                            <p><strong>Click an image to enlarge it here.</strong></p>
+                        </div>
                     </div>
 
                     <div className={classes.root} data-aos="fade-down" data-aos-once="true">
