@@ -15,13 +15,13 @@ function moveUserToSection(location){
           window.location.replace("/");
           break;
       case "projects":
-          console.log("set location to projects");
+          // Sroll down to projects section
           document.querySelector('#projects').scrollIntoView({ 
               behavior: 'smooth' 
           });
           break;
       case "hobbies":
-          // Scroll to a certain element
+          // Scroll down to hobbies section
           document.querySelector('#hobbies').scrollIntoView({ 
               behavior: 'smooth' 
           });

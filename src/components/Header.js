@@ -16,7 +16,6 @@ function Header(props){
     }
 
     const handleButtonClick = props.moveUserToSection;
-    console.log(props.moveUserToSection);
 
     return(
         <div id="headerContent" className="headerContent">
