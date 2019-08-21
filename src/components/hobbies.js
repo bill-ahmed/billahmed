@@ -33,8 +33,8 @@ const useStyles = makeStyles(theme => ({
       overflow: 'hidden',
     },
     gridList: {
-      width: "80%",
-      height: 300,
+      width: "100%",
+      height: "100%",
       flexWrap: "nowrap",
       transform: 'translateZ(0)',
     },
@@ -45,14 +45,13 @@ const useStyles = makeStyles(theme => ({
 function Hobbies(props) {
 
     // Keep track of which image is selected, so appropriate one can be displayed larger
-    const [currImage, setCurrImage] = useState(require('../assets/portfolio/IMG_3606.JPG'));
+    const [currImage, setCurrImage] = useState(require('../assets/portfolio/IMG_0381.JPG'));
 
     var classes = useStyles();  // Styles added to GridList and other elements
-    var isMobileUser = false;
+    var isMobileUser = props.isMobileUser();
 
     // Check if mobile user
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent)) {
-        isMobileUser = true;
+    if(isMobileUser) {
         classes = mobileStyles();
     }
 
@@ -71,14 +70,14 @@ function Hobbies(props) {
                 <div className="hobbiesContainer">
                     <div className="imageViewer">
                         <Paper elevation={1}>
+                            <div className="imageViewerContainer">
+                                <img width="98%" height="98%" src={currImage} alt="test"/>
+                            </div>
                             <p>
                                 In my free time, I especially enjoy photography. Most of my subjects tend to be relatively still,
                                 although I do ocassionally attempt to photograph moving objects.
                             </p>
                             <p>Click an image to enlarge it.</p>
-                            <div className="imageViewerContainer">
-                                <img width="98%" height="98%" src={currImage} alt="test"/>
-                            </div>
                         </Paper>
                     </div>
 

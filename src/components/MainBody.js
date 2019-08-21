@@ -7,8 +7,8 @@ import './css/MainBody.css';
 function MainBody(props) {
     return(
         <div className="mainBody">
-            <Projects moveUserToSection={props.moveUserToSection}/>
-            <Hobbies moveUserToSection={props.moveUserToSection}/>
+            <Projects moveUserToSection={props.moveUserToSection} isMobileUser={props.isMobileUser}/>
+            <Hobbies moveUserToSection={props.moveUserToSection} isMobileUser={props.isMobileUser}/>
         </div>
     );
 }

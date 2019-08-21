@@ -45,8 +45,8 @@ export function getPortfolioGalleryData(){
     return(
         [{
             type: "image",
-            img: require('../assets/portfolio/IMG_3606.JPG'),
-            title: 'Flower - Red',
+            img: require('../assets/portfolio/IMG_0381.JPG'),
+            title: 'Clip',
             cols: 2,
         }, {
             type: "image",
@@ -55,8 +55,8 @@ export function getPortfolioGalleryData(){
             cols: 4,
         }, {
             type: "image",
-            img: require('../assets/portfolio/IMG_0381.JPG'),
-            title: 'Clip',
+            img: require('../assets/portfolio/IMG_3606.JPG'),
+            title: 'Flower - Red',
             cols: 2,
         }, {
             type: "image",

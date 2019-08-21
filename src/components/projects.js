@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
+import CloseIcon from '@material-ui/icons/Close';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
@@ -15,6 +16,7 @@ import IconButton from '@material-ui/core/IconButton';
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 import Paper from '@material-ui/core/Paper';
 import './css/Projects.css';
+import { DialogActions } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -24,9 +26,14 @@ const useStyles = makeStyles(theme => ({
       overflow: 'hidden',
     },
     gridList: {
-      width: 500,
-      height: 450,
+      width: 600,
+      height: 700,
     },
+    closeIcon: {
+        position: "absolute",
+        right: "5px",
+        top: "10px",
+    }
   }));
 
 /* Define all the data for grid of images in "Gallery" view */
@@ -40,6 +47,7 @@ function Projects(props) {
     // Equivalent to react states
     const [open, setOpen] = React.useState(false);
     const [name, setName] = React.useState("");
+    const isMobileUser = props.isMobileUser();
     const classes = useStyles();
 
     /**Open the pop-up dialog */
@@ -87,8 +95,8 @@ function Projects(props) {
 
     let project4 = createProjectDisplay("Maze Solver", "An implementation of Dijkstra's Algorithm that finds the " + 
                                         "shortest (and only) path to solving a maze.", 
-                                        ["Python", "Dijkstra"],
-                                        "", project4Image, populateGallery);
+                                        ["Python", "PIL", "Dijkstra"],
+                                        "https://github.com/bill-ahmed/Maze-Solver", project4Image, populateGallery);
 
     let project5 = createProjectDisplay("JShell", "A Java implementation of the Unix shell, within a mock file system in the JVM.", 
                                         ["Java", "XML", "Agile/Scrum"],
@@ -101,8 +109,8 @@ function Projects(props) {
                 <Paper square elevation={0} className="projectsOverview">
                     <h2>Brief Overview</h2>
                     <p>
-                        Below are some projects i've worked on (or am actively working on) during my free time. Although the list is small,
-                        i'm always looking for ways to expand my skillset and explore new technologies.
+                        Below are some projects i've worked on (or am actively working on) during my free time. You can view sreenshots/videos
+                        showcasing each project via the Gallery button (still WIP!).
                     </p>
                 </Paper>
 
@@ -118,9 +126,16 @@ function Projects(props) {
                 </IconButton>
 
             </div>
-            <Dialog open={open} onClose={() => handleGalleryClose()}>
-                <DialogTitle>{name}</DialogTitle>
+            <Dialog open={open} fullScreen={isMobileUser} maxWidth={"md"} fullWidth={true} onClose={() => handleGalleryClose()}>
+                <DialogTitle>
+                    {name}
+                    <IconButton className={classes.closeIcon} onClick={() => handleGalleryClose()}>
+                        <CloseIcon/>
+                    </IconButton>
+                </DialogTitle>
+
                 <Divider variant="fullWidth"/>
+
                 <DialogContent>
                     <DialogContentText>
                     {getGalleryProps(name, classes)}
@@ -159,7 +174,7 @@ function createProjectDisplay(name, desc, techUsed, hypref, imgObj, galleryOpen)
                 </Button>
 
                 <Button variant="outlined" className="seeMoreButton" 
-                href={hypref} target="_blank">
+                href={hypref} target="_blank" rel="noopener noreferrer">
                     View More
                     <OpenInNewIcon style={{marginLeft : "5px"}}/>
                 </Button>
