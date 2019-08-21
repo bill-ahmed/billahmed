@@ -5,7 +5,7 @@
     padding-bottom: 30px;
 
     /* background-image: url('../../assets/dslr_icon.svg'); */
-    background-image: linear-gradient(to bottom, #0091B5, #009E9D);
+    background-image: url('../../assets/dslr_icon.svg'), linear-gradient(to bottom, #0091B5, #009E9D);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
