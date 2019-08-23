@@ -103,7 +103,7 @@ function Projects(props) {
                                         "", project5Image, populateGallery);
     return(
         <div id="projects" className="projects">
-            <h1><span>Projects</span></h1>
+            <h1>Projects</h1>
             <div className="projectsContainer">
                 <Paper square elevation={0} className="projectsOverview" data-aos="fade-up" data-aos-once="true">
                     <h2>Brief Overview</h2>
@@ -135,7 +135,7 @@ function Projects(props) {
             </div>
             <Dialog open={open} fullScreen={isMobileUser} maxWidth={"md"} fullWidth={true} onClose={() => handleGalleryClose()}>
                 <DialogTitle>
-                    {name}
+                    {name + " — Gallery"}
                     <IconButton className={classes.closeIcon} onClick={() => handleGalleryClose()}>
                         <CloseIcon/>
                     </IconButton>

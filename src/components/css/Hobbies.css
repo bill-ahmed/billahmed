@@ -15,9 +15,7 @@
     width: 100%;
     color: white;
     margin: 50px 0 50px 0;
-    /* line-height: 0.1em;
-    text-align: center;
-    border-bottom: 1px solid white; */
+
     overflow: hidden;
 }
 
@@ -25,7 +23,7 @@
     background-color: white;
     content: "";
     display: inline-block;
-    height: 1px;
+    height: 3px;
     position: relative;
     vertical-align: middle;
     width: 50%;
@@ -40,16 +38,6 @@
     left: 0.5em;
     margin-right: -50%;
   }
-
-/* .hobbies h1 span::after{
-    content: '';
-    position: fixed;
-    height: 5px;
-    border-bottom: 1px solid white;
-    border-top: 1px solid white;
-    top: 0;
-    width: 600px;
-} */
 
 .hobbies .hobbiesContainer{
     display: flex;

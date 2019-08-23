@@ -20,7 +20,7 @@ function Hobbies(props) {
     return(
         <div id="hobbies" className="hobbies">
             <div>
-                <h1><span>Photography (WIP!)</span></h1>
+                <h1>Photography (WIP!)</h1>
                 <div className="hobbiesContainer">
                     <Photography/>
                 </div>

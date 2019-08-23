@@ -10,9 +10,6 @@
     background-position: 0px -200px;
 
     color: white;
-
-    /* border-bottom: 3px dotted; */
-    /*rgb(67, 160, 71)*/
 }
 
 .projects h1{
@@ -26,7 +23,7 @@
     background-color: white;
     content: "";
     display: inline-block;
-    height: 1px;
+    height: 3px;
     position: relative;
     vertical-align: middle;
     width: 50%;
@@ -58,9 +55,6 @@
 }
 
 .projects .projectsContainer .projectsOverview{
-    /* border: solid #b3b3b3 1px;
-    border-radius: 20px; */
-
     width: calc(200px + 40%);
     max-width: 800px;
     margin-bottom: 50px;
