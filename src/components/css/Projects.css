@@ -19,14 +19,27 @@
     width: 100%;
     color: white;
     margin-top: 40px;
-    line-height: 0.1em;
-    text-align: center;
-    border-bottom: 1px solid white;
+
+    overflow: hidden;
+}
+.projects h1::before, .projects h1::after{
+    background-color: white;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
 }
 
-.projects h1 span{
-    padding: 0 10px;
-    background: #0091B5;
+.projects h1::before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+  
+.projects h1::after {
+    left: 0.5em;
+    margin-right: -50%;
 }
 
 .projects .projectsContainer{
