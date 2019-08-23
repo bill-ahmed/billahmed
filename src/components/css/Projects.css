@@ -52,6 +52,8 @@
     max-width: 800px;
     margin-bottom: 50px;
 
+    font-size: 13.5pt;
+
     background: none;
     color: white;
 }
@@ -127,5 +129,5 @@
 }
 
 .projects .projectsContainer .projectsSubsection .individualProject .techUsedChips{
-    margin: 7px 5px 5px 7px;
+    margin: 15px 5px 15px 7px;
 }

@@ -108,7 +108,7 @@ function Projects(props) {
                 <Paper square elevation={0} className="projectsOverview" data-aos="fade-up" data-aos-once="true">
                     <h2>Brief Overview</h2>
                     <p>
-                        Below are some projects i've worked on (or am actively working on) during my free time. You can view sreenshots/videos
+                        Below are some projects i've worked on (or am actively working on) during my free time. You can view sreenshots or videos
                         showcasing each project via the Gallery button (still WIP!).
                     </p>
                 </Paper>
@@ -232,7 +232,7 @@ function getGalleryProps(nameOfProject, classes){
                             <GridListTile key="motionPongVideo" cols={3}>
                                 <iframe width="100%" height="100%" title="Motion Pong Video" src="https://www.youtube.com/embed/NO6y1-P6fCI" 
                                 frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen/>
+                                allowFullScreen/>
                             </GridListTile>
                         {motionPongGalleryData.map(tile => (
                             <GridListTile key={tile.img} cols={tile.cols || 1}>

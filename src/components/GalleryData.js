@@ -49,42 +49,49 @@ export function getPortfolioGalleryData(){
             title: 'Clips',
             subtext: 'After a rainy day.',
             cols: 2,
+            index: 1
         }, {
             type: "image",
             img: require('../assets/portfolio/IMG_0407.JPG'),
             title: 'Flower - Orange',
             subtext: 'After a rainy day.',
             cols: 4,
+            index: 2
         }, {
             type: "image",
             img: require('../assets/portfolio/IMG_3606.JPG'),
             title: 'Flower - Red',
             subtext: 'After a rainy day.',
             cols: 2,
+            index: 3
         }, {
             type: "image",
             img: require('../assets/portfolio/IMG_0481.JPG'),
             title: 'Snail in a bush',
             subtext: '',
             cols: 2,
+            index: 4
         }, {
             type: "image",
             img: require('../assets/portfolio/IMG_3721.JPG'),
             title: 'Camp fire',
             subtext: 'On a cool summer night.',
             cols: 2,
+            index: 5
         }, {
             type: "image",
             img: require('../assets/portfolio/IMG_3245.JPG'),
             title: 'TTC Bus - Long Exposure',
             subtext: 'During a cool rainy night.',
             cols: 4,
+            index: 6
         }, {
             type: "image",
             img: require('../assets/portfolio/IMG_3624.JPG'),
             title: 'Flower - Blue',
             subtext: 'Warm summer afternoon.',
             cols: 2,
+            index: 7
         }]
     );
 }
