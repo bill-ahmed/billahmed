@@ -22,7 +22,7 @@ function Hobbies(props) {
             <div>
                 <h1>Photography (WIP!)</h1>
                 <div className="hobbiesContainer">
-                    <Photography/>
+                    <Photography isMobileUser={isMobileUser}/>
                 </div>
             </div>
 

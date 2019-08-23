@@ -3,6 +3,9 @@ import { autoPlay } from 'react-swipeable-views-utils';
 import { getPortfolioGalleryData } from '../GalleryData';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import MobileStepper from '@material-ui/core/MobileStepper';
@@ -19,30 +22,26 @@ const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
     },
-    imgHeader: {
-
+    gridListContainer: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        overflow: 'hidden',
+    },
+    gridList: {
+        width: 750,
+        height: 500,
     },
     img: {
         width: "100%",
-        maxWidth: "700px",
+        maxWidth: "600px",
         overflow: "hidden",
+    },
+    stepper: {
+        justifyContent: 'space-around',
     }
   }));
 
-  const mobileStyles = makeStyles(theme => ({
-    root: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'space-around',
-      overflow: 'hidden',
-    },
-    gridList: {
-      width: "100%",
-      height: "100%",
-      flexWrap: "nowrap",
-      transform: 'translateZ(0)',
-    },
-  }));
   
 function Photography(props){
     // Keep track of which image is selected, so appropriate one can be displayed larger
@@ -57,7 +56,7 @@ function Photography(props){
      */
     const handleImageClick = (imgID, imageClicked) => {
         //animateImageClick(imgID, imageClicked);
-        setCurrImage(imageClicked);
+        //setCurrImage(imageClicked);
     }
 
     /**Handle showing next image in slide show */
@@ -88,38 +87,46 @@ function Photography(props){
             </div>
 
             {/* Show the image slide show */}
-            <div className={classes.root} id="largeImageViewer">
+            <div className="largeImageViewer" id="largeImageViewer">
 
-                {/* Heading for each image */}
-                <Paper className={classes.imgHeader} elevation={0}>
-                    <h3><i>{portfolioData[activeStep].title}</i></h3>
-                </Paper>
+                {!props.isMobileUser && <div>
+                    <GridList cellHeight={270} cols={6} className={classes.gridList}>
+                        {portfolioData.map(tile => (
+                            <GridListTile onClick={() => handleImageClick(tile.title, tile.img)} key={tile.img} cols={tile.cols || 1}>
+                                <img src={tile.img} alt={tile.title} id={tile.title}/>
+                            </GridListTile>
+                        ))}
+                    </GridList>
+                </div>}
+                
+                <div className="rightContainer">
+                    {/* Control auto-play of images */}
+                    <AutoPlayPhotos axis="x" index={activeStep} onChangeIndex={handleStepChange} enableMouseEvents>
+                        {portfolioData.map((pic) => (
+                            <div key={pic.title}>
+                                <img className={classes.img} src={pic.img} alt={pic.title}/>
+                                <div className={classes.imgInfo}>
+                                    <h4><i>{pic.title}</i></h4>
+                                </div>
+                            </div>
+                        ))}
+                    </AutoPlayPhotos>
 
-                {/* Control auto-play of images */}
-                <AutoPlayPhotos axis="x" index={activeStep} onChangeIndex={handleStepChange} enableMouseEvents>
-                    {portfolioData.map((pic) => (
-                        <div key={pic.title}>
-                            <img className={classes.img} src={pic.img} alt={pic.title}/>
-                        </div>
-                    ))}
-                </AutoPlayPhotos>
-
-                {/* Controls buttons for the slide show */}
-                <MobileStepper steps={maxSteps} position="static" variant="text" activeStep={activeStep} 
-                nextButton={
-                    <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
-                        Next
-                        <KeyboardArrowRight/>
-                    </Button>
-                }
-                backButton={
-                    <Button size="small" onClick={handlePrevious} disabled={activeStep === 0}>
-                        <KeyboardArrowLeft/>
-                        Back
-                    </Button>
-                }/>
-
-                {currImage && <img width="99%" height="99%" src={currImage} alt=""/>}
+                    {/* Controls buttons for the slide show */}
+                    <MobileStepper className={classes.stepper} steps={maxSteps} position="static" variant="text" activeStep={activeStep} 
+                    nextButton={
+                        <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
+                            Next
+                            <KeyboardArrowRight/>
+                        </Button>
+                    }
+                    backButton={
+                        <Button size="small" onClick={handlePrevious} disabled={activeStep === 0}>
+                            <KeyboardArrowLeft/>
+                            Back
+                        </Button>
+                    }/>
+                </div>
             </div>
         </div>
     );
