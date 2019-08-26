@@ -103,7 +103,7 @@ function Projects(props) {
                                         "", project5Image, populateGallery);
     return(
         <div id="projects" className="projects">
-            <h1>Projects</h1>
+            <h1 data-aos="fade-up" data-aos-once="true">Projects</h1>
             <div className="projectsContainer">
                 <Paper square elevation={0} className="projectsOverview" data-aos="fade-up" data-aos-once="true">
                     <h2>Brief Overview</h2>
@@ -128,7 +128,7 @@ function Projects(props) {
                 </div>
 
                 {/* Go to hobbies section button */}
-                <IconButton size="medium" color="inherit" id="linkToHobbiesSection" onClick={() => props.moveUserToSection("hobbies")}>
+                <IconButton size="medium" color="inherit" id="linkToHobbiesSection" onClick={() => props.moveUserToSection("hobbies")} data-aos="fade-up" data-aos-once="true">
                     <ExpandMoreIcon fontSize="large"/>
                 </IconButton>
 

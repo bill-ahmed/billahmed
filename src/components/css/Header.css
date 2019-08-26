@@ -116,7 +116,7 @@
       visibility: hidden;
       
       /*Animations short-hand: {duration} {timing-function} {delay} {itetarion-count} {nameOfAnimation}*/
-      animation: 0.7s ease-out 1.3s 1 slideInFromBottom;
+      animation: 0.7s ease-out 4.3s 1 slideInFromBottom;
       animation-fill-mode: forwards;
   }
 

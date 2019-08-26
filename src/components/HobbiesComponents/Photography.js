@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
     },
     img: {
         width: "100%",
-        maxWidth: "600px",
+        maxWidth: "650px",
         overflow: "hidden",
     },
     stepper: {
