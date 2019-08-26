@@ -84,7 +84,7 @@
       text-align: center;
       visibility: hidden;
 
-      /*Animations short-hand: {duration} {timing-function} {dekay} {itetarion-count} {nameOfAnimation}*/
+      /*Animations short-hand: {duration} {timing-function} {delay} {itetarion-count} {nameOfAnimation}*/
       animation: 0.7s ease-out 1s 1 fadeUpFromBottom;
       animation-fill-mode: forwards;
   }
@@ -115,16 +115,83 @@
       margin: 10px;
       visibility: hidden;
       
-      /*Animations short-hand: {duration} {timing-function} {dekay} {itetarion-count} {nameOfAnimation}*/
+      /*Animations short-hand: {duration} {timing-function} {delay} {itetarion-count} {nameOfAnimation}*/
       animation: 0.7s ease-out 1.3s 1 slideInFromBottom;
       animation-fill-mode: forwards;
   }
 
+/*CSS for full name, all 10 characters */
+.headerContent #fullName{
+    width: calc(280pt + 2vw);
+    animation: fillWhite 0.5s ease forwards 3.2s;
+}
+
+.headerContent #fullName path:nth-child(1){ /*B*/
+    stroke-dasharray: 537;
+    stroke-dashoffset: 537;
+    /* fill: black; */
+    animation: line-animation 1.5s ease forwards 1s;
+}
+
+.headerContent #fullName path:nth-child(2){ /*I*/
+    stroke-dasharray: 463;
+    stroke-dashoffset: 463;
+    animation: line-animation 1.5s ease forwards 1.2s;
+}
+
+.headerContent #fullName path:nth-child(3){ /*L*/
+    stroke-dasharray: 495;
+    stroke-dashoffset: 495;
+    animation: line-animation 1.5s ease forwards 1.4s;
+}
+
+.headerContent #fullName path:nth-child(4){ /*A*/
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: line-animation 1.5s ease forwards 1.6s;
+}
+
+.headerContent #fullName path:nth-child(5){ /*L*/
+    stroke-dasharray: 635;
+    stroke-dashoffset: 635;
+    animation: line-animation 1.5s ease forwards 1.8s;
+}
+
+.headerContent #fullName path:nth-child(6){ /*A*/
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: line-animation 1.5s ease forwards 2.0s;
+}
+
+.headerContent #fullName path:nth-child(7){ /*H*/
+    stroke-dasharray: 463;
+    stroke-dashoffset: 463;
+    animation: line-animation 1.5s ease forwards 2.2s;
+}
+
+.headerContent #fullName path:nth-child(8){ /*M*/
+    stroke-dasharray: 650;
+    stroke-dashoffset: 650;
+    animation: line-animation 1.5s ease forwards 2.4s;
+}
+
+.headerContent #fullName path:nth-child(9){ /*E*/
+    stroke-dasharray: 550;
+    stroke-dashoffset: 550;
+    animation: line-animation 1.5s ease forwards 2.6s;
+}
+
+.headerContent #fullName path:nth-child(10){ /*D*/
+    stroke-dasharray: 550;
+    stroke-dashoffset: 550;
+    animation: line-animation 1.5s ease forwards 2.8s;
+}
+
 
   /*** ANIMATION KEYFRAMES ***/
 
-  /*Rise up and rotate tranistion*/
-  @keyframes slideInFromBottom{
+/*Rise up and rotate tranistion*/
+@keyframes slideInFromBottom{
     0% {
         transform: translateY(30%) rotate(20deg);
         opacity: 0;
@@ -136,8 +203,9 @@
         visibility: visible;
     }
 }
-    /*Fade-up from bottom*/
-  @keyframes fadeUpFromBottom{
+
+/*Fade-up from bottom*/
+@keyframes fadeUpFromBottom{
     0% {
         transform: translateY(20%);
         opacity: 0;
@@ -150,8 +218,8 @@
     }
 }
 
-  /*Fade-down from top, infinitely*/
-  @keyframes fadeDownFromTop{
+/*Fade-down from top, infinitely*/
+@keyframes fadeDownFromTop{
     0% {
         transform: translateY(-30%);
         opacity: 0;
@@ -161,5 +229,22 @@
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
+    }
+}
+
+/*Remove dasshed-strokes from element*/
+@keyframes line-animation{
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+
+/*Fill element with white*/
+@keyframes fillWhite{
+    from{
+        fill: transparent;
+    }
+    to{
+        fill: white;
     }
 }
