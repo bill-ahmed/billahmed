@@ -23,7 +23,7 @@
     visibility: hidden;
 
     /*Animations short-hand: {duration} {timing-function} {dekay} {itetarion-count} {nameOfAnimation}*/
-    animation: 0.7s ease-out 1.3s 1 fadeDownFromTop;
+    animation: 0.7s ease-out 2s 1 fadeDownFromTop;
     animation-fill-mode: forwards;
 }
 
@@ -116,75 +116,75 @@
       visibility: hidden;
       
       /*Animations short-hand: {duration} {timing-function} {delay} {itetarion-count} {nameOfAnimation}*/
-      animation: 0.7s ease-out 4.3s 1 slideInFromBottom;
+      animation: 0.7s ease-out 2s 1 slideInFromBottom;
       animation-fill-mode: forwards;
   }
 
 /*CSS for full name, all 10 characters */
 .headerContent #fullName{
     width: calc(280pt + 2vw);
-    animation: fillWhite 0.5s ease forwards 3.2s;
+    animation: fillWhite 1.5s ease forwards 3.2s;
 }
 
 .headerContent #fullName path:nth-child(1){ /*B*/
     stroke-dasharray: 537;
     stroke-dashoffset: 537;
     /* fill: black; */
-    animation: line-animation 1.5s ease forwards 1s;
+    animation: line-animation 2.5s ease forwards 1s;
 }
 
 .headerContent #fullName path:nth-child(2){ /*I*/
     stroke-dasharray: 463;
     stroke-dashoffset: 463;
-    animation: line-animation 1.5s ease forwards 1.2s;
+    animation: line-animation 2.5s ease forwards 1s;
 }
 
 .headerContent #fullName path:nth-child(3){ /*L*/
     stroke-dasharray: 495;
     stroke-dashoffset: 495;
-    animation: line-animation 1.5s ease forwards 1.4s;
+    animation: line-animation 2.5s ease forwards 1s;
 }
 
 .headerContent #fullName path:nth-child(4){ /*A*/
     stroke-dasharray: 400;
     stroke-dashoffset: 400;
-    animation: line-animation 1.5s ease forwards 1.6s;
+    animation: line-animation 2.5s ease forwards 1s;
 }
 
 .headerContent #fullName path:nth-child(5){ /*L*/
     stroke-dasharray: 635;
     stroke-dashoffset: 635;
-    animation: line-animation 1.5s ease forwards 1.8s;
+    animation: line-animation 2.5s ease forwards 1s;
 }
 
 .headerContent #fullName path:nth-child(6){ /*A*/
     stroke-dasharray: 400;
     stroke-dashoffset: 400;
-    animation: line-animation 1.5s ease forwards 2.0s;
+    animation: line-animation 2.5s ease forwards 1.2s;
 }
 
 .headerContent #fullName path:nth-child(7){ /*H*/
     stroke-dasharray: 463;
     stroke-dashoffset: 463;
-    animation: line-animation 1.5s ease forwards 2.2s;
+    animation: line-animation 2.5s ease forwards 1.2s;
 }
 
 .headerContent #fullName path:nth-child(8){ /*M*/
     stroke-dasharray: 650;
     stroke-dashoffset: 650;
-    animation: line-animation 1.5s ease forwards 2.4s;
+    animation: line-animation 2.5s ease forwards 1.2s;
 }
 
 .headerContent #fullName path:nth-child(9){ /*E*/
     stroke-dasharray: 550;
     stroke-dashoffset: 550;
-    animation: line-animation 1.5s ease forwards 2.6s;
+    animation: line-animation 2.5s ease forwards 1.2s;
 }
 
 .headerContent #fullName path:nth-child(10){ /*D*/
     stroke-dasharray: 550;
     stroke-dashoffset: 550;
-    animation: line-animation 1.5s ease forwards 2.8s;
+    animation: line-animation 2.5s ease forwards 1.2s;
 }
 
 
@@ -218,7 +218,7 @@
     }
 }
 
-/*Fade-down from top, infinitely*/
+/*Fade-down from top*/
 @keyframes fadeDownFromTop{
     0% {
         transform: translateY(-30%);
