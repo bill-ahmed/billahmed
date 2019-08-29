@@ -5,11 +5,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
+
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import MobileStepper from '@material-ui/core/MobileStepper';
-import Paper from '@material-ui/core/Paper';
+
 import SwipeableViews from 'react-swipeable-views';
 import './Photography.css';
 
@@ -55,8 +55,7 @@ function Photography(props){
      * @param imageClicked The image the use has clicked, given by require('path/to/file.jpg')
      */
     const handleImageClick = (imgID, imageClicked) => {
-        //animateImageClick(imgID, imageClicked);
-        //setCurrImage(imageClicked);
+        
     }
 
     /**Handle showing next image in slide show */
@@ -130,67 +129,6 @@ function Photography(props){
             </div>
         </div>
     );
-}
-
-
-/**Animate an image into a parent element
- * @param imageID The unique id of the DOM element
- * @param imageClicked Value of the image that was clicked, given by "require(path/to/file/jpg)" 
- */
-function animateImageClick(imageID, imageClicked){
-    // The image that was clicked in the gallery
-    let imgClicked = document.getElementById(imageID);
-    let imgClickedOrigin = imgClicked.getBoundingClientRect()
-
-    // The image that will be displayed
-    let imgToDisplay = document.createElement("img");
-
-    // Calculate it's original dimensions
-    let originalWidth = imgClickedOrigin.right - imgClickedOrigin.x;
-    let originalHeight = imgClickedOrigin.bottom - imgClickedOrigin.y;
-
-    // Parent of where this image is going to be placed
-    let imgParent = document.getElementById("imageViewerContainer");
-    let imgParentOrigin = imgParent.getBoundingClientRect();
-
-    imgToDisplay.setAttribute("src", imageClicked);
-    imgToDisplay.setAttribute("width", "99%");
-    imgToDisplay.setAttribute("height", "99%");
-
-    // [from {}, to {}]
-    let fadeInAnimation = [{
-        opacity: 0.5,
-    }, {
-        opacity: 1,
-    }]
-
-    let fadeInAndGrow = [{
-        opacity: 0.5,
-        width: "97%",
-        height: "97%"
-    }, {
-        opacity: 1,
-        width: "99%",
-        height: "99%"
-    }]
-
-
-    // If current child already exists
-    if(imgParent.children.length !== 0){
-        // Remove it
-        imgParent.removeChild(imgParent.children[0]);
-
-        // Animate the element; (keyframes, duration_of_animation)
-        imgToDisplay.animate(fadeInAnimation, {easing: 'ease-in', duration: 400});
-    } else{
-        // Animate fade in and grow
-        imgToDisplay.animate(fadeInAndGrow, {easing: 'ease-in', duration: 800});
-    }
-
-    imgParent.appendChild(imgToDisplay)
-
-    console.log(imgClicked.getBoundingClientRect());
-
 }
 
 export default Photography;

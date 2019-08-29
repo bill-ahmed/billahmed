@@ -1,7 +1,5 @@
 import React from 'react';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Header from './components/Header';
-import Fab from '@material-ui/core/Fab';
 import MainBody from './components/MainBody';
 import Footer from './components/Footer';
 import './App.css';

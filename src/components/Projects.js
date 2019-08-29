@@ -16,7 +16,6 @@ import IconButton from '@material-ui/core/IconButton';
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 import Paper from '@material-ui/core/Paper';
 import './css/Projects.css';
-import { DialogActions } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -81,26 +80,27 @@ function Projects(props) {
     let project1 = createProjectDisplay("DDSBlaze", "Web application to keep track of individuals during fire " + 
                                         "alarms and other emergencies",
                                         ["React.js", "Express.js", "Node.js", "Material-UI", "Microsoft Graph", "Twilio API"], 
-                                        {"Demo" : "https://ddsblaze.herokuapp.com"}, project1Image, populateGallery, classes);
+                                        {"Demo" : "https://ddsblaze.herokuapp.com"}, project1Image, populateGallery);
 
     let project2 = createProjectDisplay("SpendingTracker", "A web-app to help track personal spending with the aid of graphs and other " + 
                                         "statistical information.", 
                                         ["Python/Flask", "React.js", "Redux", "Material-UI", "Google Firebase", "NoSQL","Gunicorn/Nginx"],
-                                        {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, project2Image, populateGallery, classes);
+                                        {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, project2Image, populateGallery);
 
     let project3 = createProjectDisplay("Motion Pong", "A game of Pong that utilizes ultrasonic sensors for a " + 
                                         "deeper level of interaction with the user.", 
                                         ["Altera DE2-115", "Verilog HDL", "Ultrasonic Sensors"],
-                                        {"GitHub" : "https://github.com/bill-ahmed/CSCB58-Final-Project"}, project3Image, populateGallery, classes);
+                                        {"GitHub" : "https://github.com/bill-ahmed/CSCB58-Final-Project"}, project3Image, populateGallery);
 
     let project4 = createProjectDisplay("Maze Solver", "An implementation of Dijkstra's Algorithm that finds the " + 
                                         "shortest (and only) path to solving a maze.", 
                                         ["Python", "PIL", "Dijkstra"],
-                                        {"GitHub" : "https://github.com/bill-ahmed/Maze-Solver"}, project4Image, populateGallery, classes);
+                                        {"GitHub" : "https://github.com/bill-ahmed/Maze-Solver"}, project4Image, populateGallery);
 
     let project5 = createProjectDisplay("JShell", "A Java implementation of the Unix shell, within a mock file system in the JVM.", 
                                         ["Java", "XML", "Agile/Scrum"],
-                                        {"GitHub" : ""}, project5Image, populateGallery, classes);
+                                        {"GitHub" : ""}, project5Image, populateGallery);
+
     return(
         <div id="projects" className="projects">
             <h1 data-aos="fade-up" data-aos-once="true">Projects</h1>
@@ -161,10 +161,9 @@ function Projects(props) {
  * @param imgObj As of writing, <img> tags don't work unless you do <img src={require("pathToImage")}>.
  * Hence, imbObj is the return value of require() 
  * @param galleryOpen (bool) Determine if gallery is open or not
- * @param classes (object) The styles for each element
  * @returns An element populated with the given data
 */
-function createProjectDisplay(name, desc, techUsed, hyprefs, imgObj, galleryOpen, classes){
+function createProjectDisplay(name, desc, techUsed, hyprefs, imgObj, galleryOpen){
     
     // Array of allowed AOS animations for this component
     let animationOptions = ["fade-up", "fade-left", "fade-right"];

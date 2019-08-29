@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import Divider from '@material-ui/core/Divider';
 import Photography from './HobbiesComponents/Photography';
 import './css/Hobbies.css';
-import { Paper } from '@material-ui/core';
 
 
 /**A component to represent the hobbies section */
