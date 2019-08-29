@@ -124,7 +124,7 @@
 
 /*CSS for full name, all 10 characters */
 .headerContent #fullName{
-    width: calc(280pt + 2vw);
+    width: calc(300px + 2vw);
     animation: fillWhite 0.75s ease forwards 3.2s;
 }
 
