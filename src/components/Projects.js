@@ -81,26 +81,26 @@ function Projects(props) {
     let project1 = createProjectDisplay("DDSBlaze", "Web application to keep track of individuals during fire " + 
                                         "alarms and other emergencies",
                                         ["React.js", "Express.js", "Node.js", "Microsoft Graph", "Twilio API"], 
-                                        "https://ddsblaze.herokuapp.com", project1Image, populateGallery);
+                                        {"Demo" : "https://ddsblaze.herokuapp.com"}, project1Image, populateGallery, classes);
 
     let project2 = createProjectDisplay("SpendingTracker", "A web-app to help track personal spending with the aid of graphs and other " + 
                                         "statistical information.", 
                                         ["Python/Flask", "React.js", "Google Firebase", "NoSQL","Gunicorn/Nginx"],
-                                        "https://github.com/bill-ahmed/SpendingTracker", project2Image, populateGallery);
+                                        {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, project2Image, populateGallery, classes);
 
     let project3 = createProjectDisplay("Motion Pong", "A game of Pong that utilizes ultrasonic sensors for a " + 
                                         "deeper level of interaction with the user.", 
                                         ["Altera DE2-115", "Verilog HDL", "Ultrasonic Sensors"],
-                                        "https://github.com/bill-ahmed/CSCB58-Final-Project", project3Image, populateGallery);
+                                        {"GitHub" : "https://github.com/bill-ahmed/CSCB58-Final-Project"}, project3Image, populateGallery, classes);
 
     let project4 = createProjectDisplay("Maze Solver", "An implementation of Dijkstra's Algorithm that finds the " + 
                                         "shortest (and only) path to solving a maze.", 
                                         ["Python", "PIL", "Dijkstra"],
-                                        "https://github.com/bill-ahmed/Maze-Solver", project4Image, populateGallery);
+                                        {"GitHub" : "https://github.com/bill-ahmed/Maze-Solver"}, project4Image, populateGallery, classes);
 
     let project5 = createProjectDisplay("JShell", "A Java implementation of the Unix shell, within a mock file system in the JVM.", 
                                         ["Java", "XML", "Agile/Scrum"],
-                                        "", project5Image, populateGallery);
+                                        {"GitHub" : ""}, project5Image, populateGallery, classes);
     return(
         <div id="projects" className="projects">
             <h1 data-aos="fade-up" data-aos-once="true">Projects</h1>
@@ -157,40 +157,52 @@ function Projects(props) {
  * @param name Name of the project to display
  * @param desc Brief description of the project
  * @param techUsed String[] of various tools/technologies used
- * @param hypref An external link where a user can find more information
+ * @param hyprefs ({str: str}) An object of elements that map from name to hyperlink
  * @param imgObj As of writing, <img> tags don't work unless you do <img src={require("pathToImage")}>.
  * Hence, imbObj is the return value of require() 
  * @param galleryOpen (bool) Determine if gallery is open or not
+ * @param classes (object) The styles for each element
  * @returns An element populated with the given data
 */
-function createProjectDisplay(name, desc, techUsed, hypref, imgObj, galleryOpen){
+function createProjectDisplay(name, desc, techUsed, hyprefs, imgObj, galleryOpen, classes){
     
     // Array of allowed AOS animations for this component
     let animationOptions = ["fade-up", "fade-left", "fade-right"];
 
     return(
-        <div elevation={3} className="individualProject" data-aos={getRandomFadeAnimation(0, 
+        <div className="individualProject" data-aos={getRandomFadeAnimation(0, 
                                                         animationOptions.length, animationOptions)} data-aos-once="true">
-            <img alt={name + " Logo"} className="projectPhoto" src={imgObj} width="70px" height="70px"/>
             <div className="projectDetails">
+                <img alt={name + " Logo"} className="projectPhoto" src={imgObj} width="70px" height="70px"/>
                 <h2>{name}</h2>
-                <h3>{desc}</h3>
+
                 <Button variant="outlined" className="seeMoreButton" 
                 onClick={() => galleryOpen(name)}>
                     Gallery
                 </Button>
 
-                <Button variant="outlined" className="seeMoreButton" 
-                href={hypref} target="_blank" rel="noopener noreferrer">
-                    View More
-                    <OpenInNewIcon style={{marginLeft : "5px"}}/>
-                </Button>
+                {/* All hyperlinks for current project */}
+                {Object.entries(hyprefs).map(elem => {
+                    return(
+                    <Button variant="outlined" className="seeMoreButton" 
+                    href={elem[1]} target="_blank" rel="noopener noreferrer">
+                        {elem[0]}
+                        <OpenInNewIcon style={{marginLeft : "5px"}}/>
+                    </Button>
+                    );
+                })}
+                
             </div>
-            <Divider variant="middle"/>
-            <div>
+
+            <div className="secondaryDetails">
+                <h3>{desc}</h3>
+                <Divider variant="middle"/>
+
+                <div className="chipsContainer">
                 {techUsed.map((elem) => (
                     <Chip key={elem} className="techUsedChips" label={elem}/>
                 ))}
+                </div>
             </div>
         </div>
     )
