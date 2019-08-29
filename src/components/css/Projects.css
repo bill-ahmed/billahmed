@@ -141,20 +141,33 @@
 
 
 .projects .projectsContainer .projectsSubsection .individualProject .secondaryDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
     width: 100%;
-    margin: 0 15px 15px 15px;
 }
 
 .projects .projectsContainer .projectsSubsection .individualProject .secondaryDetails h3{
     font-weight: 500;
+    margin: 15px 15px 20px 15px;
 }
 
 .projects .projectsContainer .projectsSubsection .individualProject .secondaryDetails .techUsedChips{
     margin: 10px 5px 10px 7px;
 }
 
-/*Media queries*/
-@media only screen and (max-width: 1024px){
+/*** Media queries ***/
+
+/*When the project displays over-flow into flex:column display*/
+@media only screen and (max-width: 1590px){
+    .projects .projectsContainer .projectsSubsection .firstSubsection{
+        border: none;
+    }
+}
+
+/*When screen is too small to display chips and overview beside each project*/
+@media only screen and (max-width: 900px){
     .projects .projectsContainer .projectsSubsection .individualProject{
         flex-direction: column;
         margin: 20px 20px 40px 20px;

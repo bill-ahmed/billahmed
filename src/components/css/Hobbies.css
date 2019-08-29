@@ -19,6 +19,7 @@
     margin: 50px 0 50px 0;
 
     overflow: hidden;
+    line-height: normal;
 }
 
 .hobbies h1::before, .hobbies h1::after{

@@ -80,12 +80,12 @@ function Projects(props) {
 
     let project1 = createProjectDisplay("DDSBlaze", "Web application to keep track of individuals during fire " + 
                                         "alarms and other emergencies",
-                                        ["React.js", "Express.js", "Node.js", "Microsoft Graph", "Twilio API"], 
+                                        ["React.js", "Express.js", "Node.js", "Material-UI", "Microsoft Graph", "Twilio API"], 
                                         {"Demo" : "https://ddsblaze.herokuapp.com"}, project1Image, populateGallery, classes);
 
     let project2 = createProjectDisplay("SpendingTracker", "A web-app to help track personal spending with the aid of graphs and other " + 
                                         "statistical information.", 
-                                        ["Python/Flask", "React.js", "Google Firebase", "NoSQL","Gunicorn/Nginx"],
+                                        ["Python/Flask", "React.js", "Redux", "Material-UI", "Google Firebase", "NoSQL","Gunicorn/Nginx"],
                                         {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, project2Image, populateGallery, classes);
 
     let project3 = createProjectDisplay("Motion Pong", "A game of Pong that utilizes ultrasonic sensors for a " + 
