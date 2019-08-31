@@ -72,16 +72,16 @@ function Header(props){
                 </Tooltip>
 
                 {/* Facebook logo */}
-                <Tooltip title="Facebook">
+                {/* <Tooltip title="Facebook">
                     <Fab size="large" className="socialLink" href="https://www.facebook.com/BillAhmed4343" target="_blank">
                         <img alt="Link to Facebook" className="roundedImage" src={require("../assets/facebook-brands.svg")} width="80%" height="80%"/>
                     </Fab>
-                </Tooltip>
+                </Tooltip> */}
 
                 {/* Resume */}
-                <Tooltip title="My Resume/CV">
+                <Tooltip title="CV/Resume">
                     <Fab size="large" className="socialLink" variant="extended">
-                        Resume/CV
+                        My CV/Resume
                     </Fab>
                 </Tooltip>
 

@@ -12,6 +12,7 @@
 
     /* background: #3f51b5; */
     background-image: linear-gradient(to bottom, #3f51b5, #0091B5);
+    
 
     /* color: #E0E2DB; */
     color: white;
@@ -87,7 +88,7 @@
       visibility: hidden;
 
       /*Animations short-hand: {duration} {timing-function} {delay} {itetarion-count} {nameOfAnimation}*/
-      animation: 0.7s ease-out 1s 1 fadeUpFromBottom;
+      animation: 0.7s ease-out 0.5s 1 fadeUpFromBottom;
       animation-fill-mode: forwards;
   }
 
@@ -118,7 +119,7 @@
       visibility: hidden;
       
       /*Animations short-hand: {duration} {timing-function} {delay} {itetarion-count} {nameOfAnimation}*/
-      animation: 0.7s ease-out 2s 1 slideInFromBottom;
+      animation: 0.7s ease-out 0.5s 1 fadeUpFromBottom;
       animation-fill-mode: forwards;
   }
 
@@ -209,7 +210,7 @@
 /*Fade-up from bottom*/
 @keyframes fadeUpFromBottom{
     0% {
-        transform: translateY(20%);
+        transform: translateY(20px);
         opacity: 0;
     }
 
