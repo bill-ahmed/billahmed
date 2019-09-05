@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import './css/Header.css';
 
+const RESUME = require('../assets/Bilal_Ahmed_Resume.pdf');
 
 function Header(props){
     // If user is in mobile view, give the nav buttons a border
@@ -80,7 +81,7 @@ function Header(props){
 
                 {/* Resume */}
                 <Tooltip title="CV/Resume">
-                    <Fab size="large" className="socialLink" variant="extended">
+                    <Fab size="large" className="socialLink" variant="extended" href={RESUME} target="_blank">
                         My CV/Resume
                     </Fab>
                 </Tooltip>
