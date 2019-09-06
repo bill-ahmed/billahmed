@@ -9,12 +9,17 @@ export function getProjectsGalleryData(){
             type: "image",
             img: require('../assets/images/ddsblaze_homepage.jpg'),
             title: 'DDSBlaze Homepage',
-            cols: 1,
+            cols: 2,
         }, {
             type: "image",
             img: require('../assets/images/ddsblaze_undo_checkin.jpg'),
             title: 'DDSBlaze Undo Check In',
-            cols: 1,
+            cols: 2,
+        }, {
+            type: "image",
+            img: require('../assets/images/ddsblaze_send_bulk_message.jpg'),
+            title: 'DDSBlaze Send Bulk Message',
+            cols: 2,
         }], [{
 
         }], [{

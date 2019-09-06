@@ -1,6 +1,7 @@
 import { getProjectsGalleryData } from './GalleryData';
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
+import AutoPlay from './AutoPlay';
 import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
 import CloseIcon from '@material-ui/icons/Close';
@@ -25,8 +26,10 @@ const useStyles = makeStyles(theme => ({
       overflow: 'hidden',
     },
     gridList: {
-      width: 600,
-      height: 700,
+      width: "100%",
+      height: "100%",
+      maxWidth: '700px',
+      maxHeight: '730px',
     },
     closeIcon: {
         position: "absolute",
@@ -47,6 +50,7 @@ function Projects(props) {
     const [open, setOpen] = React.useState(false);
     const [name, setName] = React.useState("");
     const isMobileUser = props.isMobileUser();
+    const maxNumGridListColumns = isMobileUser ? 4 : 6;
     const classes = useStyles();
 
     /**Open the pop-up dialog */
@@ -145,7 +149,7 @@ function Projects(props) {
 
                 <DialogContent>
                     <DialogContentText>
-                    {getGalleryProps(name, classes)}
+                    {getGalleryProps(name, classes, maxNumGridListColumns)}
                     </DialogContentText>
                 </DialogContent>
             </Dialog>
@@ -209,16 +213,18 @@ function createProjectDisplay(name, desc, techUsed, hyprefs, imgObj, galleryOpen
 
 /**Given the name of a project, generate all images/videos that should
  * be included to show off the project
- * @param nameOfProject The name of the project
+ * @param nameOfProject The name of the project.
+ * @param classes Styles applied to each element
+ * @param maxNumGridListColumns The maximum number of Grid List columns to use, if mobile user or not
  * @returns A <div> containing all pictures/vidoes neatly formatted
  */
-function getGalleryProps(nameOfProject, classes){
+function getGalleryProps(nameOfProject, classes, maxNumGridListColumns){
     switch(nameOfProject){
         case "DDSBlaze":
             return (
                 <div className={classes.root}>
                     {/* Gallery of images for this project */}
-                    <GridList cellHeight={420} cols={2} className={classes.gridList}>
+                    <GridList cellHeight={350} cols={maxNumGridListColumns} className={classes.gridList}>
                         {ddsblazeGalleryData.map(tile => (
                             <GridListTile key={tile.img} cols={tile.cols || 1}>
                                 {tile.type === "image" ? <img src={tile.img} alt={tile.title}/> : 
@@ -228,7 +234,7 @@ function getGalleryProps(nameOfProject, classes){
                             </GridListTile>
                         ))}
                     </GridList>
-                    <p>More coming soon!</p>
+                    {/* <p>More coming soon!</p> */}
                 </div>
             );
         case "SpendingTracker":
@@ -245,9 +251,12 @@ function getGalleryProps(nameOfProject, classes){
                                 frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                                 allowFullScreen/>
                             </GridListTile>
+
                         {motionPongGalleryData.map(tile => (
                             <GridListTile key={tile.img} cols={tile.cols || 1}>
-                                {tile.type === "image" ? <img src={tile.img} alt={tile.title}/> : 
+                                {tile.type === "image" ? 
+                                <img src={tile.img} alt={tile.title} width="100%"/> 
+                                : 
                                 <video width="100%" height="100%" controls alt={tile.title}>
                                     <source src={tile.img} type="video/mp4"/>
                                 </video>}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { autoPlay } from 'react-swipeable-views-utils';
 import { getPortfolioGalleryData } from '../GalleryData';
 import { makeStyles } from '@material-ui/core/styles';
+import AutoPlay from '../AutoPlay';
 import Button from '@material-ui/core/Button';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
@@ -81,7 +82,7 @@ function Photography(props){
                 <p>
                     In my free time, I especially enjoy photography. Most of my subjects are relatively still,
                     although I do ocassionally attempt to photograph moving objects. The following is a small sample
-                    of the images i've taken.
+                    of images i've taken.
                 </p>
             </div>
 
@@ -97,34 +98,8 @@ function Photography(props){
                         ))}
                     </GridList>
                 </div>}
-                
                 <div className="rightContainer">
-                    {/* Control auto-play of images */}
-                    <AutoPlayPhotos axis="x" index={activeStep} onChangeIndex={handleStepChange} enableMouseEvents>
-                        {portfolioData.map((pic) => (
-                            <div key={pic.title}>
-                                <img className={classes.img} src={pic.img} alt={pic.title}/>
-                                <div className={classes.imgInfo}>
-                                    <h4><i>{pic.title}</i></h4>
-                                </div>
-                            </div>
-                        ))}
-                    </AutoPlayPhotos>
-
-                    {/* Controls buttons for the slide show */}
-                    <MobileStepper className={classes.stepper} steps={maxSteps} position="static" variant="text" activeStep={activeStep} 
-                    nextButton={
-                        <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
-                            Next
-                            <KeyboardArrowRight/>
-                        </Button>
-                    }
-                    backButton={
-                        <Button size="small" onClick={handlePrevious} disabled={activeStep === 0}>
-                            <KeyboardArrowLeft/>
-                            Back
-                        </Button>
-                    }/>
+                    <AutoPlay imageList={portfolioData}/>
                 </div>
             </div>
         </div>
