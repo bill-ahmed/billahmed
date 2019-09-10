@@ -86,7 +86,7 @@ function Projects(props) {
                                         ["React.js", "Express.js", "Node.js", "Material-UI", "Microsoft Graph", "Twilio API"], 
                                         {"Demo" : "https://ddsblaze.herokuapp.com"}, project1Image, populateGallery);
 
-    let project2 = createProjectDisplay("SpendingTracker", "A web-app to help track personal spending with the aid of graphs and other " + 
+    let project2 = createProjectDisplay("SpendingTracker", "A full-stack web application to help track personal spending with the aid of graphs and other " + 
                                         "statistical information.", 
                                         ["Python/Flask", "React.js", "Redux", "Material-UI", "Google Firebase", "NoSQL","Gunicorn/Nginx"],
                                         {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, project2Image, populateGallery);

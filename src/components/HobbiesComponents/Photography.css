@@ -27,10 +27,6 @@
 
 /*Media queries for small devices*/
 @media only screen and (max-width: 1700px){
-    .imageViewerContainer{
-        width: calc(200px + 50%);
-    }
-
     .largeImageViewer{
         flex-wrap: wrap-reverse;
     }

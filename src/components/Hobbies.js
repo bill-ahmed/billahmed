@@ -22,6 +22,9 @@ function Hobbies(props) {
             <div className="hobbiesContainer">
                 <Photography id="photographyShowcase" isMobileUser={isMobileUser}/>
                 {/* <Photography id="photographyShowcase" isMobileUser={isMobileUser}/> */}
+                <div id="otherInterests" data-aos="fade-up" data-aos-once="true">
+                    <h1>Other Interests (WIP)</h1>
+                </div>
             </div>
 
         </div>
