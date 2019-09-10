@@ -17,11 +17,11 @@ function Hobbies(props) {
 
     return(
         <div id="hobbies" className="hobbies">
-            <div>
-                <h1 data-aos="fade-up" data-aos-once="true">Photography (WIP!)</h1>
-                <div className="hobbiesContainer">
-                    <Photography isMobileUser={isMobileUser}/>
-                </div>
+            <h1 data-aos="fade-up" data-aos-once="true">Hobbies & Interests (WIP!)</h1>
+
+            <div className="hobbiesContainer">
+                <Photography id="photographyShowcase" isMobileUser={isMobileUser}/>
+                {/* <Photography id="photographyShowcase" isMobileUser={isMobileUser}/> */}
             </div>
 
         </div>

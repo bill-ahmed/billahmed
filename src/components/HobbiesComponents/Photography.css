@@ -1,42 +1,27 @@
-.imageViewerContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    width: calc(200px + 70%);
-
-    background: white;
-    border-radius: 10px;
-
-    overflow-x: hidden;
-
+#photographyHeader{
+    color: black;
+    margin: 15px 0 15px 0;
 }
 
-.imageViewerContainer .photographySummary{
-    min-width: 450px;
+#photographySummary{
+    padding: 0 15px 0 15px;
 }
 
-.imageViewerContainer p{
-    padding: 15px;
-    margin: 0 30px 0px 30px;
-}
-
-.imageViewerContainer .largeImageViewer{
+.largeImageViewer{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
 
-    margin: 30px;
+    margin: 5px;
 }
 
-.imageViewerContainer .largeImageViewer *{
+.largeImageViewer *{
     color: black;
 }
 
-.imageViewerContainer .largeImageViewer .rightContainer{
+.largeImageViewer .rightContainer{
     margin-bottom: 0;
 }
 
@@ -46,11 +31,11 @@
         width: calc(200px + 50%);
     }
 
-    .imageViewerContainer .largeImageViewer{
+    .largeImageViewer{
         flex-wrap: wrap-reverse;
     }
 
-    .imageViewerContainer .largeImageViewer .rightContainer{
+    .largeImageViewer .rightContainer{
         margin-bottom: 5%;
     }
 }

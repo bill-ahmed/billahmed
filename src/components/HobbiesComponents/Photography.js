@@ -77,8 +77,9 @@ function Photography(props){
     }
 
     return(
-        <div className="imageViewerContainer" data-aos="fade-up" data-aos-once="true">
-            <div className="photographySummary">
+        <div id={props.id} data-aos="fade-up" data-aos-once="true">
+            <h1 id="photographyHeader">Photography</h1>
+            <div id="photographySummary">
                 <p>
                     In my free time, I especially enjoy photography. Most of my subjects are relatively still,
                     although I do ocassionally attempt to photograph moving objects. The following is a small sample
@@ -88,19 +89,7 @@ function Photography(props){
 
             {/* Show the image slide show */}
             <div className="largeImageViewer" id="largeImageViewer">
-
-                {!props.isMobileUser && <div>
-                    <GridList cellHeight={270} cols={6} className={classes.gridList}>
-                        {portfolioData.map(tile => (
-                            <GridListTile onClick={() => handleImageClick(tile.title, tile.img)} key={tile.img} cols={tile.cols || 1}>
-                                <img src={tile.img} alt={tile.title} id={tile.title}/>
-                            </GridListTile>
-                        ))}
-                    </GridList>
-                </div>}
-                <div className="rightContainer">
-                    <AutoPlay imageList={portfolioData}/>
-                </div>
+                <AutoPlay imageList={portfolioData}/>
             </div>
         </div>
     );

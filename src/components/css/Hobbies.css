@@ -1,11 +1,17 @@
 .hobbies{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     width: 100%;
     min-height: 100vh;
     text-align: center;
     padding-bottom: 30px;
 
     /* background-image: url('../../assets/dslr_icon.svg'); */
-    background-image: url('../../assets/dslr_icon.svg'), linear-gradient(to bottom, #0091B5, #009E9D);
+    background: #1A77B5;
+    background-image: url('../../assets/dslr_icon.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -16,10 +22,11 @@
 .hobbies h1{
     width: 100%;
     color: white;
-    margin: 50px 0 50px 0;
+    margin: 0 0 70px 0;
 
     overflow: hidden;
     line-height: normal;
+    
 }
 
 .hobbies h1::before, .hobbies h1::after{
@@ -44,8 +51,17 @@
 
 .hobbies .hobbiesContainer{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+
+    background: white;
+    border-radius: 10px;
+
+    width: 90%;
+}
+
+.hobbies .hobbiesContainer #photographyShowcase{
+    max-width: 700px;
 }
