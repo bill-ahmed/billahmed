@@ -75,35 +75,41 @@ function Projects(props) {
         setName(name);
     }
 
-    let project1Image = require("../assets/fire-solid.svg");
-    let project2Image = require('../assets/money-check-alt-solid.svg');
-    let project3Image = require('../assets/microchip-solid.svg');
-    let project4Image = require('../assets/maze.svg');
-    let project5Image = require('../assets/gnu_bash.svg');
+    let ddsblazeImage = require("../assets/fire-solid.svg");
+    let spendingTrackerImage = require('../assets/money-check-alt-solid.svg');
+    let planitImage = require('../assets/earth_globe_icon.svg');
+    let motionPongImage = require('../assets/microchip-solid.svg');
+    let mazeSolverImage = require('../assets/maze.svg');
+    let jshellImage = require('../assets/gnu_bash.svg');
 
-    let project1 = createProjectDisplay("DDSBlaze", "Web application to keep track of individuals during fire " + 
+    let projectDDSBlaze = createProjectDisplay("DDSBlaze", "Web application to keep track of individuals during fire " + 
                                         "alarms and other emergencies",
                                         ["React.js", "Express.js", "Node.js", "Material-UI", "Microsoft Graph", "Twilio API"], 
-                                        {"Demo" : "https://ddsblaze.herokuapp.com"}, project1Image, populateGallery);
+                                        {"Demo" : "https://ddsblaze.herokuapp.com"}, ddsblazeImage, populateGallery);
 
-    let project2 = createProjectDisplay("SpendingTracker", "A full-stack web application to help track personal spending with the aid of graphs and other " + 
+    let projectSpendingTracker = createProjectDisplay("SpendingTracker", "A full-stack web application to help track personal spending with the aid of graphs and other " + 
                                         "statistical information.", 
                                         ["Python/Flask", "React.js", "Redux", "Material-UI", "Google Firebase", "NoSQL","Gunicorn/Nginx"],
-                                        {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, project2Image, populateGallery);
+                                        {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, spendingTrackerImage, populateGallery);
+    
+    let projectPlanit = createProjectDisplay("SpendingTracker", "A full-stack web application to help track personal spending with the aid of graphs and other " + 
+                                        "statistical information.", 
+                                        ["Python/Flask", "React.js", "Redux", "Material-UI", "Google Firebase", "NoSQL","Gunicorn/Nginx"],
+                                        {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, planitImage, populateGallery);
 
-    let project3 = createProjectDisplay("Motion Pong", "A game of Pong that utilizes ultrasonic sensors for a " + 
+    let projectMotionPong = createProjectDisplay("Motion Pong", "A game of Pong that utilizes ultrasonic sensors for a " + 
                                         "deeper level of interaction with the user.", 
                                         ["Altera DE2-115", "Verilog HDL", "Ultrasonic Sensors"],
-                                        {"GitHub" : "https://github.com/bill-ahmed/CSCB58-Final-Project"}, project3Image, populateGallery);
+                                        {"GitHub" : "https://github.com/bill-ahmed/CSCB58-Final-Project"}, motionPongImage, populateGallery);
 
-    let project4 = createProjectDisplay("Maze Solver", "An implementation of Dijkstra's Algorithm that finds the " + 
+    let projectMazeSolver = createProjectDisplay("Maze Solver", "An implementation of Dijkstra's Algorithm that finds the " + 
                                         "shortest (and only) path to solving a maze.", 
                                         ["Python", "PIL", "Dijkstra"],
-                                        {"GitHub" : "https://github.com/bill-ahmed/Maze-Solver"}, project4Image, populateGallery);
+                                        {"GitHub" : "https://github.com/bill-ahmed/Maze-Solver"}, mazeSolverImage, populateGallery);
 
-    let project5 = createProjectDisplay("JShell", "A Java implementation of the Unix shell, within a mock file system in the JVM.", 
+    let projectJShell = createProjectDisplay("JShell", "A Java implementation of the Unix shell, within a mock file system in the JVM.", 
                                         ["Java", "XML", "Agile/Scrum"],
-                                        {"GitHub" : ""}, project5Image, populateGallery);
+                                        {"GitHub" : ""}, jshellImage, populateGallery);
 
     return(
         <div id="projects" className="projects">
@@ -120,14 +126,14 @@ function Projects(props) {
                 {/* List all projects */}
                 <div className="projectsSubsection">
                     <div className="firstSubsection">
-                        {project1} 
-                        {project3}
+                        {projectSpendingTracker} 
+                        {projectDDSBlaze}
                     </div>
                       
                     <div className="secondSubsection">
-                        {project2}
-                        {project4}
-                        {/* {project5} */}
+                        {projectMotionPong}
+                        {projectJShell}
+                        {projectMazeSolver}
                     </div>
                 </div>
 
