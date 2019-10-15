@@ -92,10 +92,9 @@ function Projects(props) {
                                         ["Python/Flask", "React.js", "Redux", "Material-UI", "Google Firebase", "NoSQL","Gunicorn/Nginx"],
                                         {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, spendingTrackerImage, populateGallery);
     
-    let projectPlanit = createProjectDisplay("SpendingTracker", "A full-stack web application to help track personal spending with the aid of graphs and other " + 
-                                        "statistical information.", 
-                                        ["Python/Flask", "React.js", "Redux", "Material-UI", "Google Firebase", "NoSQL","Gunicorn/Nginx"],
-                                        {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, planitImage, populateGallery);
+    let projectPlanit = createProjectDisplay("Planit", "A mobile application (iOS & Android) that helps users build itineraries for locations/events in a given area.", 
+                                        ["React Native", "Redux", "Google Firebase", "NoSQL"],
+                                        {"GitHub (WIP!)" : ""}, planitImage, populateGallery);
 
     let projectMotionPong = createProjectDisplay("Motion Pong", "A game of Pong that utilizes ultrasonic sensors for a " + 
                                         "deeper level of interaction with the user.", 
@@ -126,6 +125,7 @@ function Projects(props) {
                 {/* List all projects */}
                 <div className="projectsSubsection">
                     <div className="firstSubsection">
+                        {projectPlanit}
                         {projectSpendingTracker} 
                         {projectDDSBlaze}
                     </div>
@@ -275,6 +275,8 @@ function getGalleryProps(nameOfProject, classes, maxNumGridListColumns){
             return ("Coming Soon!");
         case "JShell":
             return ("Coming Soon!");
+        case "Planit":
+            return("This academic project is still under construction. Coming soon!");
         default:
             return(
             "N/A"
