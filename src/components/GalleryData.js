@@ -5,44 +5,57 @@
  */
 export function getProjectsGalleryData(){
     return(
-        [[{
+        [[{ // DDSBlaze
             type: "image",
-            img: require('../assets/images/ddsblaze_homepage.jpg'),
+            img: require('../assets/images/ddsblaze/ddsblaze_homepage.jpg'),
             title: 'DDSBlaze Homepage',
             cols: 2,
         }, {
             type: "image",
-            img: require('../assets/images/ddsblaze_undo_checkin.jpg'),
+            img: require('../assets/images/ddsblaze/ddsblaze_undo_checkin.jpg'),
             title: 'DDSBlaze Undo Check In',
             cols: 2,
         }, {
             type: "image",
-            img: require('../assets/images/ddsblaze_send_bulk_message.jpg'),
+            img: require('../assets/images/ddsblaze/ddsblaze_send_bulk_message.jpg'),
             title: 'DDSBlaze Send Bulk Message',
             cols: 2,
         }], [{
 
-        }], [{
+        }], [{  // Motion Pong
             type: "image",
-            img: require('../assets/images/ultrasonic_sensor_1.jpg'),
+            img: require('../assets/images/motion_pong/ultrasonic_sensor_1.jpg'),
             title: 'Ultrasonic Sensor',
             cols: 1,
         }, {
             type: "image",
-            img: require('../assets/images/motion_pong_splashscreen.jpg'),
+            img: require('../assets/images/motion_pong/motion_pong_splashscreen.jpg'),
             title: 'Splash screen',
             cols: 2,
         }, {
             type: "video",
-            img: require('../assets/images/motion_pong_gameplay_1_noAudio.mp4'),
+            img: require('../assets/images/motion_pong/motion_pong_gameplay_1_noAudio.mp4'),
             title: 'Gameplay Video',
             cols: 3,
         }, {
             type: "image",
-            img: require('../assets/images/ultrasonic_sensor_2.jpg'),
+            img: require('../assets/images/motion_pong/ultrasonic_sensor_2.jpg'),
             title: 'Ultrasonic Sensor, Alternate Angle',
             cols: 3,
-        }]]
+        }], [{  // Planit project
+            type: "image",
+            img: require('../assets/images/planit_project/splash_screen.png'),
+            title: 'Splash Screen',
+            cols: 2,
+        },
+        {
+            type: "image",
+            img: require('../assets/images/planit_project/splash_screen.png'),
+            title: 'Login Page',
+            cols: 2,
+        },
+        
+        ]]
     );
 }
 

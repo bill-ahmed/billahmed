@@ -22,6 +22,7 @@ const useStyles = makeStyles(theme => ({
     root: {
       display: 'flex',
       flexWrap: 'wrap',
+      flexDirection: 'column',
       justifyContent: 'space-around',
       overflow: 'hidden',
     },
@@ -30,6 +31,7 @@ const useStyles = makeStyles(theme => ({
       height: "100%",
       maxWidth: '700px',
       maxHeight: '730px',
+      alignSelf: 'center'
     },
     closeIcon: {
         position: "absolute",
@@ -43,6 +45,7 @@ const allGalleryData = getProjectsGalleryData();
 const ddsblazeGalleryData = allGalleryData[0];
 const SpendingTrackerGalleryData = allGalleryData[1];
 const motionPongGalleryData = allGalleryData[2];
+const planitGalleryData = allGalleryData[3];
 
 /**A component to represent the porjects section */
 function Projects(props) {
@@ -276,7 +279,23 @@ function getGalleryProps(nameOfProject, classes, maxNumGridListColumns){
         case "JShell":
             return ("Coming Soon!");
         case "Planit":
-            return("This academic project is still under construction. Coming soon!");
+            return(
+            <div className={classes.root}>
+                <h3>More coming soon!</h3>
+                {/* Gallery of images for this project */}
+                <GridList cellHeight={270} cols={3} className={classes.gridList}>
+                    {planitGalleryData.map(tile => (
+                        <GridListTile key={tile.img} cols={tile.cols || 1}>
+                            {tile.type === "image" ? 
+                            <img src={tile.img} alt={tile.title} width="100%"/> 
+                            : 
+                            <video width="100%" height="100%" controls alt={tile.title}>
+                                <source src={tile.img} type="video/mp4"/>
+                            </video>}
+                        </GridListTile>
+                    ))}
+                </GridList>
+            </div>);
         default:
             return(
             "N/A"
