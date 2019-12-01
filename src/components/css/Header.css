@@ -81,6 +81,8 @@
       width: 100%;
       max-width: 680px;
 
+      visibility: hidden;
+
       /*Animations short-hand: {duration} {timing-function} {delay} {itetarion-count} {nameOfAnimation}*/
       animation: 0.7s ease-out 0.5s 1 fadeUpFromBottom;
       animation-fill-mode: forwards;
@@ -99,6 +101,12 @@
 
     margin: 5px;
     margin-right: 5%;
+
+    visibility: hidden;
+
+    /*Animations short-hand: {duration} {timing-function} {delay} {itetarion-count} {nameOfAnimation}*/
+    animation: 0.7s ease-out 0.5s 1 fadeUpFromBottom;
+    animation-fill-mode: forwards;
   }
 
   .headerContent .headerBodyContainer .recentActivity h1{
