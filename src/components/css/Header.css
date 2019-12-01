@@ -86,12 +86,6 @@
       animation-fill-mode: forwards;
   }
 
-  .headerContent .headerBodyContainer .shortIntro h1{
-      /*Limit the minimum size to be 29pt for name, and gradually increase as screen increases*/
-      font-size: calc(28pt + 2vw);
-      text-shadow: 2px 3px 0px #898999;
-  }
-
   .headerContent .headerBodyContainer .shortIntro h3{
       font-weight: 300;
       width: 90%;
@@ -106,6 +100,10 @@
     margin: 5px;
     margin-right: 5%;
   }
+
+  .headerContent .headerBodyContainer .recentActivity h1{
+    margin: 40px 20px 0px 20px;
+}
 
   .headerContent .headerBodyContainer .recentActivity .recentAcvitiyProjects{
       color: black;
