@@ -109,7 +109,7 @@
     flex-wrap: wrap;
 }
 
-.projects .projectsContainer .projectsSubsection .individualProject{
+#individualProject{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -126,31 +126,31 @@
 }
 
 /*When hovering over individual project, grow the box-shadow to stand-out*/
-.projects .projectsContainer .projectsSubsection .individualProject:hover{
+#individualProject:hover{
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-.projects .projectsContainer .projectsSubsection .individualProject .projectPhoto{
+#individualProject .projectPhoto{
     margin-top: 10px;
 }
 
-.projects .projectsContainer .projectsSubsection .individualProject .projectDetails{
+#individualProject .projectDetails{
     min-width: 300px;
     margin: 15px;
 }
 
-.projects .projectsContainer .projectsSubsection .individualProject .projectDetails .seeMoreButton{
+#individualProject .projectDetails .seeMoreButton{
     color: #3f51b5;
     margin: 10px 10px 10px 0px;
 }
 
-.projects .projectsContainer .projectsSubsection .individualProject .projectDetails .seeMoreButton:hover{
+#individualProject .projectDetails .seeMoreButton:hover{
     color: white;
     background-color: #3f51b5;
 }
 
 
-.projects .projectsContainer .projectsSubsection .individualProject .secondaryDetails{
+#individualProject .secondaryDetails{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -158,17 +158,17 @@
     width: 100%;
 }
 
-.projects .projectsContainer .projectsSubsection .individualProject .secondaryDetails h3{
+#individualProject .secondaryDetails h3{
     font-weight: 500;
     margin: 15px 15px 20px 15px;
 }
 
-.projects .projectsContainer .projectsSubsection .individualProject .secondaryDetails .chipsContainer{
+#individualProject .secondaryDetails .chipsContainer{
     max-height: 110px;
     overflow-y: scroll;
 }
 
-.projects .projectsContainer .projectsSubsection .individualProject .secondaryDetails .techUsedChips{
+#individualProject .secondaryDetails .techUsedChips{
     margin: 10px 5px 10px 7px;
 }
 
@@ -187,12 +187,12 @@
 
 /*When screen is too small to display chips and overview beside each project*/
 @media only screen and (max-width: 900px){
-    .projects .projectsContainer .projectsSubsection .individualProject{
+    #individualProject{
         flex-direction: column;
         margin: 20px 20px 40px 20px;
     }
 
-    .projects .projectsContainer .projectsSubsection .individualProject .projectDetails{
+    #individualProject .projectDetails{
         margin-bottom: 0;
     }
 

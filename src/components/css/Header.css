@@ -4,7 +4,7 @@
   
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
     margin: auto;
@@ -61,38 +61,55 @@
   .headerContent .navigation .navButton:hover{
       border: 1px solid white;
   }
+
+  .headerContent .headerBodyContainer{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+  }
   
-  .headerContent .shortIntro{
+  .headerContent .headerBodyContainer .shortIntro{
       z-index: 1000;
-      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-self: flex-start;
-      flex-grow: 6;
 
       margin: 5px;
       margin-left: 5%;
       width: 100%;
       max-width: 680px;
 
-      visibility: hidden;
-
       /*Animations short-hand: {duration} {timing-function} {delay} {itetarion-count} {nameOfAnimation}*/
       animation: 0.7s ease-out 0.5s 1 fadeUpFromBottom;
       animation-fill-mode: forwards;
   }
 
-  .headerContent .shortIntro h1{
+  .headerContent .headerBodyContainer .shortIntro h1{
       /*Limit the minimum size to be 29pt for name, and gradually increase as screen increases*/
       font-size: calc(28pt + 2vw);
       text-shadow: 2px 3px 0px #898999;
   }
 
-  .headerContent .shortIntro h3{
+  .headerContent .headerBodyContainer .shortIntro h3{
       font-weight: 300;
       width: 90%;
       max-width: 600px;
+  }
+
+  .headerContent .headerBodyContainer .recentActivity{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin: 5px;
+    margin-right: 5%;
+  }
+
+  .headerContent .headerBodyContainer .recentActivity .recentAcvitiyProjects{
+      color: black;
+      text-align: center;
   }
 
   .headerContent .socialLinks{
@@ -208,6 +225,14 @@
     .headerContent h3{
         align-self: center;
         text-align: center;
+    }
+
+    .headerContent .headerBodyContainer{
+        justify-content: center;
+    }
+
+    .headerContent .headerBodyContainer .recentActivity{
+        display: none;
     }
 }
 

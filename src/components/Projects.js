@@ -13,6 +13,7 @@ import Divider from '@material-ui/core/Divider';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 import Paper from '@material-ui/core/Paper';
@@ -88,7 +89,7 @@ function Projects(props) {
     let projectDDSBlaze = createProjectDisplay("DDSBlaze", "Web application to keep track of individuals during fire " + 
                                         "alarms and other emergencies",
                                         ["React.js", "Express.js", "Node.js", "Material-UI", "Microsoft Graph", "Twilio API"], 
-                                        {"Demo" : "https://ddsblaze.herokuapp.com"}, ddsblazeImage, populateGallery);
+                                        {"Demo" : "https://ddsblaze.herokuapp.com"}, ddsblazeImage, populateGallery, true);
 
     let projectSpendingTracker = createProjectDisplay("SpendingTracker", "A full-stack web application to help track personal spending with the aid of graphs and other " + 
                                         "statistical information.", 
@@ -97,12 +98,12 @@ function Projects(props) {
     
     let projectPlanit = createProjectDisplay("Planit", "A mobile application (iOS & Android) that helps users build itineraries for locations/events in a given area.", 
                                         ["React Native", "Redux", "Google Firebase", "NoSQL"],
-                                        {"GitHub (WIP!)" : ""}, planitImage, populateGallery);
+                                        {"Download" : "https://drive.google.com/file/d/1EKtXXa0-Ec_DMeO6nRvJvDm77xq_gBiL/view?usp=sharing"}, planitImage, populateGallery, true);
 
     let projectMotionPong = createProjectDisplay("Motion Pong", "A game of Pong that utilizes ultrasonic sensors for a " + 
                                         "deeper level of interaction with the user.", 
                                         ["Altera DE2-115", "Verilog HDL", "Ultrasonic Sensors"],
-                                        {"GitHub" : "https://github.com/bill-ahmed/CSCB58-Final-Project"}, motionPongImage, populateGallery);
+                                        {"GitHub" : "https://github.com/bill-ahmed/CSCB58-Final-Project"}, motionPongImage, populateGallery, true);
 
     let projectMazeSolver = createProjectDisplay("Maze Solver", "An implementation of Dijkstra's Algorithm that finds the " + 
                                         "shortest (and only) path to solving a maze.", 
@@ -173,25 +174,28 @@ function Projects(props) {
  * @param hyprefs ({str: str}) An object of elements that map from name to hyperlink
  * @param imgObj As of writing, <img> tags don't work unless you do <img src={require("pathToImage")}>.
  * Hence, imbObj is the return value of require() 
- * @param galleryOpen (bool) Determine if gallery is open or not
+ * @param galleryOpen (function) Callback when gallery icon is clicked
+ * @param (bool) Whether to show the Gallery button or not
  * @returns An element populated with the given data
 */
-function createProjectDisplay(name, desc, techUsed, hyprefs, imgObj, galleryOpen){
+export function createProjectDisplay(name, desc, techUsed, hyprefs, imgObj, galleryOpen, showGalleryButton){
     
     // Array of allowed AOS animations for this component
     let animationOptions = ["fade-up", "fade-left", "fade-right"];
 
     return(
-        <div className="individualProject" data-aos={getRandomFadeAnimation(0, 
+        <div id="individualProject" data-aos={getRandomFadeAnimation(0, 
                                                         animationOptions.length, animationOptions)} data-aos-once="true">
             <div className="projectDetails">
                 <img alt={name + " Logo"} className="projectPhoto" src={imgObj} width="70px" height="70px"/>
                 <h2>{name}</h2>
 
+               { showGalleryButton && 
                 <Button variant="outlined" className="seeMoreButton" 
-                onClick={() => galleryOpen(name)}>
-                    Gallery
+                    onClick={() => galleryOpen(name)}>
+                        Gallery
                 </Button>
+                }
 
                 {/* All hyperlinks for current project */}
                 {Object.entries(hyprefs).map(elem => {
@@ -228,18 +232,20 @@ function createProjectDisplay(name, desc, techUsed, hyprefs, imgObj, galleryOpen
  * @returns A <div> containing all pictures/vidoes neatly formatted
  */
 function getGalleryProps(nameOfProject, classes, maxNumGridListColumns){
+
     switch(nameOfProject){
         case "DDSBlaze":
             return (
                 <div className={classes.root}>
                     {/* Gallery of images for this project */}
-                    <GridList cellHeight={350} cols={maxNumGridListColumns} className={classes.gridList}>
+                    <GridList cellHeight={maxNumGridListColumns === 4 ? 320 : 400} cols={maxNumGridListColumns} className={classes.gridList}>
                         {ddsblazeGalleryData.map(tile => (
                             <GridListTile key={tile.img} cols={tile.cols || 1}>
                                 {tile.type === "image" ? <img src={tile.img} alt={tile.title}/> : 
                                 <video width="100%" height="100%" controls alt={tile.title}>
                                     <source src={tile.img} type="video/mp4"/>
                                 </video>}
+                                <GridListTileBar title={tile.title}/>
                             </GridListTile>
                         ))}
                     </GridList>
@@ -254,7 +260,7 @@ function getGalleryProps(nameOfProject, classes, maxNumGridListColumns){
             return(
                 <div className={classes.root}>
                     {/* Gallery of images for this project */}
-                    <GridList cellHeight={270} cols={3} className={classes.gridList}>
+                    <GridList cellHeight={maxNumGridListColumns === 4 ? 320 : 400} cols={3} className={classes.gridList}>
                             <GridListTile key="motionPongVideo" cols={3}>
                                 <iframe width="100%" height="100%" title="Motion Pong Video" src="https://www.youtube.com/embed/NO6y1-P6fCI" 
                                 frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
@@ -269,6 +275,7 @@ function getGalleryProps(nameOfProject, classes, maxNumGridListColumns){
                                 <video width="100%" height="100%" controls alt={tile.title}>
                                     <source src={tile.img} type="video/mp4"/>
                                 </video>}
+                                <GridListTileBar title={tile.title}/>
                             </GridListTile>
                         ))}
                     </GridList>
@@ -283,7 +290,7 @@ function getGalleryProps(nameOfProject, classes, maxNumGridListColumns){
             <div className={classes.root}>
                 <h3>More coming soon!</h3>
                 {/* Gallery of images for this project */}
-                <GridList cellHeight={270} cols={3} className={classes.gridList}>
+                <GridList cellHeight={maxNumGridListColumns === 4 ? 320 : 400} cols={maxNumGridListColumns} className={classes.gridList}>
                     {planitGalleryData.map(tile => (
                         <GridListTile key={tile.img} cols={tile.cols || 1}>
                             {tile.type === "image" ? 
@@ -292,6 +299,8 @@ function getGalleryProps(nameOfProject, classes, maxNumGridListColumns){
                             <video width="100%" height="100%" controls alt={tile.title}>
                                 <source src={tile.img} type="video/mp4"/>
                             </video>}
+
+                            <GridListTileBar title={tile.title}/>
                         </GridListTile>
                     ))}
                 </GridList>

@@ -2,17 +2,9 @@ import React from 'react';
 import Header from './components/Header';
 import MainBody from './components/MainBody';
 import Footer from './components/Footer';
+import isMobileUser from './api/UserInfo';
 import './App.css';
 
-/**Determine if current user is a mobile user or not
- * @returns true iff mobile user, false otherwise
- */
-function isMobileUser(){
-  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent)) {
-    return true;
-  }
-  return false;
-}
 /**Move user to appropriate section within the app
  * @param location (String) The section to move the user to.
  */

@@ -8,17 +8,17 @@ export function getProjectsGalleryData(){
         [[{ // DDSBlaze
             type: "image",
             img: require('../assets/images/ddsblaze/ddsblaze_homepage.jpg'),
-            title: 'DDSBlaze Homepage',
+            title: 'Homepage',
             cols: 2,
         }, {
             type: "image",
             img: require('../assets/images/ddsblaze/ddsblaze_undo_checkin.jpg'),
-            title: 'DDSBlaze Undo Check In',
+            title: 'Undo Check In',
             cols: 2,
         }, {
             type: "image",
             img: require('../assets/images/ddsblaze/ddsblaze_send_bulk_message.jpg'),
-            title: 'DDSBlaze Send Bulk Message',
+            title: 'Send Bulk Message',
             cols: 2,
         }], [{
 
@@ -50,8 +50,38 @@ export function getProjectsGalleryData(){
         },
         {
             type: "image",
-            img: require('../assets/images/planit_project/splash_screen.png'),
+            img: require('../assets/images/planit_project/login_screen.jpg'),
             title: 'Login Page',
+            cols: 2,
+        },
+        {
+            type: "image",
+            img: require('../assets/images/planit_project/itineraries.jpg'),
+            title: 'Itineraries Tab',
+            cols: 2,
+        },
+        {
+            type: "image",
+            img: require('../assets/images/planit_project/events.jpg'),
+            title: 'Events in itinerary',
+            cols: 2,
+        },
+        {
+            type: "image",
+            img: require('../assets/images/planit_project/maps.jpg'),
+            title: 'Google Maps Overlay',
+            cols: 2,
+        },
+        {
+            type: "image",
+            img: require('../assets/images/planit_project/create_itinerary.jpg'),
+            title: 'Create Itinerary',
+            cols: 2,
+        },
+        {
+            type: "image",
+            img: require('../assets/images/planit_project/build_itinerary.jpg'),
+            title: 'Build/Upload Itinerary',
             cols: 2,
         },
         
