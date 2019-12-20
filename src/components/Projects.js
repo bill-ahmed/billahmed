@@ -89,7 +89,7 @@ function Projects(props) {
     let projectDDSBlaze = createProjectDisplay("DDSBlaze", "Web application to keep track of individuals during fire " + 
                                         "alarms and other emergencies",
                                         ["React.js", "Express.js", "Node.js", "Material-UI", "Microsoft Graph", "Twilio API"], 
-                                        {"Demo" : "https://ddsblaze.herokuapp.com"}, ddsblazeImage, populateGallery, true);
+                                        {"GitHub": "https://github.com/bill-ahmed/DDSBlaze-Deployment", "Demo" : "https://ddsblaze.herokuapp.com"}, ddsblazeImage, populateGallery, true);
 
     let projectSpendingTracker = createProjectDisplay("SpendingTracker", "A full-stack web application to help track personal spending with the aid of graphs and other " + 
                                         "statistical information.", 
@@ -112,7 +112,7 @@ function Projects(props) {
 
     let projectJShell = createProjectDisplay("JShell", "A Java implementation of the Unix shell, within a mock file system in the JVM.", 
                                         ["Java", "XML", "Agile/Scrum"],
-                                        {"GitHub" : ""}, jshellImage, populateGallery);
+                                        {}, jshellImage, populateGallery);
 
     return(
         <div id="projects" className="projects">
