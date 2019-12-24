@@ -10,26 +10,20 @@
     padding-bottom: 30px;
 
     /* background-image: url('../../assets/dslr_icon.svg'); */
-    background: #1A77B5;
+    background: rgba(255, 255, 255, 0.6);
     background-image: url('../../assets/dslr_icon.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
-    line-height: 24px;
 }
 
 .hobbies h1{
-    width: 100%;
-    color: white;
+    color: black;
     margin: 0 0 70px 0;
-
-    overflow: hidden;
-    line-height: normal;
-    
 }
 
-.hobbies h1::before, .hobbies h1::after{
+/* ENABLE FOR LINE THROUGH TEXT EFFECT */
+/* .hobbies h1::before, .hobbies h1::after{
     background-color: white;
     content: "";
     display: inline-block;
@@ -47,7 +41,7 @@
 .hobbies h1::after {
     left: 0.5em;
     margin-right: -50%;
-  }
+  } */
 
 .hobbies .hobbiesContainer{
     display: flex;

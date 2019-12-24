@@ -77,10 +77,7 @@
       justify-content: center;
       align-self: flex-start;
       
-
-      /* margin: 5px; */
       margin-left: 8%;
-      margin-top: 5%;
       width: 100%;
       max-width: 680px;
 
@@ -219,6 +216,12 @@
         margin-top: 0;
     }
 
+    .headerContent .headerBodyContainer{
+        justify-content: center;
+        position: absolute;
+        top: 25%;
+    }
+
     .headerContent .headerBodyContainer .shortIntro{
         align-self: center;
         margin: 0;
@@ -238,10 +241,6 @@
     .headerContent h3{
         align-self: center;
         text-align: center;
-    }
-
-    .headerContent .headerBodyContainer{
-        justify-content: center;
     }
 
     .headerContent .headerBodyContainer .recentActivity{

@@ -1,9 +1,8 @@
 .projects{
     width: 100%;
-    min-height: 100vh;
     text-align: center;
 
-    background: none;
+    background: rgba(255, 255, 255, 1);
     color: black;
 }
 
@@ -45,7 +44,6 @@
     margin-bottom: 90px;
 }
 .projects .projectsContainer #projectInnerContainer{
-    background: rgba(255, 255, 255, 0.6);
     width: 95%;
 }
 
@@ -200,6 +198,10 @@
 
     #individualProject .projectDetails{
         margin-bottom: 0;
+    }
+
+    .projects .projectsContainer #projectInnerContainer .projectsOverview p{
+        text-align: center;
     }
 
     .projects .projectsContainer #projectInnerContainer .projectsOverview{

@@ -128,8 +128,7 @@ function Projects(props) {
 
                         </div>
                         <p>
-                            Below are some projects i've worked on (or am actively working on) during my free time. You can view sreenshots or videos
-                            showcasing each project via the Gallery button (still WIP!).<br/><br/>
+                            Below are some projects i've worked on (or actively working on) during my free time.
                             In most cases, links to my GitHub are available if you want to see source code.
                         </p>
                     </div>
@@ -151,9 +150,9 @@ function Projects(props) {
                 </div>
 
                 {/* Go to hobbies section button */}
-                <IconButton size="medium" color="inherit" id="linkToHobbiesSection" onClick={() => props.moveUserToSection("hobbies")} data-aos="fade-up" data-aos-once="true">
+                {/* <IconButton size="medium" color="inherit" id="linkToHobbiesSection" onClick={() => props.moveUserToSection("hobbies")} data-aos="fade-up" data-aos-once="true">
                     <ExpandMoreIcon fontSize="large"/>
-                </IconButton>
+                </IconButton> */}
 
             </div>
             <Dialog open={open} fullScreen={isMobileUser} maxWidth={"md"} fullWidth={true} onClose={() => handleGalleryClose()}>

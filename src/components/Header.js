@@ -94,7 +94,7 @@ function Header(props){
                 <ButtonGroup size="medium" color="inherit" className="rightNavigation">
                     <Button className="navButton" size="large" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("home")}>Home</Button>
                     <Button className="navButton" size="large" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("projects")}>Projects</Button>
-                    <Button className="navButton" size="large" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("hobbies")}>Hobbies</Button>
+                    {/* <Button className="navButton" size="large" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("hobbies")}>Hobbies</Button> */}
                 </ButtonGroup>
             </div>
             
@@ -156,9 +156,10 @@ function Header(props){
                     </div>
                 </div>
             </div>
-            <IconButton size="medium" color="inherit" id="linkToProjectSection" onClick={() => handleButtonClick("projects")}>
+                {/* GO TO PROJECTS SECTION */}
+                {/* <IconButton size="medium" color="inherit" id="linkToProjectSection" onClick={() => handleButtonClick("projects")}>
                     <ExpandMoreIcon fontSize="large"/>
-                </IconButton>
+                </IconButton> */}
             <br/>
             <br/>
             
