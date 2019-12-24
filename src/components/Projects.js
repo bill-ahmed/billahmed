@@ -18,6 +18,7 @@ import IconButton from '@material-ui/core/IconButton';
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 import Paper from '@material-ui/core/Paper';
 import './css/Projects.css';
+import SvgIcon from '@material-ui/icons/Close';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -89,15 +90,15 @@ function Projects(props) {
     let projectDDSBlaze = createProjectDisplay("DDSBlaze", "Web application to keep track of individuals during fire " + 
                                         "alarms and other emergencies",
                                         ["React.js", "Express.js", "Node.js", "Material-UI", "Microsoft Graph", "Twilio API"], 
-                                        {"GitHub": "https://github.com/bill-ahmed/DDSBlaze-Deployment", "Demo" : "https://ddsblaze.herokuapp.com"}, ddsblazeImage, populateGallery, true);
+                                        {"GitHub": "https://github.com/bill-ahmed/DDSBlaze-Deployment"}, ddsblazeImage, populateGallery, true);
 
     let projectSpendingTracker = createProjectDisplay("SpendingTracker", "A full-stack web application to help track personal spending with the aid of graphs and other " + 
                                         "statistical information.", 
-                                        ["Python/Flask", "React.js", "Redux", "Material-UI", "Google Firebase", "NoSQL","Gunicorn/Nginx"],
+                                        ["Python", "Flask", "React.js", "Redux", "Google Firebase","Gunicorn/Nginx"],
                                         {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, spendingTrackerImage, populateGallery);
     
     let projectPlanit = createProjectDisplay("Planit", "A mobile application (iOS & Android) that helps users build itineraries for locations/events in a given area.", 
-                                        ["React Native", "Redux", "Google Firebase", "NoSQL"],
+                                        ["React Native", "Redux", "Google Firebase", "Yelp API"],
                                         {"Download" : "https://drive.google.com/file/d/1EKtXXa0-Ec_DMeO6nRvJvDm77xq_gBiL/view?usp=sharing"}, planitImage, populateGallery, true);
 
     let projectMotionPong = createProjectDisplay("Motion Pong", "A game of Pong that utilizes ultrasonic sensors for a " + 
@@ -116,28 +117,36 @@ function Projects(props) {
 
     return(
         <div id="projects" className="projects">
-            <h1 data-aos="fade-up" data-aos-once="true">Projects</h1>
             <div className="projectsContainer">
-                <Paper square elevation={0} className="projectsOverview" data-aos="fade-up" data-aos-once="true">
-                    <h2>Brief Overview</h2>
-                    <p>
-                        Below are some projects i've worked on (or am actively working on) during my free time. You can view sreenshots or videos
-                        showcasing each project via the Gallery button (still WIP!).
-                    </p>
-                </Paper>
+                <div id="projectInnerContainer">
+                    <div className="projectsOverview" data-aos="fade-up" data-aos-once="true">
+                        <div id="projectsHeading" data-aos="fade-up" data-aos-once="true">
+                            <h1>
+                                Projects
+                            </h1>
+                            
 
-                {/* List all projects */}
-                <div className="projectsSubsection">
-                    <div className="firstSubsection">
-                        {projectPlanit}
-                        {projectSpendingTracker} 
-                        {projectDDSBlaze}
+                        </div>
+                        <p>
+                            Below are some projects i've worked on (or am actively working on) during my free time. You can view sreenshots or videos
+                            showcasing each project via the Gallery button (still WIP!).<br/><br/>
+                            In most cases, links to my GitHub are available if you want to see source code.
+                        </p>
                     </div>
-                      
-                    <div className="secondSubsection">
-                        {projectMotionPong}
-                        {projectJShell}
-                        {projectMazeSolver}
+
+                    {/* List all projects */}
+                    <div className="projectsSubsection">
+                        <div className="firstSubsection">
+                            {projectPlanit}
+                            {projectSpendingTracker} 
+                            {projectDDSBlaze}
+                        </div>
+                        
+                        <div className="secondSubsection">
+                            {projectMotionPong}
+                            {projectJShell}
+                            {projectMazeSolver}
+                        </div>
                     </div>
                 </div>
 

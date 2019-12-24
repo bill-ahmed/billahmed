@@ -3,23 +3,14 @@
     min-height: 100vh;
     text-align: center;
 
-    background: #1A77B5;
-    background-image: url('../../assets/code_icon.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0px -200px;
-
-    color: white;
+    background: none;
+    color: black;
 }
 
-.projects h1{
-    width: 100%;
-    color: white;
-    margin-top: 40px;
 
-    overflow: hidden;
-}
-.projects h1::before, .projects h1::after{
+/* ENABLE for lines on both sides of text */
+
+/* .projects h1::before, .projects h1::after{
     background-color: white;
     content: "";
     display: inline-block;
@@ -27,9 +18,9 @@
     position: relative;
     vertical-align: middle;
     width: 50%;
-}
+} */
 
-.projects h1::before {
+/* .projects h1::before {
     right: 0.5em;
     margin-left: -50%;
 }
@@ -37,17 +28,14 @@
 .projects h1::after {
     left: 0.5em;
     margin-right: -50%;
-}
+} */
 
 .projects .projectsContainer{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
-    align-content: center;
     align-items: center;
-
-    margin-top: calc(50px + 3%);
 
     line-height: 24px;
 }
@@ -56,38 +44,52 @@
     margin-top: 30px;
     margin-bottom: 90px;
 }
+.projects .projectsContainer #projectInnerContainer{
+    background: rgba(255, 255, 255, 0.6);
+    width: 95%;
+}
 
-.projects .projectsContainer .projectsOverview{
-    width: calc(250px + 40%);
-    max-width: 800px;
+.projects .projectsContainer #projectInnerContainer .projectsOverview{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: center;
+
+    max-width: 95%;
     margin-bottom: 50px;
 
     font-size: 13.5pt;
 
-    background: none;
-    color: white;
+    border-radius: 10;
+    color: black;
 }
 
-.projects .projectsContainer .projectsOverview p{
+.projects .projectsOverview #projectsHeading{
+    color: #1A77B5;
     margin: 20px;
+    font-size: 22pt;
 }
 
-.projects .projectsContainer .projectsSubsection{
+.projects .projectsContainer #projectInnerContainer .projectsOverview p{
+    margin: 20px;
+    text-align: left;
+}
+
+.projects .projectsContainer #projectInnerContainer .projectsSubsection{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
 
-    margin: 20px;
-    margin-bottom: 0;
     width: 100%;
     min-width: 200px;
 
     color: black;
 }
 
-.projects .projectsContainer .projectsSubsection .firstSubsection{
+.projects .projectsContainer #projectInnerContainer .projectsSubsection .firstSubsection{
     flex-grow: 1;
 
     display: flex;
@@ -95,11 +97,9 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-
-    border-right: solid white 1px;
 }
 
-.projects .projectsContainer .projectsSubsection .secondSubsection{
+.projects .projectsContainer #projectInnerContainer .projectsSubsection .secondSubsection{
     flex-grow: 1;
 
     display: flex;
@@ -117,11 +117,12 @@
 
     margin: 40px 20px 60px 20px;
     max-width: 750px;
+    height: 280px;
 
     background-color: white;
     border-radius: 10px;
 
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 3px 11px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
@@ -176,12 +177,16 @@
 
 /*** Wrap the inidividual projects into columns 1280px ***/
 @media only screen and (max-width: 1280px){
-    .projects .projectsContainer .projectsSubsection{
-        flex-wrap: wrap;
+    .projects .projectsContainer #projectInnerContainer{
+        width: 100%;
     }
 
-    .projects .projectsContainer .projectsSubsection .firstSubsection{
-        border: none;
+    .projects .projectsContainer #projectInnerContainer .projectsOverview{
+        align-items: center;
+    }
+
+    .projects .projectsContainer #projectInnerContainer .projectsSubsection{
+        flex-wrap: wrap;
     }
 }
 
@@ -190,13 +195,14 @@
     #individualProject{
         flex-direction: column;
         margin: 20px 20px 40px 20px;
+        height: unset;
     }
 
     #individualProject .projectDetails{
         margin-bottom: 0;
     }
 
-    .projects .projectsContainer .projectsOverview{
+    .projects .projectsContainer #projectInnerContainer .projectsOverview{
         margin-bottom: 0;
     }
 }

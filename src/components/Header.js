@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { createProjectDisplay } from './Projects';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Fab from '@material-ui/core/Fab';
+import GetAppIcon from '@material-ui/icons/GetApp';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import { getProjectsGalleryData } from './GalleryData';
 import IconButton from '@material-ui/core/IconButton';
@@ -83,7 +83,7 @@ function Header(props){
         { 
             name: "My Resume",
             href: RESUME,
-            svgPath: null,
+            svgPath: <GetAppIcon/>,
             showInMobile: true
         }
     ];
@@ -92,9 +92,9 @@ function Header(props){
         <div id="headerContent" className="headerContent">
             <div className="navigation">
                 <ButtonGroup size="medium" color="inherit" className="rightNavigation">
-                    <Button className="navButton" size="medium" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("home")}>Home</Button>
-                    <Button className="navButton" size="medium" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("projects")}>Projects</Button>
-                    <Button className="navButton" size="medium" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("hobbies")}>Hobbies</Button>
+                    <Button className="navButton" size="large" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("home")}>Home</Button>
+                    <Button className="navButton" size="large" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("projects")}>Projects</Button>
+                    <Button className="navButton" size="large" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("hobbies")}>Hobbies</Button>
                 </ButtonGroup>
             </div>
             
@@ -127,12 +127,19 @@ function Header(props){
                             return(
                                 isMobileUser ? 
                     
-                                <IconButton key={index} style={{color: '#1A77B5', marginLeft: 10, marginRight: 10}} size="medium" className="socialLink" href={elem.href} target="_blank" >
-                                    {elem.svgPath && <SvgIcon viewBox="0 0 500 500">
+                                <IconButton key={index} style={{color: '#1A77B5', marginLeft: 10, marginRight: 10}} size="small" className="socialLink" href={elem.href} target="_blank" >
+                                    {elem.svgPath && !elem.showInMobile &&
+                                    <SvgIcon viewBox="0 0 500 500">
                                         {elem.svgPath}
                                     </SvgIcon>}
 
                                     {elem.showInMobile && elem.name}
+                                    {elem.showInMobile 
+                                    && 
+                                    <SvgIcon viewBox="0 0 500 500">
+                                        {elem.svgPath}
+                                    </SvgIcon>
+                                    }
                                 </IconButton>
                                 :
                                 <Button key={index} variant="outlined" style={{color: '#1A77B5', marginLeft: 10, marginRight: 10}} size="large" className="socialLink" href={elem.href} target="_blank" 
@@ -148,14 +155,6 @@ function Header(props){
                         })}
                     </div>
                 </div>
-
-                {/* <div className="recentActivity">
-                    <h1>Recent Activity</h1>
-                    <div className="recentAcvitiyProjects">
-                        { projectPlanit }
-                        { projectSpendingTracker }
-                    </div>
-                </div> */}
             </div>
             <IconButton size="medium" color="inherit" id="linkToProjectSection" onClick={() => handleButtonClick("projects")}>
                     <ExpandMoreIcon fontSize="large"/>

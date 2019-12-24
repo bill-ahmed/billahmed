@@ -34,7 +34,7 @@
     -->
     <title>Bilal Ahmed</title>
 
-    <div id="animatedBackground"></div>
+    <div style="position: fixed !important;" id="animatedBackground"></div>
 
     <!-- vanta js assets -->
     <script src="./three.min.js"></script>
@@ -43,18 +43,23 @@
     <!-- Instilize vanta js by #id selector -->
     <script> 
       // Strength of each effect; higher numbers ==> more intensive ==> more performance hungry
-      var netPoints = 5.00;
+      var netPoints = 4.00;
       var netMaxDistance = 24.00;
-      var netSpacing = 25.00;
+      var netSpacing = 28.00;
 
-      // VANTA.NET({
-      //     el: "#animatedBackground",
-      //     color: '#1A77B5',
-      //     backgroundColor: '#FDFDFD',
-      //     points: netPoints,
-      //     maxDistance: netMaxDistance,
-      //     spacing: netSpacing
-      //   })
+      // Make spacing larger on mobile devices
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        netSpacing = 35;
+      }
+
+      VANTA.NET({
+          el: "#animatedBackground",
+          color: '#d2e9f9',
+          backgroundColor: '#FDFDFD',
+          points: netPoints,
+          maxDistance: netMaxDistance,
+          spacing: netSpacing,
+        })
       
     </script>
 
