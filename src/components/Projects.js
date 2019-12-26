@@ -5,6 +5,7 @@ import AutoPlay from './AutoPlay';
 import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
 import CloseIcon from '@material-ui/icons/Close';
+import CodeIcon from '../assets/code_icon.svg'
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
@@ -98,7 +99,7 @@ function Projects(props) {
                                         {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, spendingTrackerImage, populateGallery);
     
     let projectPlanit = createProjectDisplay("Planit", "A mobile application (iOS & Android) that helps users build itineraries for locations/events in a given area.", 
-                                        ["React Native", "Redux", "Google Firebase", "Yelp API"],
+                                        ["React Native", "Redux", "Google Firebase", "Yelp API", "Expo Framework"],
                                         {"Download" : "https://drive.google.com/file/d/1EKtXXa0-Ec_DMeO6nRvJvDm77xq_gBiL/view?usp=sharing"}, planitImage, populateGallery, true);
 
     let projectMotionPong = createProjectDisplay("Motion Pong", "A game of Pong that utilizes ultrasonic sensors for a " + 
@@ -124,12 +125,12 @@ function Projects(props) {
                             <h1>
                                 Projects
                             </h1>
-                            
 
+                            <img src={require('../assets/code_icon.svg')} width="45"/>
                         </div>
                         <p>
                             Below are some projects i've worked on (or actively working on) during my free time.
-                            In most cases, links to my GitHub are available if you want to see source code.
+                            In most cases, links to my GitHub are available if you want to see additional info.
                         </p>
                     </div>
 
