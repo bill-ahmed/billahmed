@@ -113,7 +113,7 @@ function Projects(props) {
                                         {"GitHub" : "https://github.com/bill-ahmed/Maze-Solver"}, mazeSolverImage, populateGallery);
 
     let projectJShell = createProjectDisplay("JShell", "A Java implementation of the Unix shell, within a mock file system in the JVM.", 
-                                        ["Java", "XML", "Agile/Scrum"],
+                                        ["Java", "XML", "Agile/Scrum", "Subversion"],
                                         {}, jshellImage, populateGallery);
 
     return(
@@ -126,7 +126,7 @@ function Projects(props) {
                                 Projects
                             </h1>
 
-                            <img src={require('../assets/code_icon.svg')} width="45"/>
+                            {/* <img src={require('../assets/code_icon.svg')} width="45"/> */}
                         </div>
                         <p>
                             Below are some projects i've worked on (or actively working on) during my free time.
@@ -139,13 +139,13 @@ function Projects(props) {
                         <div className="firstSubsection">
                             {projectPlanit}
                             {projectSpendingTracker} 
-                            {projectDDSBlaze}
+                            {projectMazeSolver}
                         </div>
                         
                         <div className="secondSubsection">
+                            {projectDDSBlaze}
                             {projectMotionPong}
                             {projectJShell}
-                            {projectMazeSolver}
                         </div>
                     </div>
                 </div>

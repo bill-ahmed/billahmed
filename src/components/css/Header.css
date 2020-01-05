@@ -230,7 +230,7 @@
 @media only screen and (max-width: 768px){
     .headerContent .navigation{
         align-self: flex-start;
-        margin: 15px 0 0 15px;
+        margin: 15px 0 0 10px;
     }
 
     .headerContent .navigation .rightNavigation{
