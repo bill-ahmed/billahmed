@@ -99,7 +99,7 @@ function Projects(props) {
                                         {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, spendingTrackerImage, populateGallery);
     
     let projectPlanit = createProjectDisplay("Planit", "A mobile application (iOS & Android) that helps users build itineraries for locations/events in a given area.", 
-                                        ["React Native", "Redux", "Google Firebase", "Yelp API", "Expo Framework"],
+                                        ["React Native", "Node.js", "Redux", "Google Firebase", "Yelp API", "Expo Framework"],
                                         {"Download" : "https://drive.google.com/file/d/1EKtXXa0-Ec_DMeO6nRvJvDm77xq_gBiL/view?usp=sharing"}, planitImage, populateGallery, true);
 
     let projectMotionPong = createProjectDisplay("Motion Pong", "A game of Pong that utilizes ultrasonic sensors for a " + 
