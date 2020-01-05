@@ -19,6 +19,10 @@
     
   }
 
+  .headerContent .navigation .leftNavigation{
+      visibility: hidden;
+  }
+
   /*Down-pointing chevron*/
   .headerContent #linkToProjectSection{
     visibility: hidden;
@@ -50,16 +54,6 @@
       /*Animations short-hand: {duration} {timing-function} {dekay} {itetarion-count} {nameOfAnimation}*/
       animation: 0.7s ease-out 0.5s 1 fadeUpFromBottom;
       animation-fill-mode: forwards;
-  }
-
-  /*Hide the border for navigation buttons, until hover*/
-  .headerContent .navigation .navButton{
-      border: 1px solid transparent;
-      margin: 5px;
-  }
-
-  .headerContent .navigation .navButton:hover{
-      border: 1px solid white;
   }
 
   .headerContent .headerBodyContainer{
@@ -192,7 +186,7 @@
 
 /*** Media queries ***/
 
-/*** For phones and other less-wide screens ***/
+/*** For other less-wide screens ***/
 @media only screen and (max-width: 1280px){
     .headerContent .navigation{
         align-self: center;
@@ -229,6 +223,25 @@
 
     .headerContent .headerBodyContainer .recentActivity{
         display: none;
+    }
+}
+
+/** For phone screens */
+@media only screen and (max-width: 768px){
+    .headerContent .navigation{
+        align-self: flex-start;
+        margin: 15px 0 0 15px;
+    }
+
+    .headerContent .navigation .rightNavigation{
+        display: none;
+    }
+
+    .headerContent .navigation .leftNavigation{
+
+      /*Animations short-hand: {duration} {timing-function} {dekay} {itetarion-count} {nameOfAnimation}*/
+      animation: 0.7s ease-out 0.5s 1 fadeUpFromBottom;
+      animation-fill-mode: forwards;
     }
 }
 

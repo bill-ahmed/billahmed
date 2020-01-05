@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
+import CodeIcon from '@material-ui/icons/Code';
 import { createProjectDisplay } from './Projects';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Divider from '@material-ui/core/Divider';
+import Drawer from '@material-ui/core/Drawer';
 import GetAppIcon from '@material-ui/icons/GetApp';
+import HomeIcon from '@material-ui/icons/Home';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import { makeStyles } from '@material-ui/core/styles';
+import MenuIcon from '@material-ui/icons/Menu';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import { getProjectsGalleryData } from './GalleryData';
 import IconButton from '@material-ui/core/IconButton';
-import { makeStyles } from '@material-ui/styles';
-import Tooltip from '@material-ui/core/Tooltip';
 import './css/Header.css';
 
 const useStyles = makeStyles({
@@ -17,7 +24,10 @@ const useStyles = makeStyles({
     },
     iconRoot: {
       textAlign: 'center'
-    }
+    },
+    list: {
+        width: 250,
+    },
   });
 
 const RESUME = require('../assets/Bilal_Ahmed_Resume.pdf');
@@ -33,6 +43,10 @@ const planitImage = require('../assets/earth_globe_icon.svg');
 
 /**Render first page user sees */
 function Header(props){
+    // Control side-navigation drawer
+    const [drawerOpen, setDrawerOpen] = useState(false);
+    const classes = useStyles();
+
     // If user is in mobile view, give the nav buttons a border
     var isMobileUser = global.isMobileUser;
     let navButtonVariant = "text";
@@ -85,19 +99,35 @@ function Header(props){
         }
     ];
 
+    const itemsToDisplay = [
+        {
+            name: "Home", 
+            callback: () => handleButtonClick("home"),
+            icon: <HomeIcon/>
+        },
+        {
+            name: "Projects",
+            callback: () => {handleButtonClick("projects"); setDrawerOpen(false)},
+            icon: <CodeIcon/>
+        }
+    ];
+
     return(
         <div id="headerContent" className="headerContent">
             <div className="navigation">
+                <div className="leftNavigation">
+                    <IconButton onClick={() => setDrawerOpen(true)} aria-label="open navigation">
+                        <MenuIcon/>
+                    </IconButton>
+                </div>
                 <ButtonGroup size="medium" color="inherit" className="rightNavigation">
                     <Button className="navButton" size="large" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("home")}>Home</Button>
                     <Button className="navButton" size="large" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("projects")}>Projects</Button>
-                    {/* <Button className="navButton" size="large" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("hobbies")}>Hobbies</Button> */}
                 </ButtonGroup>
             </div>
             
             <div className="headerBodyContainer">
                 <div className="shortIntro">
-                    {/* <h1>Bilal Ahmed</h1> */}
 
                     {/* My full name */}
                     <svg id="fullName" width="755" height="120" viewBox="0 0 755 120" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -136,13 +166,62 @@ function Header(props){
                     </div>
                 </div>
             </div>
-                {/* GO TO PROJECTS SECTION */}
-                {/* <IconButton size="medium" color="inherit" id="linkToProjectSection" onClick={() => handleButtonClick("projects")}>
-                    <ExpandMoreIcon fontSize="large"/>
-                </IconButton> */}
             <br/>
             <br/>
-            
+
+            {/* Left navigation drawer for small displays */}
+            <Drawer disableRestoreFocus anchor="left" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+                {getDrawerNavigationItems(classes, itemsToDisplay)}
+            </Drawer>
+        </div>
+    );
+}
+
+/**Return props for left navigation, when on a small display
+ * @param classes The styling to apply
+ * @param itemsToDisplay Array of items to display, along with name and callbacks
+ */
+function getDrawerNavigationItems(classes, itemsToDisplay){
+
+    return(
+        <div className={classes.list}>
+            <List>
+                <ListItem>
+                    <ListItemText primary="Navigation" secondary="Tap outside to close"/>
+                </ListItem>
+            </List>
+
+            <Divider/>
+            <List>
+                {itemsToDisplay.map((item, index) => {
+                    return(
+                        <ListItem button onClick={() => item.callback()}>
+                            <ListItemIcon>
+                                {item.icon}
+                            </ListItemIcon>
+
+                            <ListItemText primary={item.name}/>
+                        </ListItem>
+                    );
+                })}
+                {/* <ListItem button>
+
+                    <ListItemIcon>
+                        <HomeIcon/>
+                    </ListItemIcon>
+
+                    <ListItemText primary="Home"/>
+                </ListItem>
+
+                <ListItem button>
+
+                    <ListItemIcon>
+                        <CodeIcon/>
+                    </ListItemIcon>
+
+                    <ListItemText primary="Projects"/>
+                </ListItem> */}
+            </List>
         </div>
     );
 }
