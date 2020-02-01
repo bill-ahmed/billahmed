@@ -2,10 +2,9 @@
     width: 100%;
     text-align: center;
 
-    background: #FDFDFD;
-    color: black;
+    background: #212121;
+    color: white;
 }
-
 
 /* ENABLE for lines on both sides of text */
 
@@ -58,11 +57,11 @@
     margin-bottom: 60px;
 
     font-size: 13.5pt;
-    color: black;
+    color: white;
 }
 
 .projects .projectsOverview #projectsHeading{
-    color: #1A77B5;
+    color: white;
     margin: 10px;
     font-size: 22pt;
     text-align: center;
@@ -94,7 +93,7 @@
     width: 100%;
     min-width: 200px;
 
-    color: black;
+    color: white;
 }
 
 .projects .projectsContainer #projectInnerContainer .projectsSubsection .firstSubsection{
@@ -127,7 +126,7 @@
     max-width: 750px;
     height: 280px;
 
-    background-color: white;
+    background-color: #424242;
     border-radius: 10px;
 
     box-shadow: 0 3px 11px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
@@ -173,9 +172,11 @@
     margin: 0px 15px 0px 15px;
 }
 
+#individualProject .secondaryDetails .projectDescription{
+}
+
 #individualProject .secondaryDetails .chipsContainer{
-    max-height: 110px;
-    overflow-y: scroll;
+    flex-grow: 0.25;
 }
 
 #individualProject .secondaryDetails .techUsedChips{

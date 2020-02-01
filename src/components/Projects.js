@@ -40,6 +40,9 @@ const useStyles = makeStyles(theme => ({
         position: "absolute",
         right: "5px",
         top: "10px",
+    },
+    divider: {
+        background: 'white'
     }
   }));
 
@@ -164,7 +167,7 @@ function Projects(props) {
                     </IconButton>
                 </DialogTitle>
 
-                <Divider variant="fullWidth"/>
+                <Divider light variant="fullWidth"/>
 
                 <DialogContent>
                     <DialogContentText>
@@ -220,12 +223,12 @@ export function createProjectDisplay(name, desc, techUsed, hyprefs, imgObj, gall
             </div>
 
             <div className="secondaryDetails">
-                <h3>{desc}</h3>
-                <Divider variant="middle"/>
+                <h3 className="projectDescription">{desc}</h3>
+                <hr width="90%"/>
 
                 <div className="chipsContainer">
                 {techUsed.map((elem) => (
-                    <Chip key={elem} className="techUsedChips" label={elem}/>
+                    <Chip key={elem} variant='outlined' className="techUsedChips" label={elem}/>
                 ))}
                 </div>
             </div>
