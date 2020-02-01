@@ -150,6 +150,7 @@
 #individualProject .projectDetails .seeMoreButton{
     color: white;
     margin: 10px 10px 10px 0px;
+    border-color: white;
 }
 
 #individualProject .projectDetails .seeMoreButton:hover{

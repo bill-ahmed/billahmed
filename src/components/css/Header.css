@@ -10,10 +10,10 @@
     margin: auto;
     padding-bottom: 2%;
 
-    background: #FDFDFD;
+    background: #212121;
 
     /* color: #E0E2DB; */
-    color: black;
+    color: white;
 
     line-height: 24px;
     
@@ -104,7 +104,9 @@
   .headerContent .socialLinks .socialLink{
       visibility: hidden;
       margin: 10px;
-
+      color: #1A77B5;
+      background-color: white;
+      border-color: white;
       
       /*Animations short-hand: {duration} {timing-function} {delay} {itetarion-count} {nameOfAnimation}*/
       animation: 0.7s ease-out 0.5s 1 fadeUpFromBottom;
@@ -112,7 +114,8 @@
   }
 
   .headerContent .socialLinks .socialLink:hover{
-    background-color: rgba(26,119,181, 0.3);
+    color: white;
+    background-color: #1A77B5;
 }
 
 /*CSS for full name, all 10 characters */

@@ -152,7 +152,7 @@ function Header(props){
                     <div className="socialLinks">
                         {headerLinks.map((elem, index) => {
                             return(
-                                <Button key={index} variant="outlined" style={{color: '#1A77B5', marginLeft: 10, marginRight: 10}} size="large" className="socialLink" href={elem.href} target="_blank" 
+                                <Button key={index} variant="outlined" size="large" className="socialLink" href={elem.href} target="_blank" 
                                 endIcon={elem.svgPath && 
                                     <SvgIcon viewBox="0 0 500 500">
                                         {elem.svgPath}
