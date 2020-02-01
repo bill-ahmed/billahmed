@@ -40,9 +40,6 @@ const useStyles = makeStyles(theme => ({
         position: "absolute",
         right: "5px",
         top: "10px",
-    },
-    divider: {
-        background: 'white'
     }
   }));
 
@@ -94,26 +91,26 @@ function Projects(props) {
     let projectDDSBlaze = createProjectDisplay("DDSBlaze", "Web application to keep track of individuals during fire " + 
                                         "alarms and other emergencies",
                                         ["React.js", "Express.js", "Node.js", "Material-UI", "Microsoft Graph", "Twilio API"], 
-                                        {"GitHub": "https://github.com/bill-ahmed/DDSBlaze-Deployment"}, ddsblazeImage, populateGallery, true);
+                                        {"GitHub": "https://github.com/bill-ahmed/DDSBlaze-Deployment"}, ddsblazeImage, populateGallery, true, classes);
 
     let projectSpendingTracker = createProjectDisplay("SpendingTracker", "A full-stack web application to help track personal spending with the aid of graphs and other " + 
                                         "statistical information.", 
                                         ["Python", "Flask", "React.js", "Redux", "Google Firebase","Gunicorn/Nginx"],
                                         {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, spendingTrackerImage, populateGallery);
     
-    let projectPlanit = createProjectDisplay("Planit", "A mobile application (iOS & Android) that helps users build itineraries for locations/events in a given area.", 
+    let projectPlanit = createProjectDisplay("Planit", "Android & iOS application that helps users build itineraries for locations/events in a given area.", 
                                         ["React Native", "Node.js", "Redux", "Google Firebase", "Yelp API", "Expo Framework"],
-                                        {"Download" : "https://drive.google.com/file/d/1EKtXXa0-Ec_DMeO6nRvJvDm77xq_gBiL/view?usp=sharing"}, planitImage, populateGallery, true);
+                                        {"Download" : "https://drive.google.com/file/d/1EKtXXa0-Ec_DMeO6nRvJvDm77xq_gBiL/view?usp=sharing"}, planitImage, populateGallery, true, classes);
 
     let projectMotionPong = createProjectDisplay("Motion Pong", "A game of Pong that utilizes ultrasonic sensors for a " + 
                                         "deeper level of interaction with the user.", 
                                         ["Altera DE2-115", "Verilog HDL", "Ultrasonic Sensors"],
-                                        {"GitHub" : "https://github.com/bill-ahmed/CSCB58-Final-Project"}, motionPongImage, populateGallery, true);
+                                        {"GitHub" : "https://github.com/bill-ahmed/CSCB58-Final-Project"}, motionPongImage, populateGallery, true, classes);
 
     let projectMazeSolver = createProjectDisplay("Maze Solver", "An implementation of Dijkstra's Algorithm that finds the " + 
                                         "shortest (and only) path to solving a maze.", 
                                         ["Python", "PIL", "Dijkstra"],
-                                        {"GitHub" : "https://github.com/bill-ahmed/Maze-Solver"}, mazeSolverImage, populateGallery);
+                                        {"GitHub" : "https://github.com/bill-ahmed/Maze-Solver"}, mazeSolverImage, populateGallery, classes);
 
     let projectJShell = createProjectDisplay("JShell", "A Java implementation of the Unix shell, within a mock file system in the JVM.", 
                                         ["Java", "XML", "Agile/Scrum", "Subversion"],
@@ -190,7 +187,7 @@ function Projects(props) {
  * @param (bool) Whether to show the Gallery button or not
  * @returns An element populated with the given data
 */
-export function createProjectDisplay(name, desc, techUsed, hyprefs, imgObj, galleryOpen, showGalleryButton){
+export function createProjectDisplay(name, desc, techUsed, hyprefs, imgObj, galleryOpen, showGalleryButton, classes){
     
     // Array of allowed AOS animations for this component
     let animationOptions = ["fade-up", "fade-left", "fade-right"];
@@ -228,7 +225,7 @@ export function createProjectDisplay(name, desc, techUsed, hyprefs, imgObj, gall
 
                 <div className="chipsContainer">
                 {techUsed.map((elem) => (
-                    <Chip key={elem} variant='outlined' className="techUsedChips" label={elem}/>
+                    <Chip clickable style={{color: 'white', borderColor: 'white'}} key={elem} variant='outlined' className="techUsedChips" label={elem}/>
                 ))}
                 </div>
             </div>

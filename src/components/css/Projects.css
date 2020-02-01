@@ -63,7 +63,7 @@
 .projects .projectsOverview #projectsHeading{
     color: white;
     margin: 10px;
-    font-size: 22pt;
+    font-size: 24pt;
     text-align: center;
     width: 100%;
 
@@ -148,13 +148,13 @@
 }
 
 #individualProject .projectDetails .seeMoreButton{
-    color: #3f51b5;
+    color: white;
     margin: 10px 10px 10px 0px;
 }
 
 #individualProject .projectDetails .seeMoreButton:hover{
     color: white;
-    background-color: #3f51b5;
+    background-color: #1A77B5;
 }
 
 
@@ -170,13 +170,6 @@
 #individualProject .secondaryDetails h3{
     font-weight: 500;
     margin: 0px 15px 0px 15px;
-}
-
-#individualProject .secondaryDetails .projectDescription{
-}
-
-#individualProject .secondaryDetails .chipsContainer{
-    flex-grow: 0.25;
 }
 
 #individualProject .secondaryDetails .techUsedChips{
