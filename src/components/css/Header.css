@@ -20,36 +20,31 @@
   }
 
   .headerContent .navigation .leftNavigation{
-      visibility: hidden;
+      color: white;
+      display: none;
   }
 
-  /*Down-pointing chevron*/
-  .headerContent #linkToProjectSection{
-    visibility: hidden;
-
-    /*Animations short-hand: {duration} {timing-function} {dekay} {itetarion-count} {nameOfAnimation}*/
-    animation: 0.7s ease-out 2s 1 fadeDownFromTop;
-    animation-fill-mode: forwards;
-}
-
   .headerContent .navigation{
-      position: relative;
+      /* position: fixed;
+      top: 0;
+      z-index: 1100; */
+      background: #212121;
+      width: 100%;
 
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: flex-end;
       align-items: center;
       align-self: flex-end;
 
       margin-right: 5%;
-      margin-top: 10px;
   }
 
   .headerContent .navigation .rightNavigation{
-      margin: 10px;
-      margin-top: 0;
+      margin: 10px 50px 10px 10px;
       padding-top: 10px;
       visibility: hidden;
+      align-self: flex-end;
 
       /*Animations short-hand: {duration} {timing-function} {dekay} {itetarion-count} {nameOfAnimation}*/
       animation: 0.7s ease-out 0.5s 1 fadeUpFromBottom;
@@ -233,7 +228,8 @@
 @media only screen and (max-width: 768px){
     .headerContent .navigation{
         align-self: flex-start;
-        margin: 15px 0 0 10px;
+        margin: 0;
+        justify-content: flex-start;
     }
 
     .headerContent .navigation .rightNavigation{
@@ -241,6 +237,8 @@
     }
 
     .headerContent .navigation .leftNavigation{
+        display: unset;
+        margin: 7px;
 
       /*Animations short-hand: {duration} {timing-function} {dekay} {itetarion-count} {nameOfAnimation}*/
       animation: 0.7s ease-out 0.5s 1 fadeUpFromBottom;

@@ -11,8 +11,11 @@ import './App.css';
 function moveUserToSection(location){
   switch(location){
       case "home":
-          window.location.replace("/");
-          break;
+        document.querySelector('.headerContent').scrollIntoView({ 
+          behavior: 'smooth' 
+      });
+        
+      break;
       case "projects":
           // Sroll down to projects section
           document.querySelector('#projects').scrollIntoView({ 
@@ -37,6 +40,25 @@ function moveUserToSection(location){
 }
 
 function App() {
+
+  // When user scrolls far enough, show navigation at top
+  window.onscroll = function(){
+    var currentScrollPos = window.pageYOffset;
+    var threshhold = document.querySelector('#headerContent').scrollHeight - 300;
+
+    var headerNavBar = document.getElementById('topNavigation');
+    this.console.log(currentScrollPos, threshhold)
+    // If user scrolls far enough, show the top navigation
+    if(currentScrollPos > threshhold){
+      
+      headerNavBar.style.position = 'fixed';
+      headerNavBar.style.top = 0;
+      headerNavBar.style.zIndex = 1100;
+    } else {
+      headerNavBar.style.position = 'relative'
+    }
+
+  }
 
   return (
     <div className="App">

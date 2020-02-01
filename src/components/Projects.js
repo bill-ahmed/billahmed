@@ -128,7 +128,7 @@ function Projects(props) {
 
                             {/* <img src={require('../assets/code_icon.svg')} width="45"/> */}
                         </div>
-                        <p>
+                        <p id="projectInfoText">
                             Below are some projects i've worked on (or actively working on) during my free time.
                             In most cases, links to my GitHub are available if you want to see additional info.
                         </p>

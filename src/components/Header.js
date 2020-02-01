@@ -56,16 +56,6 @@ function Header(props){
 
     const handleButtonClick = props.moveUserToSection;  // Navigation to other sections
 
-    let projectSpendingTracker = createProjectDisplay("SpendingTracker", "A full-stack web application to help track personal spending with the aid of graphs and other " + 
-                                        "statistical information.", 
-                                        ["Python/Flask", "React.js", "Redux", "Material-UI", "Google Firebase", "NoSQL","Gunicorn/Nginx"],
-                                        {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, spendingTrackerImage, () => alert("Gallery WIP!"));
-
-    let projectPlanit = createProjectDisplay("Planit", "A mobile application (iOS & Android) that helps users build itineraries for locations/events in a given area.", 
-                                        ["React Native", "Redux", "Google Firebase", "NoSQL"],
-                                        {"Download" : "https://drive.google.com/file/d/1EKtXXa0-Ec_DMeO6nRvJvDm77xq_gBiL/view?usp=sharing"}, planitImage, () => alert("Gallery WIP!"));
-
-
     // All the links in header, such as GitHub, LinkedIn, etc.
     let headerLinks = [
         {
@@ -102,7 +92,7 @@ function Header(props){
     const itemsToDisplay = [
         {
             name: "Home", 
-            callback: () => handleButtonClick("home"),
+            callback: () => {handleButtonClick("home"); setDrawerOpen(false)},
             icon: <HomeIcon/>
         },
         {
@@ -114,9 +104,9 @@ function Header(props){
 
     return(
         <div id="headerContent" className="headerContent">
-            <div className="navigation">
+            <div id="topNavigation" className="navigation">
                 <div className="leftNavigation">
-                    <IconButton onClick={() => setDrawerOpen(true)} aria-label="open navigation">
+                    <IconButton color="inherit" onClick={() => setDrawerOpen(true)} aria-label="open navigation">
                         <MenuIcon/>
                     </IconButton>
                 </div>
