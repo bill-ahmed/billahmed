@@ -28,7 +28,6 @@ function NavigationDrawer(props){
     }
 
     function handleButtonClick(id){
-        console.log("in handlebuttonclick with id: " + id);
         props.handleButtonClick(id);
         // toggleDrawer(false);
         

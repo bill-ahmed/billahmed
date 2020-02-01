@@ -47,7 +47,6 @@ function App() {
     var threshhold = document.querySelector('#headerContent').scrollHeight - 300;
 
     var headerNavBar = document.getElementById('topNavigation');
-    this.console.log(currentScrollPos, threshhold)
     // If user scrolls far enough, show the top navigation
     if(currentScrollPos > threshhold){
       
