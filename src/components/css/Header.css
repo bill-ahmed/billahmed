@@ -123,7 +123,7 @@
     align-self: center;
     width: 100%;
     max-width: 600px;
-    animation: fillBlue 0.75s ease forwards 3.2s;
+    animation: fillWhite 0.75s ease forwards 3.2s;
 }
 
 .headerContent #fullName path:nth-child(1){ /*B*/
@@ -316,5 +316,15 @@
     }
     to{
         fill: #1A77B5;
+    }
+}
+
+/*Fill element with white*/
+@keyframes fillWhite{
+    from{
+        fill: transparent;
+    }
+    to{
+        fill: white;
     }
 }
