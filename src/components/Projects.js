@@ -86,12 +86,12 @@ function Projects(props) {
     let planitImage = require('../assets/earth_globe_icon.svg');
     let motionPongImage = require('../assets/microchip-solid.svg');
     let mazeSolverImage = require('../assets/maze.svg');
-    let jshellImage = require('../assets/gnu_bash.svg');
+    let mandoBotImage = require('../assets/gnu_bash.svg');
 
     let projectDDSBlaze = createProjectDisplay("DDSBlaze", "Web application to keep track of individuals during fire " + 
                                         "alarms and other emergencies",
                                         ["React.js", "Express.js", "Node.js", "Material-UI", "Microsoft Graph", "Twilio API"], 
-                                        {"GitHub": "https://github.com/bill-ahmed/DDSBlaze-Deployment"}, ddsblazeImage, populateGallery, true, classes);
+                                        {"GitHub": "https://github.com/bill-ahmed/DDSBlaze-Deployment"}, ddsblazeImage, populateGallery, true);
 
     let projectSpendingTracker = createProjectDisplay("SpendingTracker", "A full-stack web application to help track personal spending with the aid of graphs and other " + 
                                         "statistical information.", 
@@ -100,21 +100,22 @@ function Projects(props) {
     
     let projectPlanit = createProjectDisplay("Planit", "Android & iOS application that helps users build itineraries for locations/events in a given area.", 
                                         ["React Native", "Node.js", "Redux", "Google Firebase", "Yelp API", "Expo Framework"],
-                                        {"Download" : "https://drive.google.com/file/d/1EKtXXa0-Ec_DMeO6nRvJvDm77xq_gBiL/view?usp=sharing"}, planitImage, populateGallery, true, classes);
+                                        {"Download" : "https://drive.google.com/file/d/1EKtXXa0-Ec_DMeO6nRvJvDm77xq_gBiL/view?usp=sharing"}, planitImage, populateGallery, true);
 
     let projectMotionPong = createProjectDisplay("Motion Pong", "A game of Pong that utilizes ultrasonic sensors for a " + 
                                         "deeper level of interaction with the user.", 
                                         ["Altera DE2-115", "Verilog HDL", "Ultrasonic Sensors"],
-                                        {"GitHub" : "https://github.com/bill-ahmed/CSCB58-Final-Project"}, motionPongImage, populateGallery, true, classes);
+                                        {"GitHub" : "https://github.com/bill-ahmed/CSCB58-Final-Project"}, motionPongImage, populateGallery, true);
 
     let projectMazeSolver = createProjectDisplay("Maze Solver", "An implementation of Dijkstra's Algorithm that finds the " + 
                                         "shortest (and only) path to solving a maze.", 
                                         ["Python", "PIL", "Dijkstra"],
-                                        {"GitHub" : "https://github.com/bill-ahmed/Maze-Solver"}, mazeSolverImage, populateGallery, classes);
+                                        {"GitHub" : "https://github.com/bill-ahmed/Maze-Solver"}, mazeSolverImage, populateGallery);
 
-    let projectJShell = createProjectDisplay("JShell", "A Java implementation of the Unix shell, within a mock file system in the JVM.", 
-                                        ["Java", "XML", "Agile/Scrum", "Subversion"],
-                                        {}, jshellImage, populateGallery);
+    let projectMandoBot = createProjectDisplay("Mando Bot", "A template/boilerplate for creating a Slack bot. " + 
+                                                "This template can be used to rapidly deploy & build functionality for a bot.", 
+                                        ["Node.js", "Express.js", "Slack", "Bot"],
+                                        {"GitHub": "https://github.com/bill-ahmed/mando_bot"}, mandoBotImage, populateGallery);
 
     return(
         <div id="projects" className="projects">
@@ -138,14 +139,14 @@ function Projects(props) {
                     <div className="projectsSubsection">
                         <div className="firstSubsection">
                             {projectPlanit}
-                            {projectSpendingTracker} 
-                            {projectMazeSolver}
+                            {projectMandoBot} 
+                            {projectMotionPong}
                         </div>
                         
                         <div className="secondSubsection">
                             {projectDDSBlaze}
-                            {projectMotionPong}
-                            {projectJShell}
+                            {projectSpendingTracker}
+                            {projectMazeSolver}
                         </div>
                     </div>
                 </div>
@@ -187,7 +188,7 @@ function Projects(props) {
  * @param (bool) Whether to show the Gallery button or not
  * @returns An element populated with the given data
 */
-export function createProjectDisplay(name, desc, techUsed, hyprefs, imgObj, galleryOpen, showGalleryButton, classes){
+export function createProjectDisplay(name, desc, techUsed, hyprefs, imgObj, galleryOpen, showGalleryButton){
     
     // Array of allowed AOS animations for this component
     let animationOptions = ["fade-up", "fade-left", "fade-right"];
@@ -292,7 +293,7 @@ function getGalleryProps(nameOfProject, classes, maxNumGridListColumns){
             );
         case "Maze Solver":
             return ("Coming Soon!");
-        case "JShell":
+        case "Mando Bot":
             return ("Coming Soon!");
         case "Planit":
             return(

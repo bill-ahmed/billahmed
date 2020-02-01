@@ -51,6 +51,10 @@
       animation-fill-mode: forwards;
   }
 
+  .headerContent .navigation .rightNavigation .navButton{
+      margin: 0 5px 0 10px;
+  }
+
   .headerContent .headerBodyContainer{
       width: 100%;
       display: flex;
@@ -239,6 +243,7 @@
     .headerContent .navigation .leftNavigation{
         display: unset;
         margin: 7px;
+        margin-bottom: 0;
 
       /*Animations short-hand: {duration} {timing-function} {dekay} {itetarion-count} {nameOfAnimation}*/
       animation: 0.7s ease-out 0.5s 1 fadeUpFromBottom;
