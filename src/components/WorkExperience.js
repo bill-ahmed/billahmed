@@ -6,7 +6,7 @@ import Timeline from './WorkExperienceComponents/Timeline';
 export default function WorkExperience(props){
     return(
         <div className="workExperience">
-            <h1 id="workExperienceHeading">Work & Education</h1>
+            <h1 id="workExperienceHeading">Work Experience</h1>
             <Timeline/>
         </div>
     );

@@ -2,6 +2,7 @@ import React from 'react';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import TimelineInfo from './TimelineDetails';
 import 'react-vertical-timeline-component/style.min.css';
+import './css/Timeline.css';
 
 /**A timeline generator for different events */
 export default function Timeline(props){
@@ -37,6 +38,36 @@ export default function Timeline(props){
                 })}
                 
             </VerticalTimeline>
+
+            {/* <VerticalTimeline layout='1-column'>
+                {TimelineInfo.education.map((edu, index) => {
+                        let backgroundColour = edu.bgColor == null ? '#424242' : edu.bgColor;
+                        let arrowColor = edu.arrowColor == null ? '#1A77B5' : edu.arrowColor;
+                        console.log(edu.bgColor)
+
+                        return(
+                            <VerticalTimelineElement key={index}
+                                className="vertical-timeline-element--education"
+                                contentStyle={{ background: backgroundColour , color: '#fff' }}
+                                contentArrowStyle={{ borderRight: `7px solid ${arrowColor}` }}
+                                iconStyle={{ background: '#1A77B5', color: '#fff' }}
+                                icon={edu.icon}
+                                date={edu.timeframe}>
+                                    
+                                <h3 className="vertical-timeline-element-title"> {edu.institution} </h3>
+                                <h4 className="vertical-timeline-element-subtitle">
+                                    <i>
+                                        {edu.degree} 
+                                    </i>
+                                </h4>
+
+                                <p>
+                                    {edu.yearOfStudy}
+                                </p>
+                            </VerticalTimelineElement>
+                        );
+                    })}
+            </VerticalTimeline> */}
         </div>
     );
 }
