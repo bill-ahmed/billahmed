@@ -14,7 +14,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SvgIcon from '@material-ui/core/SvgIcon';
-import { getProjectsGalleryData } from './GalleryData';
+import { getProjectsGalleryData } from './ProjectsComponents/GalleryData';
 import IconButton from '@material-ui/core/IconButton';
 import './css/Header.css';
 
@@ -99,6 +99,11 @@ function Header(props){
             name: "Projects",
             callback: () => {handleButtonClick("projects"); setDrawerOpen(false)},
             icon: <CodeIcon/>
+        },
+        {
+            name: "Work Experience",
+            callback: () => {handleButtonClick("workExperience"); setDrawerOpen(false)},
+            icon: <CodeIcon/>
         }
     ];
 
@@ -111,8 +116,17 @@ function Header(props){
                     </IconButton>
                 </div>
                 <ButtonGroup size="medium" color="inherit" className="rightNavigation">
-                    <Button className="navButton" size="large" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("home")}>Home</Button>
-                    <Button className="navButton" size="large" variant={navButtonVariant} color="inherit" onClick={() => handleButtonClick("projects")}>Projects</Button>
+                    {itemsToDisplay.map((button, index) => {
+                        return(
+                            <Button className="navButton" 
+                                    size="large" 
+                                    variant={navButtonVariant} 
+                                    color="inherit" 
+                                    onClick={() => button.callback()}>
+                                {button.name}
+                            </Button>
+                        );
+                    })}
                 </ButtonGroup>
             </div>
             

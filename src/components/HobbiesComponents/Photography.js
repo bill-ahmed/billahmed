@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { autoPlay } from 'react-swipeable-views-utils';
-import { getPortfolioGalleryData } from '../GalleryData';
+import { getPortfolioGalleryData } from '../ProjectsComponents/GalleryData';
 import { makeStyles } from '@material-ui/core/styles';
 import AutoPlay from '../AutoPlay';
 import Button from '@material-ui/core/Button';

@@ -28,6 +28,12 @@ function moveUserToSection(location){
               behavior: 'smooth' 
           });
           break;
+      
+      case "workExperience":
+          document.querySelector('.workExperience').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+        break;
 
       case "top":
           // Sroll back to the top of the page

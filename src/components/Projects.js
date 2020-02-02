@@ -1,4 +1,4 @@
-import { getProjectsGalleryData } from './GalleryData';
+import { getProjectsGalleryData } from './ProjectsComponents/GalleryData';
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import AutoPlay from './AutoPlay';
