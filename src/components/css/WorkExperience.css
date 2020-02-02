@@ -1,0 +1,13 @@
+.workExperience{
+    width: 100%;
+    margin-top: 12%;
+    background: #212121;
+    color: white;
+
+}
+
+.workExperience #workExperienceHeading{
+    font-size: 40pt;
+    margin: 5%;
+    text-align: center;
+}
