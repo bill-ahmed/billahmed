@@ -16,6 +16,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import { getProjectsGalleryData } from './ProjectsComponents/GalleryData';
 import IconButton from '@material-ui/core/IconButton';
+import WorkIcon from '@material-ui/icons/Work';
 import './css/Header.css';
 
 const useStyles = makeStyles({
@@ -103,7 +104,7 @@ function Header(props){
         {
             name: "Work Experience",
             callback: () => {handleButtonClick("workExperience"); setDrawerOpen(false)},
-            icon: <CodeIcon/>
+            icon: <WorkIcon/>
         }
     ];
 
