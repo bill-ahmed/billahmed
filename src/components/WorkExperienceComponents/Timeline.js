@@ -6,6 +6,7 @@ import './css/Timeline.css';
 
 /**A timeline generator for different events */
 export default function Timeline(props){
+
     return(
         <div className="workExperienceTimeline">
             <VerticalTimeline>
@@ -26,7 +27,7 @@ export default function Timeline(props){
                             <h3 className="vertical-timeline-element-title"> {work.org} </h3>
                             <h4 className="vertical-timeline-element-subtitle">
                                 <i>
-                                    {work.role} 
+                                    {work.role} • {work.duration}
                                 </i>
                             </h4>
 
@@ -36,7 +37,6 @@ export default function Timeline(props){
                         </VerticalTimelineElement>
                     );
                 })}
-                
             </VerticalTimeline>
 
             {/* <VerticalTimeline layout='1-column'>
