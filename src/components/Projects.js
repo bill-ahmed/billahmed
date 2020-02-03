@@ -1,25 +1,21 @@
 import { getProjectsGalleryData } from './ProjectsComponents/GalleryData';
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
-import AutoPlay from './AutoPlay';
 import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
 import CloseIcon from '@material-ui/icons/Close';
-import CodeIcon from '../assets/code_icon.svg'
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Divider from '@material-ui/core/Divider';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
+import IsMobileUser from '../api/UserInfo';
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
-import Paper from '@material-ui/core/Paper';
 import './css/Projects.css';
-import SvgIcon from '@material-ui/icons/Close';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -95,12 +91,12 @@ function Projects(props) {
 
     let projectSpendingTracker = createProjectDisplay("SpendingTracker", "A full-stack web application to help track personal spending with the aid of graphs and other " + 
                                         "statistical information.", 
-                                        ["Python", "Flask", "React.js", "Redux", "Google Firebase","Gunicorn/Nginx"],
-                                        {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, spendingTrackerImage, populateGallery);
+                                        ["Python", "Flask", "React.js", "Redux", "Google Firebase", "Nginx"],
+                                        {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, spendingTrackerImage, populateGallery, true);
     
     let projectPlanit = createProjectDisplay("Planit", "Android & iOS application that helps users build itineraries for locations/events in a given area.", 
-                                        ["React Native", "Node.js", "Redux", "Google Firebase", "Yelp API", "Expo Framework"],
-                                        {"Download" : "https://drive.google.com/file/d/1EKtXXa0-Ec_DMeO6nRvJvDm77xq_gBiL/view?usp=sharing"}, planitImage, populateGallery, true);
+                                        ["React Native", "Node.js", "Redux", "Google Firebase", "Expo Framework", "Yelp API"],
+                                        {"Install" : "https://drive.google.com/file/d/1EKtXXa0-Ec_DMeO6nRvJvDm77xq_gBiL/view?usp=sharing"}, planitImage, populateGallery, true);
 
     let projectMotionPong = createProjectDisplay("Motion Pong", "A game of Pong that utilizes ultrasonic sensors for a " + 
                                         "deeper level of interaction with the user.", 
@@ -114,7 +110,7 @@ function Projects(props) {
 
     let projectMandoBot = createProjectDisplay("Mando Bot", "A template/boilerplate for creating a Slack bot. " + 
                                                 "This template can be used to rapidly deploy & build functionality for a bot.", 
-                                        ["Node.js", "Express.js", "Slack", "Bot"],
+                                        ["Node.js", "Express.js", "Slack Bot"],
                                         {"GitHub": "https://github.com/bill-ahmed/mando_bot"}, mandoBotImage, populateGallery);
 
     return(
@@ -192,6 +188,7 @@ export function createProjectDisplay(name, desc, techUsed, hyprefs, imgObj, gall
     
     // Array of allowed AOS animations for this component
     let animationOptions = ["fade-up", "fade-left", "fade-right"];
+    let btnSize = IsMobileUser() ? "small" : "medium";
 
     return(
         <div id="individualProject" data-aos={getRandomFadeAnimation(0, 
@@ -201,7 +198,7 @@ export function createProjectDisplay(name, desc, techUsed, hyprefs, imgObj, gall
                 <h2>{name}</h2>
 
                { showGalleryButton && 
-                <Button variant="outlined" className="seeMoreButton" 
+                <Button size={btnSize} variant="outlined" className="seeMoreButton" 
                     onClick={() => galleryOpen(name)}>
                         Gallery
                 </Button>
@@ -210,10 +207,10 @@ export function createProjectDisplay(name, desc, techUsed, hyprefs, imgObj, gall
                 {/* All hyperlinks for current project */}
                 {Object.entries(hyprefs).map(elem => {
                     return(
-                    <Button variant="outlined" className="seeMoreButton" 
+                    <Button size={btnSize} variant="outlined" className="seeMoreButton" 
                     href={elem[1]} target="_blank" rel="noopener noreferrer">
                         {elem[0]}
-                        <OpenInNewIcon style={{marginLeft : "5px"}}/>
+                        <OpenInNewIcon fontSize={btnSize} style={{marginLeft : "5px"}}/>
                     </Button>
                     );
                 })}
@@ -226,7 +223,7 @@ export function createProjectDisplay(name, desc, techUsed, hyprefs, imgObj, gall
 
                 <div className="chipsContainer">
                 {techUsed.map((elem) => (
-                    <Chip clickable style={{color: 'white', borderColor: 'white'}} key={elem} variant='outlined' className="techUsedChips" label={elem}/>
+                    <Chip size={btnSize} clickable style={{color: 'white', borderColor: 'white'}} key={elem} variant='outlined' className="techUsedChips" label={elem}/>
                 ))}
                 </div>
             </div>
