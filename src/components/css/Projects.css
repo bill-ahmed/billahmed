@@ -1,6 +1,7 @@
 .projects{
-    width: 100%;
+    width: 97%;
     text-align: center;
+    border-radius: 20px;
 
     background: #212121;
     color: white;
@@ -185,6 +186,12 @@
 
 /*When screen is too small to display chips and overview beside each project*/
 @media only screen and (max-width: 900px){
+    .projects{
+        width: 100%;
+        border-radius: 25px;
+        border-bottom-left-radius: initial;
+        border-bottom-right-radius: initial;
+    }
     #individualProject{
         flex-direction: column;
         margin: 20px 20px 40px 20px;

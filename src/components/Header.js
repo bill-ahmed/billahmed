@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import CodeIcon from '@material-ui/icons/Code';
-import { createProjectDisplay } from './Projects';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import GetAppIcon from '@material-ui/icons/GetApp';
@@ -32,15 +31,6 @@ const useStyles = makeStyles({
   });
 
 const RESUME = require('../assets/Bilal_Ahmed_Resume.pdf');
-
-/* Define all the data for grid of images in "Gallery" view */
-const allGalleryData = getProjectsGalleryData();
-const spendingTrackerDate = allGalleryData[1];
-const planitGalleryData = allGalleryData[3];
-
-/**Defined images for each project */
-const spendingTrackerImage = require('../assets/money-check-alt-solid.svg');
-const planitImage = require('../assets/earth_globe_icon.svg');
 
 /**Render first page user sees */
 function Header(props){
@@ -102,7 +92,7 @@ function Header(props){
             icon: <CodeIcon/>
         },
         {
-            name: "Work Experience",
+            name: "Work & Education",
             callback: () => {handleButtonClick("workExperience"); setDrawerOpen(false)},
             icon: <WorkIcon/>
         }
@@ -209,23 +199,6 @@ function getDrawerNavigationItems(classes, itemsToDisplay){
                         </ListItem>
                     );
                 })}
-                {/* <ListItem button>
-
-                    <ListItemIcon>
-                        <HomeIcon/>
-                    </ListItemIcon>
-
-                    <ListItemText primary="Home"/>
-                </ListItem>
-
-                <ListItem button>
-
-                    <ListItemIcon>
-                        <CodeIcon/>
-                    </ListItemIcon>
-
-                    <ListItemText primary="Projects"/>
-                </ListItem> */}
             </List>
         </div>
     );
