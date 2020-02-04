@@ -9,6 +9,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Divider from '@material-ui/core/Divider';
+import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
@@ -36,6 +38,11 @@ const useStyles = makeStyles(theme => ({
         position: "absolute",
         right: "5px",
         top: "10px",
+    },
+    expandIcon: {
+        color: 'white',
+        fontSize: "large",
+        margin: "20px"
     }
   }));
 
@@ -51,6 +58,7 @@ function Projects(props) {
     // Equivalent to react states
     const [open, setOpen] = React.useState(false);
     const [name, setName] = React.useState("");
+    const [seeMore, setSeeMore] = React.useState(false);    // Controll how many projects are rendered on screen
     const isMobileUser = props.isMobileUser();
     const maxNumGridListColumns = isMobileUser ? 4 : 6;
     const classes = useStyles();
@@ -135,22 +143,22 @@ function Projects(props) {
                     <div className="projectsSubsection">
                         <div className="firstSubsection">
                             {projectPlanit}
-                            {projectMandoBot} 
-                            {projectMotionPong}
+                            {seeMore && projectMandoBot} 
+                            {seeMore && projectMotionPong}
                         </div>
                         
                         <div className="secondSubsection">
                             {projectDDSBlaze}
-                            {projectSpendingTracker}
-                            {projectMazeSolver}
+                            {seeMore && projectSpendingTracker}
+                            {seeMore && projectMazeSolver}
                         </div>
                     </div>
                 </div>
 
-                {/* Go to hobbies section button */}
-                {/* <IconButton size="medium" color="inherit" id="linkToHobbiesSection" onClick={() => props.moveUserToSection("hobbies")} data-aos="fade-up" data-aos-once="true">
-                    <ExpandMoreIcon fontSize="large"/>
-                </IconButton> */}
+                {/* Show More or Less Icon */}
+                <IconButton className={classes.expandIcon} size="medium" onClick={() => setSeeMore(!seeMore)}>
+                    {seeMore ? <ExpandLessIcon/> : <ExpandMoreIcon/>}
+                </IconButton>
 
             </div>
             <Dialog open={open} fullScreen={isMobileUser} maxWidth={"md"} fullWidth={true} onClose={() => handleGalleryClose()}>
