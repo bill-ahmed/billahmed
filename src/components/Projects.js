@@ -86,16 +86,16 @@ function Projects(props) {
 
     let projectDDSBlaze = createProjectDisplay("DDSBlaze", "Web application to keep track of individuals during fire " + 
                                         "alarms and other emergencies",
-                                        ["React.js", "Express.js", "Node.js", "Material-UI", "Microsoft Graph", "Twilio API"], 
+                                        ["React.js", "Express.js", "Node.js", "Microsoft Graph", "Twilio API"], 
                                         {"GitHub": "https://github.com/bill-ahmed/DDSBlaze-Deployment"}, ddsblazeImage, populateGallery, true);
 
     let projectSpendingTracker = createProjectDisplay("SpendingTracker", "A full-stack web application to help track personal spending with the aid of graphs and other " + 
                                         "statistical information.", 
-                                        ["Python", "Flask", "React.js", "Redux", "Google Firebase", "Nginx"],
+                                        ["Python Flask", "React.js", "Redux", "Firebase"],
                                         {"GitHub" : "https://github.com/bill-ahmed/SpendingTracker"}, spendingTrackerImage, populateGallery, true);
     
     let projectPlanit = createProjectDisplay("Planit", "Android & iOS application that helps users build itineraries for locations/events in a given area.", 
-                                        ["React Native", "Node.js", "Redux", "Google Firebase", "Expo Framework", "Yelp API"],
+                                        ["React Native", "Node.js", "Redux", "Firebase", "Yelp API"],
                                         {"Install" : "https://drive.google.com/file/d/1EKtXXa0-Ec_DMeO6nRvJvDm77xq_gBiL/view?usp=sharing"}, planitImage, populateGallery, true);
 
     let projectMotionPong = createProjectDisplay("Motion Pong", "A game of Pong that utilizes ultrasonic sensors for a " + 

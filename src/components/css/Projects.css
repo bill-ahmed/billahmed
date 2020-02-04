@@ -8,8 +8,7 @@
 }
 
 #projectInfoText{
-    max-width: 680px;
-    margin: 5px;
+    max-width: 670px;
 }
 /* ENABLE for lines on both sides of text */
 
@@ -138,8 +137,6 @@
 
 #individualProject .projectDetails{
     min-width: 300px;
-    margin: 15px;
-    margin-right: 0;
 }
 
 #individualProject .projectDetails .seeMoreButton{
