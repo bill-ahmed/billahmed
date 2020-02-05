@@ -141,22 +141,27 @@ function Projects(props) {
 
                     {/* List all projects */}
                     <div className="projectsSubsection">
-                        <div className="firstSubsection">
+                        <div className="projectsRow">
                             {projectPlanit}
-                            {seeMore && projectMandoBot} 
-                            {seeMore && projectMotionPong}
+                            {projectDDSBlaze}
                         </div>
                         
-                        <div className="secondSubsection">
-                            {projectDDSBlaze}
-                            {seeMore && projectSpendingTracker}
-                            {seeMore && projectMazeSolver}
+                        <div className="projectsRow">
+                            {projectMandoBot} 
+                            {projectSpendingTracker}
+                        </div>
+
+                        <div className="projectsRow">
+                            {projectMotionPong}
+                            {projectMazeSolver}
                         </div>
                     </div>
                 </div>
 
                 {/* Show More or Less Icon */}
-                <IconButton className={classes.expandIcon} size="medium" onClick={() => setSeeMore(!seeMore)}>
+                <IconButton id="ExpandAndCollapseProjects" className={classes.expandIcon} 
+                    size="medium" onClick={() => setSeeMore(!seeMore)}>
+
                     {seeMore ? <ExpandLessIcon/> : <ExpandMoreIcon/>}
                 </IconButton>
 

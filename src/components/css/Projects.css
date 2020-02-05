@@ -57,7 +57,7 @@
 
 .projects .projectsContainer #projectInnerContainer .projectsSubsection{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
@@ -68,22 +68,13 @@
     color: white;
 }
 
-.projects .projectsContainer #projectInnerContainer .projectsSubsection .firstSubsection{
+.projects .projectsContainer #projectInnerContainer .projectsSubsection .projectsRow{
     flex-grow: 1;
+    width: 100%;
 
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.projects .projectsContainer #projectInnerContainer .projectsSubsection .secondSubsection{
-    flex-grow: 1;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
 }
