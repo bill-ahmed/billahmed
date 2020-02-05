@@ -60,7 +60,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
 
     width: 100%;
     min-width: 200px;
@@ -76,7 +75,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 #individualProject{
@@ -149,7 +148,7 @@
         width: 100%;
     }
 
-    .projects .projectsContainer #projectInnerContainer .projectsSubsection{
+    .projects .projectsContainer #projectInnerContainer .projectsSubsection .projectsRow{
         flex-wrap: wrap;
     }
 }

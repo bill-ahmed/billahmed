@@ -91,7 +91,7 @@ function Projects(props) {
             // Collapse all the projects
             setSeeMore(false);
             document.getElementById("individualProject").scrollIntoView();
-            
+
         } else {
             setSeeMore(true);
         }
@@ -156,7 +156,7 @@ function Projects(props) {
                             {projectDDSBlaze}
                         </div>
                         
-                        {seeMore && 
+                        {(seeMore || !isMobileUser) &&
                         
                         <div className="projectsRow">
                             {projectMandoBot} 
