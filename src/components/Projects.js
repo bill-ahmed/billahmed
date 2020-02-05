@@ -85,6 +85,18 @@ function Projects(props) {
         setName(name);
     }
 
+    /**Open or collapse the "see more" button for viewing all/some projects * */
+    function toggleProjectsView(){
+        if(seeMore){
+            // Collapse all the projects
+            setSeeMore(false);
+            document.getElementById("individualProject").scrollIntoView();
+            
+        } else {
+            setSeeMore(true);
+        }
+    }
+
     let ddsblazeImage = require("../assets/fire-solid.svg");
     let spendingTrackerImage = require('../assets/money-check-alt-solid.svg');
     let planitImage = require('../assets/earth_globe_icon.svg');
@@ -130,8 +142,6 @@ function Projects(props) {
                             <h1>
                                 Projects
                             </h1>
-
-                            {/* <img src={require('../assets/code_icon.svg')} width="45"/> */}
                         </div>
                         <p id="projectInfoText">
                             Below are some projects i've worked on (or actively working on) during my free time.
@@ -146,21 +156,28 @@ function Projects(props) {
                             {projectDDSBlaze}
                         </div>
                         
+                        {seeMore && 
+                        
                         <div className="projectsRow">
                             {projectMandoBot} 
                             {projectSpendingTracker}
                         </div>
-
+                        }
+                        
+                        {seeMore && 
+                        
                         <div className="projectsRow">
                             {projectMotionPong}
                             {projectMazeSolver}
                         </div>
+                        }
+                        
                     </div>
                 </div>
 
                 {/* Show More or Less Icon */}
                 <IconButton id="ExpandAndCollapseProjects" className={classes.expandIcon} 
-                    size="medium" onClick={() => setSeeMore(!seeMore)}>
+                    size="medium" onClick={toggleProjectsView}>
 
                     {seeMore ? <ExpandLessIcon/> : <ExpandMoreIcon/>}
                 </IconButton>
