@@ -59,8 +59,10 @@ function App() {
       headerNavBar.style.position = 'fixed';
       headerNavBar.style.top = 0;
       headerNavBar.style.zIndex = 1100;
+      headerNavBar.style.backgroundColor = '#212121';
     } else {
       headerNavBar.style.position = 'relative'
+      headerNavBar.style.backgroundColor = 'inherit';
     }
 
   }

@@ -12,7 +12,7 @@ export default {
             duration: "8 months",
             summary: 
                 <p>
-                    Working alongisde a passionate & agile team has been an incredible learning experience. More details to come!
+                    WIP!
                 </p>
             ,
             icon: <WorkIcon fontSize="large"/>,
@@ -26,8 +26,10 @@ export default {
             timeframe: "Sept. 2018 - April 2019",
             duration: "8 months",
             summary: 
-                <p>During this first internship, I learned many new technologies/frameworks in software development and automation. 
-                    <br/><br/>With exposure to agile methodologies, my experience here laid the groundwork for future learning.
+                <p>
+                    During this first internship, I learned many new technologies/frameworks in software development and automation. 
+                    <br/><br/
+                    >Through exposure to agile methodologies my experience here laid the groundwork for future learning.
                 </p>,
             icon: <WorkIcon/>,
             bgColor: '#62B2AE',
@@ -44,7 +46,7 @@ export default {
             summary: 
                 <p>
                     The beginnings of my interest and passion in Software Engineering. Exploration into software,
-                    hardware & algorithms has opened many doors and kindled a sense of curiosity.
+                    hardware & algorithms had opened many doors and kindled a sense of curiosity.
                 </p>,
             bgColor: '#192E5B',
             arrowColor: '#192E5B'
