@@ -102,7 +102,7 @@ function Projects(props) {
     let planitImage = require('../assets/earth_globe_icon.svg');
     let motionPongImage = require('../assets/microchip-solid.svg');
     let mazeSolverImage = require('../assets/maze.svg');
-    let mandoBotImage = require('../assets/gnu_bash.svg');
+    let mandoBotImage = require('../assets/slack_icon.svg');
 
     let projectDDSBlaze = createProjectDisplay("DDSBlaze", "Web application to keep track of individuals during fire " + 
                                         "alarms and other emergencies",
@@ -131,7 +131,7 @@ function Projects(props) {
 
     let projectMandoBot = createProjectDisplay("Mando Bot", "A template/boilerplate for creating a Slack bot. " + 
                                                 "This template can be used to rapidly deploy & build functionality for a bot.", 
-                                        ["Node.js", "Express.js", "Slack Bot"],
+                                        ["Node.js", "Express.js", "MongoDB", "Slack Bot"],
                                         {"GitHub": "https://github.com/bill-ahmed/mando_bot"}, mandoBotImage, populateGallery);
 
     return(
@@ -154,13 +154,13 @@ function Projects(props) {
                     <div className="projectsSubsection">
                         <div className="projectsRow">
                             {projectPlanit}
-                            {projectDDSBlaze}
+                            {projectMandoBot}
                         </div>
                         
                         {(seeMore || !isMobileUser) &&
                         
                         <div className="projectsRow">
-                            {projectMandoBot} 
+                            {projectDDSBlaze} 
                             {projectSpendingTracker}
                         </div>
                         }
