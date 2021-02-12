@@ -8,11 +8,16 @@ export default {
             org: "Zymewire",
             role: "Software Developer",
             location: "Toronto, ON",
-            timeframe: "Jan. 2020 - Present",
-            duration: "8 months",
+            timeframe: "Jan. 2020 - December 2020",
+            duration: "12 months",
             summary: 
                 <p>
-                    WIP!
+                    Took a deep-dive into tools such as Ruby on Rails, React.JS, MongoDB, 
+                    and much more!
+                    <br/><br/>
+                    Through working with various 3rd-party integrations
+                    I gained a newfound appreciation for good software design and the kind of team work
+                    that helps projects thrive.
                 </p>
             ,
             icon: <WorkIcon fontSize="large"/>,
@@ -28,8 +33,8 @@ export default {
             summary: 
                 <p>
                     During this first internship, I learned many new technologies/frameworks in software development and automation. 
-                    <br/><br/
-                    >Through exposure to agile methodologies my experience here laid the groundwork for future learning.
+                    <br/><br/>
+                    Through exposure to agile methodologies my experience here laid the groundwork for future learning.
                 </p>,
             icon: <WorkIcon/>,
             bgColor: '#62B2AE',
