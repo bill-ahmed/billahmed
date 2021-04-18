@@ -2,6 +2,7 @@
   <div class="projects-container grow">
     <div class="ncol">
       <h1> Personal Projects </h1>
+      <br/>
 
       <div class="nrow f-wrap">
         <ProjectTile v-for="p in personal" :key="p.name" :details="p"/>

@@ -1,5 +1,5 @@
 <template>
-  <div class="project-tile-cotnainer ncol justify-center n-elevation-1">
+  <div class="project-tile-container ncol justify-center n-elevation-1" :style="image ? { backgroundImage: 'url(' + image + ')' } : ''">
     <div>
       <div class="nrow">
         <h2>
@@ -30,14 +30,14 @@ export default {
 
   data() {
     return {
-
+      image: this.details.bg_icon ? require('../../assets/' + this.details.bg_icon) : null
     }
   }
 }
 </script>
 
 <style scoped>
-.project-tile-cotnainer {
+.project-tile-container {
   padding: 15px;
   margin: 10px;
 
@@ -49,5 +49,11 @@ export default {
   border-radius: 15px;
 
   /* text-align: center; */
+  background-image: url(../../assets/code_icon.svg);
+  background-repeat: no-repeat;
+  background-size: 150px;
+  background-position: 110% 150%;
+
+  word-spacing: 1px;
 }
 </style>

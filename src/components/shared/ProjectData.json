@@ -5,6 +5,7 @@
       "description": "A full-stack web application that connects tutors with students.",
       "tags": ["Vue JS", "Express JS", "MongoDB"],
       "github": "https://github.com/bill-ahmed",
+      "bg_icon": "",
       "type": "academic"
     },
     {
@@ -12,6 +13,7 @@
       "description": "Android & iOS application that helps users build itineraries for locations/events in a given area.",
       "tags": ["React Native", "Node.JS", "Redux", "Firebase"],
       "github": "https://github.com/bill-ahmed/og-planit",
+      "bg_icon": "earth_globe_icon.svg",
       "type": "academic"
     },
     {
@@ -19,6 +21,7 @@
       "description": "A game of Pong that utilizes ultrasonic sensors for a deeper level of interaction with the user.",
       "tags": ["Altera DE2-115", "Verilog HDL"],
       "github": "https://github.com/bill-ahmed/CSCB58-Final-Project",
+      "bg_icon": "microchip-solid.svg",
       "type": "academic"
     },
     {
@@ -26,6 +29,7 @@
       "description": "An implementation of Dijkstra's Algorithm that finds the shortest (and only) path to solving a maze.",
       "tags": ["Python", "PIL", "Dijkstra"],
       "github": "https://github.com/bill-ahmed/Maze-Solver",
+      "bg_icon": "maze.svg",
       "type": "academic"
     },
 
@@ -34,6 +38,7 @@
       "description": "Web application to keep track of individuals during fire alarms and other emergencies.",
       "tags": ["React JS", "Express JS", "Microsoft Graph"],
       "github": "https://github.com/bill-ahmed/DDSBlaze-Deployment",
+      "bg_icon": "fire-solid.svg",
       "type": "personal"
     },
     {
@@ -41,6 +46,7 @@
       "description": "A template/boilerplate for creating a Slack bot. This template can be used to rapidly deploy & build functionality for a bot.",
       "tags": ["Express JS", "MongoDB", "Slack Bot"],
       "github": "https://github.com/bill-ahmed/mando_bot",
+      "bg_icon": "slack_icon.svg",
       "type": "personal"
     },
     {
@@ -48,6 +54,7 @@
       "description": "A material WebUI for qBittorrent, written in Angular.",
       "tags": ["Angular", "Google Material Design"],
       "github": "https://github.com/bill-ahmed/qbit-matUI",
+      "bg_icon": "angular-icon.svg",
       "type": "personal"
     },
     {
@@ -55,6 +62,7 @@
       "description": "Define ExpressJS routes as Typescript classes.",
       "tags": ["Express JS", "ES6 Decorators"],
       "github": "https://github.com/bill-ahmed/eec",
+      "bg_icon": "",
       "type": "personal"
     }
   ]
