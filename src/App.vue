@@ -1,34 +1,46 @@
 <template>
   <div id="app">
-    <div class="nrow grow space-between">
-      <div v-if="isSelected('Home')" class="ncol" id="tab-1-content" style="margin-left: 70px;">
-        <div class="nrow">
-          <div id="name">
-            Bilal Ahmed
+    <div class="nrow grow" style="padding: 0 35px;">
+      <transition appear name="slide-fade">
+        <div v-if="isSelected('Home')" class="ncol grow fade-slide-left" id="tab-1-content">
+          <div class="nrow">
+            <div id="name">
+              Bilal Ahmed
+            </div>
+          </div>
+
+          <div class="nrow" id="short_info">
+            <p>
+              A <b>Computer Science</b> student at the <br/>
+            University of Toronto that's passionate about <br/> 
+            <b>web design</b> and <b>software development</b>.
+            </p>
+          </div>
+
+          <div class="nrow" style="margin-top: 50px">
+            <b-button type="is-dark" size="is-large" rounded icon-left="github" @click="open('https://github.com/bill-ahmed')">
+              
+            </b-button>
+
+            <b-button type="is-dark" size="is-large" rounded icon-left="linkedin" @click="open('https://www.linkedin.com/in/bill-ahmed')">
+            </b-button>
+
+            <b-button type="is-dark" size="is-large" rounded icon-left="download" @click="open('/')">
+              My Resume
+            </b-button>
           </div>
         </div>
+      </transition>
 
-        <div class="nrow" id="short_info">
-          <p>
-            A <b>Computer Science</b> student at the <br/>
-          University of Toronto that's passionate about <br/> 
-          <b>web design</b> and <b>software development</b>.
-          </p>
-        </div>
+      <transition appear name="slide-fade">
+        <Projects v-if="isSelected('Projects')"/>
+      </transition>
 
-        <div class="nrow" style="margin-top: 50px">
-          <b-button type="is-dark" size="is-large" rounded icon-left="github" @click="open('https://github.com/bill-ahmed')">
-            
-          </b-button>
+      <transition appear name="slide-fade">
+        <Education v-if="isSelected('Education')"/>
+      </transition>
 
-          <b-button type="is-dark" size="is-large" rounded icon-left="linkedin" @click="open('https://www.linkedin.com/in/bill-ahmed')">
-          </b-button>
-
-          <b-button type="is-dark" size="is-large" rounded icon-left="download" @click="open('/')">
-            My Resume
-          </b-button>
-        </div>
-      </div>
+      <div class="grow-3"/>
 
       <div id="right-nav" class="ncol justify-center">
         <b-button v-for="tab in tabs" :key="tab" 
@@ -45,9 +57,13 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import Education from '@/components/Education.vue';
+import Projects from '@/components/Projects.vue';
 
 @Component({
   components: {
+    Education,
+    Projects
   },
 })
 export default class App extends Vue {
@@ -89,7 +105,7 @@ export default class App extends Vue {
 }
 
 #right-nav {
-  margin-right: 40px;
+  margin-right: 10px;
 }
 
 #tab-1-content {
@@ -97,6 +113,7 @@ export default class App extends Vue {
   justify-content: center;
 
   min-width: 600px;
+  margin-left: 10%;
 }
 
 #app {
@@ -115,5 +132,22 @@ export default class App extends Vue {
 #short_info {
   font-size: 1.8rem;
   font-weight: 100;
+}
+
+/* Transitions */
+
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .5s ease;
+}
+.slide-fade-leave-active {
+  transition: none;
+  opacity: 0;
+}
+.slide-fade-enter {
+  transform: translateX(-30px);
+  opacity: 0;
 }
 </style>

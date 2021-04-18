@@ -37,6 +37,7 @@ p {
 
 .space-evenly { justify-content: space-evenly; }
 .space-between { justify-content: space-between; }
+.space-around { justify-content: space-around; }
 .justify-center { justify-content: center; }
 
 /*** CUSTOM SCROLLBAR ***/
