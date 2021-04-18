@@ -1,17 +1,50 @@
 <template>
-  <div class="container grow">
-    Projects
+  <div class="projects-container grow">
+    <div class="ncol">
+      <h1> Personal Projects </h1>
+
+      <div class="nrow f-wrap">
+        <ProjectTile v-for="p in personal" :key="p.name" :details="p"/>
+      </div>
+    </div>
+    <br/>
+    <br/>
+
+    <div class="ncol">
+      <h1> Academic Projects </h1>
+      <br/>
+
+      <div class="nrow f-wrap">
+        <ProjectTile v-for="p in academic" :key="p.name" :details="p"/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import ProjectTile from './shared/ProjectTile.vue';
+import * as ProjectData from './shared/ProjectData.json';
+
 export default {
-  
+  components: {
+    ProjectTile
+  },
+  data() {
+    let projects = ProjectData.projects;
+
+    let personal = projects.filter((p) => p.type === 'personal');
+    let academic = projects.filter((p) => p.type === 'academic');
+
+    return {
+      personal,
+      academic
+    }
+  }
 }
 </script>
 
 <style scoped>
-.container {
+.projects-container {
   padding: 25px;
 }
 </style>

@@ -134,9 +134,6 @@ export default class App extends Vue {
   font-weight: 100;
 }
 
-/* Transitions */
-
-
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-fade-enter-active {
