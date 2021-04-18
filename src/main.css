@@ -18,29 +18,26 @@ p {
   margin: 0;
 }
 
-.spacer { flex-grow: 1; }
-.spacer-1 { flex-grow: 0.1; }
-.spacer-2 { flex-grow: 0.2; }
-.spacer-3 { flex-grow: 0.3; }
-.spacer-4 { flex-grow: 0.4; }
-.spacer-5 { flex-grow: 0.5; }
+.grow { flex-grow: 1; }
+.grow-1 { flex-grow: 0.1; }
+.grow-2 { flex-grow: 0.2; }
+.grow-3 { flex-grow: 0.3; }
+.grow-4 { flex-grow: 0.4; }
+.grow-5 { flex-grow: 0.5; }
 
 .nrow {
   display: flex;
   flex-direction: row;
-
-  padding: 15px;
 }
 
 .ncol {
   display: flex;
   flex-direction: column;
-
-  padding: 15px;
 }
 
 .space-evenly { justify-content: space-evenly; }
 .space-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
 
 /*** CUSTOM SCROLLBAR ***/
 ::-webkit-scrollbar {
