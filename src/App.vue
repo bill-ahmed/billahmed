@@ -32,25 +32,27 @@
         </div>
       </transition>
 
-      <transition appear name="slide-fade">
-        <Projects v-if="isSelected('Projects')"/>
+      <transition appear name="slide-fade-fast">
+        <Projects v-if="isSelected('Projects')" style="max-width: 85vw;"/>
       </transition>
 
-      <transition appear name="slide-fade">
+      <transition appear name="slide-fade-fast">
         <Education v-if="isSelected('Education')"/>
       </transition>
 
       <div class="grow-3"/>
 
-      <div id="right-nav" class="ncol justify-center">
-        <b-button v-for="tab in tabs" :key="tab" 
-                  type="is-dark"
-                  @click="handleTabClick(tab)" 
-                  :outlined="!isSelected(tab)" 
-                  class="b-button" :size="isSelected(tab) ? 'is-large' : 'is-medium'">
-         {{ tab }}
-        </b-button>
-      </div>
+      <transition appear name="slide-fade-right">
+        <div id="right-nav" class="ncol justify-center">
+          <b-button v-for="tab in tabs" :key="tab" 
+                    type="is-dark"
+                    @click="handleTabClick(tab)" 
+                    :outlined="!isSelected(tab)" 
+                    class="b-button" :size="isSelected(tab) ? 'is-large' : 'is-medium'">
+          {{ tab }}
+          </b-button>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -105,7 +107,11 @@ export default class App extends Vue {
 }
 
 #right-nav {
-  margin-right: 10px;
+  position: absolute;
+  
+  top: 0;
+  bottom: 0;
+  right: 30px;
 }
 
 #tab-1-content {
@@ -137,13 +143,39 @@ export default class App extends Vue {
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-fade-enter-active {
-  transition: all .5s ease;
+  transition: all .8s ease;
 }
 .slide-fade-leave-active {
   transition: none;
   opacity: 0;
 }
 .slide-fade-enter {
+  transform: translateX(-30px);
+  opacity: 0;
+}
+
+
+.slide-fade-right-enter-active {
+  transition: all .8s ease;
+}
+.slide-fade-right-leave-active {
+  transition: none;
+  opacity: 0;
+}
+.slide-fade-right-enter {
+  transform: translateX(30px);
+  opacity: 0;
+}
+
+
+.slide-fade-fast-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-fast-leave-active {
+  transition: none;
+  opacity: 0;
+}
+.slide-fade-fast-enter {
   transform: translateX(-30px);
   opacity: 0;
 }

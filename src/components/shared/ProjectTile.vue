@@ -1,35 +1,36 @@
 <template>
-  <div class="project-tile-container ncol justify-center n-elevation-1" :style="image ? { backgroundImage: 'url(' + image + ')' } : ''">
-    <div>
-      <div class="nrow">
-        <h2>
-          {{ details.name }}
-        </h2>
-        <div class="grow"/>
-        <IconButton icon="github" :url="details.github"/>
+    <div class="project-tile-container ncol justify-center n-elevation-1" :style="image ? { backgroundImage: 'url(' + image + ')' } : ''">
+      <div>
+        <div class="nrow">
+          <h2>
+            {{ details.name }}
+          </h2>
+          <div class="grow"/>
+          <IconButton icon="github" :url="details.github"/>
+        </div>
+        <hr/>
       </div>
-      <hr/>
-    </div>
 
-    <div>
-      <p> {{details.description}} </p>
-    </div>
-    <div class="grow" style="margin-top: 20px"/>
+      <div>
+        <p> {{details.description}} </p>
+      </div>
+      <div class="grow" style="margin-top: 20px"/>
 
-    <div class="nrow">
-      <b-taglist>
-        <b-tag v-for="tag in details.tags" :key="tag" type="is-dark"  size="is-medium">{{tag}}</b-tag>
-      </b-taglist>
+      <div class="nrow">
+        <b-taglist>
+          <b-tag v-for="tag in details.tags" :key="tag" type="is-dark" size="is-medium">{{tag}}</b-tag>
+        </b-taglist>
+      </div>
     </div>
-  </div>
 </template>
 
 <script lang="ts">
 export default {
   props: ['details'],
 
-  data() {
+  data(): any {
     return {
+      //@ts-ignore
       image: this.details.bg_icon ? require('../../assets/' + this.details.bg_icon) : null
     }
   }
