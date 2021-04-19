@@ -4,7 +4,7 @@
       <h1> Personal Projects </h1>
       <br/>
 
-      <div class="nrow f-wrap">
+      <div class="nrow f-wrap project-tiles-container">
         <ProjectTile v-for="p in personal" :key="p.name" :details="p"/>
       </div>
     </div>
@@ -15,7 +15,7 @@
       <h1> Academic Projects </h1>
       <br/>
 
-      <div class="nrow f-wrap">
+      <div class="nrow f-wrap project-tiles-container">
         <ProjectTile v-for="p in academic" :key="p.name" :details="p"/>
       </div>
     </div>
@@ -47,5 +47,13 @@ export default {
 <style scoped>
 .projects-container {
   padding: 25px;
+  width: 80%;
+  min-width: 420px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .project-tiles-container {
+    justify-content: center;
+  }
 }
 </style>

@@ -47,7 +47,8 @@ export default {
   flex-grow: 1;
 
   min-height: 225px;
-  max-width: 400px;
+  max-width: 500px;
+  min-width: 350px;
 
   border-radius: 15px;
 

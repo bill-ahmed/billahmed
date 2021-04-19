@@ -26,6 +26,9 @@ hr {
   background: rgba(255, 255, 255, 0.3);
 }
 
+.debug { border: solid 1px red; }
+
+.hidden { display: none; }
 .container { padding: 25px; }
 
 .grow { flex-grow: 1; }
@@ -53,7 +56,11 @@ hr {
 .space-evenly { justify-content: space-evenly; }
 .space-between { justify-content: space-between; }
 .space-around { justify-content: space-around; }
+
 .justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+
+.align-center { align-items: center; }
 
 /*** CUSTOM SCROLLBAR ***/
 ::-webkit-scrollbar {
