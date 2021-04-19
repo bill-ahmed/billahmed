@@ -1,31 +1,26 @@
 <template>
   <div id="app">
-    <div class="nrow grow" style="padding: 0 35px;">
+    <div class="ncol grow" style="padding: 0 35px;">
       <transition appear name="slide-fade">
-        <div v-if="isSelected('Home')" class="ncol grow fade-slide-left" id="tab-1-content">
+        <div class="ncol grow" id="tab-1-content">
           <div class="nrow">
-            <div id="name">
-              Bilal Ahmed
-            </div>
+            <AnimatedName/>
           </div>
 
           <div class="nrow" id="short_info">
             <p>
               A <b>Computer Science</b> student at the <br/>
             University of Toronto that's passionate about <br/> 
-            <b>web design</b> and <b>software development</b>.
+            <b>software development</b> and <b>web design</b>.
             </p>
           </div>
 
-          <div class="nrow" style="margin-top: 50px">
-            <b-button type="is-dark" size="is-large" rounded icon-left="github" @click="open('https://github.com/bill-ahmed')">
-              
-            </b-button>
+          <div class="nrow" id="social_links">
+            <b-button id="github_link" type="is-dark" size="is-large" rounded icon-left="github" @click="open('https://github.com/bill-ahmed')"/>
 
-            <b-button type="is-dark" size="is-large" rounded icon-left="linkedin" @click="open('https://www.linkedin.com/in/bill-ahmed')">
-            </b-button>
+            <b-button id="linkedin_link" type="is-dark" size="is-large" rounded icon-left="linkedin" @click="open('https://www.linkedin.com/in/bill-ahmed')"/>
 
-            <b-button type="is-dark" size="is-large" rounded icon-left="download" @click="open('/')">
+            <b-button id="resume_link" type="is-dark" size="is-large" rounded icon-left="download" @click="open('/')">
               My Resume
             </b-button>
           </div>
@@ -34,10 +29,6 @@
 
       <transition appear name="slide-fade-fast">
         <Projects v-if="isSelected('Projects')" style="max-width: 85vw;"/>
-      </transition>
-
-      <transition appear name="slide-fade-fast">
-        <Education v-if="isSelected('Education')"/>
       </transition>
 
       <div class="grow-3"/>
@@ -59,25 +50,33 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Education from '@/components/Education.vue';
 import Projects from '@/components/Projects.vue';
+import AnimatedName from '@/components/AnimtedName.vue';
 
 @Component({
   components: {
-    Education,
-    Projects
+    Projects,
+    AnimatedName
   },
 })
 export default class App extends Vue {
   tabs = [
     'Home',
-    'Projects',
-    'Education'
+    'Projects'
   ]
 
   selected = this.tabs[0];
 
   handleTabClick(tab: string) {
+    if(tab !== this.selected && (this.selected === this.tabs[0] || tab === this.tabs[0]))
+    {
+      // Animate going to any other tab from home
+      let elem = document.getElementById('tab-1-content');
+
+      elem?.classList.toggle('transition-header');
+      elem?.classList.toggle('ncol');
+      elem?.classList.toggle('nrow');
+    }
     this.selected = tab;
   }
 
@@ -91,7 +90,16 @@ export default class App extends Vue {
 }
 </script>
 
-<style>
+<style lang="scss">
+:root {
+  --animation_delay: 0.3s;
+  --animation_delay_last: 0.5s;
+}
+
+#github_link:hover, #linkedin_link:hover, #resume_link:hover {
+  color: #1B76B4;
+}
+
 .b-button {
   margin: 15px;
 }
@@ -106,38 +114,59 @@ export default class App extends Vue {
   flex-direction: column;
 }
 
-#right-nav {
-  position: absolute;
-  
-  top: 0;
-  bottom: 0;
-  right: 30px;
-}
-
-#tab-1-content {
-  height: 100%;
-  justify-content: center;
-
-  min-width: 600px;
-  margin-left: 10%;
-}
-
 #app {
   width: 100%;
   height: 100vh;
 
   display: flex;
   flex-direction: column;
-}
 
-#name {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 7rem;
-}
+  #tab-1-content {
+    height: 100%;
+    justify-content: center;
 
-#short_info {
-  font-size: 1.8rem;
-  font-weight: 100;
+    min-width: 600px;
+
+    padding-bottom: 15vh;
+    margin-left: 10%;
+
+    transition: all .5s ease;
+
+    #short_info {
+      font-size: 1.8rem;
+      font-weight: 100;
+    }
+
+    #social_links {
+      margin-top: 50px
+    }
+  }
+
+  #right-nav {
+    position: absolute;
+    
+    top: 0;
+    bottom: 0;
+    right: 30px;
+  }
+
+  .transition-header {
+    // flex-direction: row;
+
+    &#tab-1-content {
+      margin: 0;
+      padding: 10px;
+
+      height: 100px;
+
+      #fullName { width: 300px; }
+      #social_links {
+        margin: 10px;
+      }
+    }
+
+    #short_info { display: none; }
+  }
 }
 
 /* Enter and leave animations can use different */
