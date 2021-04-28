@@ -47,7 +47,7 @@ export default {
 <style scoped>
 .projects-container {
   padding: 25px;
-  width: 80%;
+  width: 85%;
   min-width: 420px;
 }
 

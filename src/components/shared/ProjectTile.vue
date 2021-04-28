@@ -44,11 +44,8 @@ export default {
 
   background: #424242;
   
-  flex-grow: 1;
-
-  min-height: 225px;
-  max-width: 500px;
-  min-width: 350px;
+  width: 500px;
+  min-height: 275px;
 
   border-radius: 15px;
 

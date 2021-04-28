@@ -24,14 +24,6 @@
       "bg_icon": "microchip-solid.svg",
       "type": "academic"
     },
-    {
-      "name": "Maze Solver",
-      "description": "An implementation of Dijkstra's Algorithm that finds the shortest (and only) path to solving a maze.",
-      "tags": ["Python", "PIL", "Dijkstra"],
-      "github": "https://github.com/bill-ahmed/Maze-Solver",
-      "bg_icon": "maze.svg",
-      "type": "academic"
-    },
 
     {
       "name": "DDSBlaze",
@@ -55,14 +47,6 @@
       "tags": ["Angular", "Google Material Design"],
       "github": "https://github.com/bill-ahmed/qbit-matUI",
       "bg_icon": "angular-icon.svg",
-      "type": "personal"
-    },
-    {
-      "name": "eec",
-      "description": "Define ExpressJS routes as Typescript classes.",
-      "tags": ["Express JS", "ES6 Decorators"],
-      "github": "https://github.com/bill-ahmed/eec",
-      "bg_icon": "",
       "type": "personal"
     }
   ]
