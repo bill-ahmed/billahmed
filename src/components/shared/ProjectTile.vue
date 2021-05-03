@@ -18,7 +18,7 @@
 
       <div class="nrow">
         <b-taglist>
-          <b-tag v-for="tag in details.tags" :key="tag" type="is-dark" size="is-medium">{{tag}}</b-tag>
+          <b-tag v-for="tag in details.tags" :key="tag" type="is-dark" size="is-medium" style="font-size: 11pt;">{{tag}}</b-tag>
         </b-taglist>
       </div>
     </div>
@@ -44,10 +44,13 @@ export default {
 
   background: #424242;
   
-  width: 500px;
-  min-height: 275px;
+  width: 30%;
+  min-width: 250px;
+  /* max-width: 300px; */
+  
+  height: 240px;
 
-  border-radius: 15px;
+  border-radius: 10px;
 
   /* text-align: center; */
   background-image: url(../../assets/code_icon.svg);
@@ -55,6 +58,9 @@ export default {
   background-size: 150px;
   background-position: 110% 150%;
 
-  word-spacing: 1px;
+  font-size: 11pt;
+  word-spacing: 1.5px;
+
+  overflow-y: scroll;
 }
 </style>

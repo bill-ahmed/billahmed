@@ -1,8 +1,9 @@
 <template>
   <div class="projects-container grow">
+    <br/><br/>
+    
     <div class="ncol">
-      <h1> Personal Projects </h1>
-      <br/>
+      <div class="title is-4 project-title"> Personal </div>
 
       <div class="nrow f-wrap project-tiles-container">
         <ProjectTile v-for="p in personal" :key="p.name" :details="p"/>
@@ -12,8 +13,7 @@
     <br/>
 
     <div class="ncol">
-      <h1> Academic Projects </h1>
-      <br/>
+      <div class="title is-4 project-title"> Academic </div>
 
       <div class="nrow f-wrap project-tiles-container">
         <ProjectTile v-for="p in academic" :key="p.name" :details="p"/>
@@ -44,11 +44,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .projects-container {
   padding: 25px;
-  width: 85%;
+  /* width: 85%; */
   min-width: 420px;
+
+  .project-title {
+    color: rgba(255, 255, 255, 0.7);
+  }
 }
 
 @media only screen and (max-width: 1200px) {

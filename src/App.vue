@@ -1,46 +1,52 @@
 <template>
   <div id="app">
-    <div class="ncol grow" style="align-items: center;">
-      <transition appear name="slide-fade">
-        <div class="ncol align-center" id="tab-1-content">
-          <div class="nrow">
-            <AnimatedName/>
+    <div class="nrow grow space-around align-center f-wrap">
+      <div id="leftContainer" class="ncol grow-1 align-center">
+        <transition appear name="slide-fade">
+          <div class="ncol align-center" id="tab-1-content">
+            <div class="nrow">
+              <AnimatedName/>
+            </div>
+
+            <div id="short_info">
+              <p>
+                A <b>Computer Science</b> student at the
+              University of Toronto that's passionate about
+              <b>software development</b> and <b>web design</b>.
+              </p>
+            </div>
+
+            <div class="nrow" id="social_links">
+              <b-button id="github_link" type="is-dark" size="is-medium" rounded icon-left="github" @click="open('https://github.com/bill-ahmed')"/>
+
+              <b-button id="linkedin_link" type="is-dark" size="is-medium" rounded icon-left="linkedin" @click="open('https://www.linkedin.com/in/bill-ahmed')"/>
+
+              <b-button id="resume_link" type="is-dark" size="is-medium" icon-left="download" @click="open('/')">
+                My Resume
+              </b-button>
+            </div>
           </div>
-          <br/><br/>
+        </transition>
+      </div>
 
-          <div id="short_info">
-            <p>
-              A <b>Computer Science</b> student at the
-            University of Toronto that's passionate about
-            <b>software development</b> and <b>web design</b>.
-            </p>
+      <transition appear name="slide-fade-right">
+        <div class="ncol" id="rightContent">
+          <div class="ncol card-outer-container" style="margin: 50px 0;">
+            <div class=" card-title title is-h2"> Projects </div>
+          
+            <div class="ncol card-container">
+              <Projects/>
+            </div>
           </div>
 
-          <div class="nrow" id="social_links">
-            <b-button id="github_link" type="is-dark" size="is-medium" rounded icon-left="github" @click="open('https://github.com/bill-ahmed')"/>
-
-            <b-button id="linkedin_link" type="is-dark" size="is-medium" rounded icon-left="linkedin" @click="open('https://www.linkedin.com/in/bill-ahmed')"/>
-
-            <b-button id="resume_link" type="is-dark" size="is-medium" icon-left="download" @click="open('/')">
-              My Resume
-            </b-button>
-          </div>
-
-          <div id="right-nav" class="nrow justify-center">
-            <b-button v-for="tab in tabs" :key="tab" 
-                      type="is-light"
-                      @click="handleTabClick(tab)" 
-                      :outlined="!isSelected(tab)"
-                      rounded
-                      class="b-button" :class="isSelected(tab) ? 'hidden' : ''" size="is-medium">
-            {{ tab }}
-            </b-button>
+          <div class="ncol card-outer-container" style="margin: 50px 0;">
+            <div class=" card-title title is-h2"> Experience </div>
+          
+            <div class="ncol card-container">
+              <Projects/>
+            </div>
           </div>
         </div>
-      </transition>
-
-      <transition appear name="slide-fade-fast">
-        <Projects v-if="isSelected('Projects')"/>
       </transition>
     </div>
   </div>
@@ -59,25 +65,14 @@ import AnimatedName from '@/components/AnimtedName.vue';
 })
 export default class App extends Vue {
   tabs = [
-    'Home',
-    'Projects'
+    'Projects',
+    'Experience (WIP)'
   ]
 
   selected = this.tabs[0];
   headerOnTop = false;
 
   handleTabClick(tab: string) {
-    if(tab !== this.selected && (this.selected === this.tabs[0] || tab === this.tabs[0]))
-    {
-      // Animate going to any other tab from home
-      let elem = document.getElementById('tab-1-content');
-
-      elem?.classList.toggle('transition-header');
-      elem?.classList.toggle('ncol');
-      elem?.classList.toggle('nrow');
-
-      this.headerOnTop = !this.headerOnTop;
-    }
     this.selected = tab;
   }
 
@@ -117,22 +112,58 @@ export default class App extends Vue {
 
 #app {
   width: 100%;
-  height: 100vh;
 
   display: flex;
   flex-direction: column;
 
+  #rightContent {
+    height: 95vh;
+    max-width: 60vw;
+
+    overflow-y: scroll;
+    padding: 0 45px;
+  }
+
+  .card-outer-container {
+    position: relative;
+
+    .card-title {
+      position: absolute;
+
+      color: white;
+      background: #1B76B4;
+      padding: 10px 15px;
+
+      width: max-content;
+      
+      top: -30px;
+      left: -30px;
+
+      border-top: #1B76B4;
+
+      border: solid 5px #1B76B4;
+
+      box-shadow: 0px 4px 15px 6px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  .card-container {
+    background-color: #292929;
+    // border-radius: 15px;
+
+    box-shadow: 0px 4px 15px 2px rgba(0, 0, 0, 0.25);
+  }
+
   #tab-1-content {
     height: 100%;
     justify-content: center;
+    align-items: flex-start;
 
     padding: 15px;
 
-    text-align: center;
-
     #fullName {
       width: 80vw;
-      max-width: 550px;
+      max-width: 450px;
     }
 
     #short_info {
@@ -143,42 +174,8 @@ export default class App extends Vue {
     }
 
     #social_links {
-      margin-top: 60px
-    }
-  }
-
-  #right-nav {
-    margin-top: 35px;
-  }
-
-  .transition-header {
-    position: sticky;
-    top: 0;
-    
-    width: 100%;
-    // min-width: 280px;
-
-    background: #1E1E1E;
-    align-items: center;
-
-    box-shadow: 0px 0px 8px 6px rgba(0, 0, 0, 0.15);
-    
-
-    &#tab-1-content {
-      margin: 0;
-      padding: 10px;
-      justify-content: space-around;
-      animation: fade-drop .5s ease forwards;
-
-      // flex-wrap: wrap;
-
-      height: 90px;
-
-      #fullName { width: 150px }
-      #right-nav { margin: 0; }
-
-      #short_info { display: none; }
-      #social_links { display: none; }
+      margin-top: 30px;
+      width: 100%;
     }
   }
 }
@@ -193,7 +190,7 @@ export default class App extends Vue {
   opacity: 0;
 }
 .slide-fade-enter {
-  transform: translateY(-30px);
+  transform: translateX(-30px);
   opacity: 0;
 }
 
@@ -211,15 +208,15 @@ export default class App extends Vue {
 }
 
 
-.slide-fade-fast-enter-active {
-  transition: all .3s ease;
+.slide-fade-right-enter-active {
+  transition: all .8s ease;
 }
-.slide-fade-fast-leave-active {
+.slide-fade-right-leave-active {
   transition: none;
   opacity: 0;
 }
-.slide-fade-fast-enter {
-  transform: translateX(-30px);
+.slide-fade-right-enter {
+  transform: translateX(30px);
   opacity: 0;
 }
 

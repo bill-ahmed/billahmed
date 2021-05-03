@@ -11,7 +11,7 @@
     {
       "name": "Planit",
       "description": "Android & iOS application that helps users build itineraries for locations/events in a given area.",
-      "tags": ["React Native", "Node.JS", "Redux", "Firebase"],
+      "tags": ["React Native", "Firebase"],
       "github": "https://github.com/bill-ahmed/og-planit",
       "bg_icon": "earth_globe_icon.svg",
       "type": "academic"
@@ -36,7 +36,7 @@
     {
       "name": "Mando Bot",
       "description": "A template/boilerplate for creating a Slack bot. This template can be used to rapidly deploy & build functionality for a bot.",
-      "tags": ["Express JS", "MongoDB", "Slack Bot"],
+      "tags": ["Express JS", "MongoDB"],
       "github": "https://github.com/bill-ahmed/mando_bot",
       "bg_icon": "slack_icon.svg",
       "type": "personal"
