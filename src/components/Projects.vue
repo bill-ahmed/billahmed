@@ -47,8 +47,7 @@ export default {
 <style scoped lang="scss">
 .projects-container {
   padding: 25px;
-  /* width: 85%; */
-  min-width: 420px;
+  // min-width: 420px;
 
   .project-title {
     color: rgba(255, 255, 255, 0.7);

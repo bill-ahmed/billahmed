@@ -63,4 +63,10 @@ export default {
 
   overflow-y: scroll;
 }
+
+@media only screen and (max-width: 680px) {
+  .project-tile-container {
+    width: 100%;
+  }
+}
 </style>

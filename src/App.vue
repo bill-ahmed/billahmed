@@ -1,9 +1,9 @@
 <template>
-  <div id="app">
+  <div id="app" class="nrow f-wrap">
     <div class="nrow grow space-around align-center f-wrap">
-      <div id="leftContainer" class="ncol grow-1 align-center">
+      <div id="leftContainer" class="ncol align-center">
         <transition appear name="slide-fade">
-          <div class="ncol align-center" id="tab-1-content">
+          <div class="ncol" id="tab-1-content">
             <div class="nrow">
               <AnimatedName/>
             </div>
@@ -43,7 +43,7 @@
             <div class=" card-title title is-h2"> Experience </div>
           
             <div class="ncol card-container">
-              <Projects/>
+              <Experience/>
             </div>
           </div>
         </div>
@@ -54,13 +54,15 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Projects from '@/components/Projects.vue';
 import AnimatedName from '@/components/AnimtedName.vue';
+import Projects from '@/components/Projects.vue';
+import Experience from '@/components/Experience.vue';
 
 @Component({
   components: {
     Projects,
-    AnimatedName
+    AnimatedName,
+    Experience
   },
 })
 export default class App extends Vue {
@@ -113,15 +115,14 @@ export default class App extends Vue {
 #app {
   width: 100%;
 
-  display: flex;
-  flex-direction: column;
+  #leftContainer {
+    height: 100vh;
+    padding-top: 25vh;
+  }
 
   #rightContent {
-    height: 95vh;
-    max-width: 60vw;
-
-    overflow-y: scroll;
-    padding: 0 45px;
+    max-width: 1080px;
+    padding: 25px 40px;
   }
 
   .card-outer-container {
@@ -139,8 +140,6 @@ export default class App extends Vue {
       top: -30px;
       left: -30px;
 
-      border-top: #1B76B4;
-
       border: solid 5px #1B76B4;
 
       box-shadow: 0px 4px 15px 6px rgba(0, 0, 0, 0.25);
@@ -149,14 +148,12 @@ export default class App extends Vue {
 
   .card-container {
     background-color: #292929;
-    // border-radius: 15px;
+    border-radius: 7px;
 
     box-shadow: 0px 4px 15px 2px rgba(0, 0, 0, 0.25);
   }
 
   #tab-1-content {
-    height: 100%;
-    justify-content: center;
     align-items: flex-start;
 
     padding: 15px;
@@ -229,6 +226,37 @@ export default class App extends Vue {
   100% {
     opacity: 1;
     padding-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #app {
+    .card-title {
+      left: -10px;
+    }
+
+    #rightContent {
+      padding: 25px 15px;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #app {
+    #leftContainer {
+      height: 100vh;
+      justify-content: center;
+
+      padding-top: 0;
+      padding-bottom: 20vh;
+
+      #tab-1-content {
+        align-items: center;
+        text-align: center;
+
+        #social_links { justify-content: center; }
+      }
+    }
   }
 }
 </style>
