@@ -29,6 +29,12 @@
         </transition>
       </div>
 
+      <transition appear name="slide-fade">
+        <span id="showMoreButton" class="icon-button is-large" @click="showMore()">
+          <i class="mdi mdi-chevron-down"/>
+        </span>
+      </transition>
+
       <transition appear name="slide-fade-right">
         <div class="ncol" id="rightContent">
           <div class="ncol card-outer-container" style="margin: 50px 0;">
@@ -85,6 +91,10 @@ export default class App extends Vue {
   isSelected(tab: string) {
     return this.selected === tab;
   }
+
+  showMore() {
+    document.getElementById('rightContent')?.scrollIntoView({ behavior: 'smooth' });
+  }
 }
 </script>
 
@@ -114,6 +124,7 @@ export default class App extends Vue {
 
 #app {
   width: 100%;
+  position: relative;
 
   #leftContainer {
     height: 100vh;
@@ -123,6 +134,11 @@ export default class App extends Vue {
   #rightContent {
     max-width: 1080px;
     padding: 25px 40px;
+  }
+
+  #showMoreButton {
+    position: absolute;
+    bottom: 25vh;
   }
 
   .card-outer-container {

@@ -42,6 +42,11 @@ hr {
 .grow-8 { flex-grow: 0.8; }
 .grow-9 { flex-grow: 0.9; }
 
+.icon-button {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
 
 .nrow {
   display: flex;
